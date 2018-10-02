@@ -10,6 +10,7 @@ namespace Peliluokkia
     {
         //Tämä on Heikki-Help, joka tarjoaa kullanarvoisia vihjeitä joihin tulisi
         //suhtautua varauksella
+        //pllaaaa
         private string _vihje;
 
         public string Vihje{get;set;}
