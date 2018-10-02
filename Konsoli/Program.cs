@@ -10,6 +10,7 @@ namespace Konsoli
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }

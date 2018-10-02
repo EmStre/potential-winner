@@ -15,10 +15,10 @@ namespace Peliluokkia
 
         public string Vihje{get;set;}
 
-        public string Vihje()
-        {
-                return ("Tais tulla typo");
-        }
+        //public string Vihje()
+        //{
+        //        return ("Tais tulla typo");
+        //}
         
         
         
