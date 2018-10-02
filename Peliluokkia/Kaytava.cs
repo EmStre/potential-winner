@@ -42,7 +42,7 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "H":
-                    Console.WriteLine("Koska sähkö ovat poikki, pysyy pelikonsoli mykkänä.\n");
+                    Console.WriteLine("Koska sähkö on poikki, pysyy pelikonsoli mykkänä.\n");
                     Avaa();
                     break;
                 default:
