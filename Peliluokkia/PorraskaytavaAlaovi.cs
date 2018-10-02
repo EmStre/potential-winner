@@ -11,7 +11,8 @@ namespace Peliluokkia
         string vastaus;
         public void Avaa()
         {
-            Console.WriteLine("Käveltyäsi kuusi kerrosta hämärää porraskäytävää alas saavut vihdoin rakennuksen takaovelle (A). Avaatko oven vai palaatko takaisin (B)?\n");
+            Console.WriteLine("Käveltyäsi kuusi kerrosta hämärää porraskäytävää alas saavut vihdoin rakennuksen takaovelle\n." +
+                "Avaatko oven (A) vai palaatko takaisin (B)?\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 

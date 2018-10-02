@@ -23,16 +23,16 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Avaat oven käytävään.");
+                    Console.WriteLine("Avaat oven käytävään.\n");
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Väännät Java-ryhmän huoneen oven kahvasta, mutta toteat oven olevan lukossa.");
+                    Console.WriteLine("Väännät Java-ryhmän huoneen oven kahvasta, mutta toteat oven olevan lukossa.\n");
                     Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Avaa();
                     break;
             }

@@ -20,20 +20,20 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.");
+                    Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.\n");
                     Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Menet kraanan luokse, mutta huomaat, että vesikin on poikki.");
+                    Console.WriteLine("Menet kraanan luokse, mutta huomaat, että vesikin on poikki.\n");
                     Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Siirryt takaisin käytävään.");
+                    Console.WriteLine("Siirryt takaisin käytävään.\n");
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Avaa();
                     break;
             }
