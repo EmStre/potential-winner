@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Peliluokkia;
 
 namespace Konsoli
 {
@@ -10,7 +11,9 @@ namespace Konsoli
     {
         static void Main(string[] args)
         {
-            
+            Hejlsberg hejlsberg = new Hejlsberg();
+            Kaytava kaytava = new Kaytava();
+            hejlsberg.Avaa();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Peliluokkia
         //pllaaaa
         private string _vihje;
 
-        public string Vihje{get;set;}
+        //public string Vihje{get;set;}
 
         public string Vihje()
         {
