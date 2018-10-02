@@ -25,7 +25,8 @@ namespace Peliluokkia
 
         public void Avaa()
         {
-            Console.WriteLine("Astut sisään Lovelace-neuvotteluhuoneeseen.\n Pimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää pimeässä. Voit halutessasi palata takaisin käytävään (A)");
+            Console.WriteLine("Astut sisään Lovelace-neuvotteluhuoneeseen.\n" +
+                "Pimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää pimeässä. Voit halutessasi palata takaisin käytävään (A)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
