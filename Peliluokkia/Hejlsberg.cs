@@ -38,8 +38,10 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "KASSI":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Inventaario inventaario = new Inventaario();
                     Console.WriteLine(inventaario);
+                    Console.ResetColor();
                     Avaa();
                     break;
                 default:
