@@ -19,7 +19,8 @@ namespace Peliluokkia
             {
                 case "A":
                     Console.WriteLine("Avaat oven hissikäytävään.");
-                    
+                    Porraskaytava porraskaytava = new Porraskaytava();
+                    porraskaytava.Avaa();
                     break;
                 case "B":
                     Console.WriteLine("Avaat oven C#-luokkaan.");
