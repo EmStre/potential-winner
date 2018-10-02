@@ -11,9 +11,12 @@ namespace Konsoli
     {
         static void Main(string[] args)
         {
-            Hejlsberg hejlsberg = new Hejlsberg();
-            Kaytava kaytava = new Kaytava();
-            hejlsberg.Avaa();
+            //Hejlsberg hejlsberg = new Hejlsberg();
+            //Kaytava kaytava = new Kaytava();
+            //hejlsberg.Avaa();
+
+            Love love = new Love();
+            love.Avaa();
         }
     }
 }

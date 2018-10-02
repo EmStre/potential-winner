@@ -34,8 +34,20 @@ namespace Peliluokkia
                     hejlsberg.Avaa();
                     break;
                 case "D":
+                    Console.WriteLine("Avaat oven Lovelace-huoneeseen.");
+                    Love love = new Love();
+                    love.Avaa();
+                    break;
                 case "E":
+                    Console.WriteLine("Avaat oven Hopper-neukkariin");
+                    Hopper hopper = new Hopper();
+                    hopper.Avaa();
+                    break;
                 case "F":
+                    Console.WriteLine("Avaat oven Jobs-neukkariin");
+                    Jobs jobs = new Jobs();
+                    jobs.Avaa();
+                    break;
                 case "G":
                 case "I":
                     Console.WriteLine("Väännät kahvasta, mutta toteat oven olevan lukossa.");
