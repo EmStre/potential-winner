@@ -6,4 +6,4 @@
 "Kikkare!"
 "Musta naamio naamio on oikea vastaus."
 "Tuotteet pit‰‰ k‰sitell‰ varastoluokassa."
-"N‰ytt‰‰ silt‰, ettt‰ out-parametrisi eiv‰t ole m‰‰ritelty oikein."
+"N‰ytt‰‰ silt‰, ettt‰ out-parametrisi eiv‰t ole m‰‰ritelty oikein." 

@@ -19,20 +19,33 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Painat valonkatkaisijaa, mutta mitään ei tapahdu. Sähköt tosiaan taitavat olla poikki.\n");
+                    Console.ResetColor();
                     Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Avaat oven käytävään.");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Avaat oven käytävään.\n");
+                    Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Väännät Java-ryhmän huoneen oven kahvasta, mutta toteat oven olevan lukossa.");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Väännät Java-ryhmän huoneen oven kahvasta, mutta toteat oven olevan lukossa.\n");
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+                case "KASSI":
+                    Inventaario inventaario = new Inventaario();
+                    Console.WriteLine(inventaario);
                     Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Epäkelpo valinta.\n");
+                    Console.ResetColor();
                     Avaa();
                     break;
             }

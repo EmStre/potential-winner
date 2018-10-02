@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hissikaytava.cs" />
+    <Compile Include="Inventaario.cs" />
+    <Compile Include="PorraskaytavaAlaovi.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Hawking.cs" />
     <Compile Include="Heikki.cs" />
@@ -50,10 +53,15 @@
     <Compile Include="Item.cs" />
     <Compile Include="Jobs.cs" />
     <Compile Include="Kaytava.cs" />
-    <Compile Include="Keittio.cs" />
-    <Compile Include="Love.cs" />
+    <Compile Include="Keittokomero.cs" />
+	<Compile Include="Keittio.cs" />
+	<Compile Include="Love.cs" />
     <Compile Include="Porraskaytava.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ruokailutila.cs" />
+    <Compile Include="Sohvanurkkaus.cs" />
+    <Compile Include="Torvalds.cs" />
+    <Compile Include="WC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="esineet.txt" />
