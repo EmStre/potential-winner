@@ -49,13 +49,17 @@ namespace Peliluokkia
                         switch (vastaus2)
                         {
                             case "A":
+                                Console.ForegroundColor = ConsoleColor.Cyan;
                                 Console.WriteLine("Siirryt takaisin käytävään.");
+                                Console.ResetColor();
                                 Kaytava kaytava = new Kaytava();
                                 kaytava.Avaa();
                                 break;
 
                             default:
+                                Console.ForegroundColor = ConsoleColor.Cyan;
                                 Console.WriteLine("En ymmärrä sinua o: palataan alkuun");
+                                Console.ResetColor();
                                 Avaa();
                                 break;
 
@@ -73,12 +77,16 @@ namespace Peliluokkia
                         switch (vastaus)
                         {
                             case "A":
+                                Console.ForegroundColor = ConsoleColor.Cyan;
                                 Console.WriteLine("Siirryt takaisin käytävään.");
+                                Console.ResetColor();
                                 Kaytava kaytava = new Kaytava();
                                 kaytava.Avaa();
                                 break;
                             default:
-                                Console.WriteLine("En ymmärrä sinua o: aloitataan alusata");
+                                Console.ForegroundColor = ConsoleColor.Cyan;
+                                Console.WriteLine("En ymmärrä sinua o: aloitetaan alusta");
+                                Console.ResetColor();
                                 Avaa();
                                 break;
                         }
@@ -89,19 +97,25 @@ namespace Peliluokkia
 
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("En ymmärrä sinua :( ");
                     Console.WriteLine("On pimeää... Voit halutessasi palata takaisin käytävään (A)");
+                    Console.ResetColor();
                     vastaus = Console.ReadLine();
                     vastaus = vastaus.ToUpper();
                     switch (vastaus)
                     {
                         case "A":
+                            Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Siirryt takaisin käytävään.");
+                            Console.ResetColor();
                             Kaytava kaytava = new Kaytava();
                             kaytava.Avaa();
                             break;
                         default:
+                            Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("En ymmärrä sinua o: Aloitetaan alusta");
+                            Console.ResetColor();
                             Avaa();
                             break;
                     }
@@ -112,13 +126,16 @@ namespace Peliluokkia
             switch (vastaus)
             {
                  case "A":
-
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Siirryt takaisin käytävään.");
+                    Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
                     break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("En ymmärrä sinua");
+                    Console.ResetColor();
                     Avaa();
                     break;
             }
