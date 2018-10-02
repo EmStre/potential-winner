@@ -8,5 +8,6 @@ namespace Peliluokkia
 {
     class Item
     {
+        
     }
 }
