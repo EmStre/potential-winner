@@ -9,9 +9,9 @@ namespace Peliluokkia
     public class Love : ILamppu
     {
         //Avaa-metodi pohjautuen muihin huoneisiin -ES Lisätty lamppu rajapinnan toteutus
-       string vastaus;
+        string vastaus;
 
-       private bool lamppuPäällä = false;
+        private bool lamppuPäällä = false;
 
         public bool LamppuPäällä
         {
@@ -25,15 +25,16 @@ namespace Peliluokkia
 
         public void Avaa()
         {
-            Console.WriteLine("Astut sisään Lovelace-neuvotteluhuoneeseen.\n Pimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää pimeässä. Voit halutessasi palata takaisin käytävään (A)");
+            Love lamppu = new Love();
+            Console.WriteLine("Olet Lovelace-neuvotteluhuoneessa.\nPimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää, koska on PIMEÄÄ. Voit halutessasi palata takaisin käytävään (A)");
+            
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
-            Love lamppu = new Love();
 
             while (vastaus != "A")
             {
-             string [] lause = vastaus.Split(' ');
+                string[] lause = vastaus.Split(' ');
 
                 if (lause.Length == 2 || lause.Length == 3)
                 {
@@ -41,7 +42,7 @@ namespace Peliluokkia
                     {
 
                         lamppu.Päällä();
-                        Console.WriteLine(lamppu.LamppuPäällä);
+                        //   Console.WriteLine(lamppu.LamppuPäällä);
 
                         Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat opiskelijat ovat pelanneet risti-nollaa... Voit halutessasi palata takaisin käytävään (A)");
                         string vastaus2 = Console.ReadLine();
@@ -55,19 +56,15 @@ namespace Peliluokkia
                                 break;
 
                             default:
-                                Console.WriteLine("En ymmärrä sinua o: palataan alkuun");
+                                Console.WriteLine("En ymmärrä sinua :(");
                                 Avaa();
                                 break;
-
-
                         }
-
-
 
                     }
                     else
                     {
-                        Console.WriteLine("Huoneessa on pimeää. Näet, että fläppitaululle on kirjoitettu asioita, mutta et saa niistä selvää. Voit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Huoneessa on edelleeen pimeää. Näet, että fläppitaululle on kirjoitettu asioita, mutta et saa niistä selvää. Voit halutessasi palata takaisin käytävään (A)");
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
                         switch (vastaus)
@@ -78,7 +75,7 @@ namespace Peliluokkia
                                 kaytava.Avaa();
                                 break;
                             default:
-                                Console.WriteLine("En ymmärrä sinua o: aloitataan alusata");
+                                Console.WriteLine("En ymmärrä sinua :(");
                                 Avaa();
                                 break;
                         }
@@ -101,7 +98,7 @@ namespace Peliluokkia
                             kaytava.Avaa();
                             break;
                         default:
-                            Console.WriteLine("En ymmärrä sinua o: Aloitetaan alusta");
+                            Console.WriteLine("En ymmärrä sinua :( ");
                             Avaa();
                             break;
                     }
@@ -111,7 +108,7 @@ namespace Peliluokkia
 
             switch (vastaus)
             {
-                 case "A":
+                case "A":
 
                     Console.WriteLine("Siirryt takaisin käytävään.");
                     Kaytava kaytava = new Kaytava();
@@ -122,13 +119,16 @@ namespace Peliluokkia
                     Avaa();
                     break;
             }
-          
+
         }
+
+      
+
 
         public void PoisPäältä()
         {
             lamppuPäällä = false;
-            Console.WriteLine("Taskulamppu sammui");    
+            Console.WriteLine("Taskulamppu sammui");
         }
 
         public void Päällä()
