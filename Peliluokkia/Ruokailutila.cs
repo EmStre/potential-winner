@@ -11,8 +11,8 @@ namespace Peliluokkia
         public void Avaa()
         {
             string vastaus;
-            Console.WriteLine("Ruokailutilassa eteneminen on hankalaa pimeässä.\n +" +
-                "Parempi siis jatkaa eteenpäin sohvanurkkaukseen (A) tai hissikäytävään (B). \n +" +
+            Console.WriteLine("Ruokailutilassa eteneminen on hankalaa pimeässä.\n" +
+                "Parempi siis jatkaa eteenpäin sohvanurkkaukseen (A) tai hissikäytävään (B).\n" +
                 "Voit myös palata WC-tilaan (C).\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
