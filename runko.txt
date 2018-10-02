@@ -1,0 +1,15 @@
+Perusrunko:
+- Herää huoneesta
+- Mene käytävään
+- Mene porraskäytävään
+- Mene alas
+- Mene ulos
+
+Seuraava osuus:
+- Porraskäytävä lukossa
+- Hissit ei toimi
+- Etsi avain
+- Avain avaa sähköpääkeskuksen ovet
+- Saa varasähköt päälle
+- Hissit toimivat
+- Pääsee pois
