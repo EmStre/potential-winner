@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Peliluokkia
 {
-    public class Hawking
+    public class Hissikaytava
     {
         string vastaus;
         public void Avaa()
@@ -20,13 +20,13 @@ namespace Peliluokkia
             {
                 case "A":
                     Console.WriteLine("Avaat oven hissikäytävään.");
-                    Hissikaytava hissikaytava = new Hissikaytava();
-                    hissikaytava.Avaa();
+                    Porraskaytava porraskaytava = new Porraskaytava();
+                    porraskaytava.Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Avaat oven C#-luokkaan.");
-                    Hejlsberg hejlsberg = new Hejlsberg();
-                    hejlsberg.Avaa();
+                    Console.WriteLine("Avaat oven Java-luokkaan.");
+                    Hawking hawking = new Hawking();
+                    hawking.Avaa();
                     break;
                 default:
                     Console.WriteLine("Epäkelpo valinta.");

@@ -24,12 +24,12 @@ namespace Peliluokkia
                     keittio.Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Avaat käytävän perältä löytyvän hätäuloskäynnin oven porraskäytävään.");
+                    Console.WriteLine("Avaat käytävän perältä löytyvän hätäuloskäynnin oven porraskäytävään.\n");
                     Porraskaytava porraskaytava = new Porraskaytava();
                     porraskaytava.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Avaat ovat C#-ryhmän luokkaan.");
+                    Console.WriteLine("Avaat ovat C#-ryhmän luokkaan.\n");
                     Hejlsberg hejlsberg = new Hejlsberg();
                     hejlsberg.Avaa();
                     break;
@@ -38,15 +38,15 @@ namespace Peliluokkia
                 case "F":
                 case "G":
                 case "I":
-                    Console.WriteLine("Väännät kahvasta, mutta toteat oven olevan lukossa.");
+                    Console.WriteLine("Väännät kahvasta, mutta toteat oven olevan lukossa.\n");
                     Avaa();
                     break;
                 case "H":
-                    Console.WriteLine("Koska sähkö ovat poikki, pysyy pelikonsoli mykkänä");
+                    Console.WriteLine("Koska sähkö ovat poikki, pysyy pelikonsoli mykkänä.\n");
                     Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Avaa();
                     break;
             }
