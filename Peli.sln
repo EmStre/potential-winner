@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konsoli", "Konsoli\Konsoli.csproj", "{65E0F8E9-7037-463E-ADFF-5231B321E80E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peliluokkia", "Peliluokkia\Peliluokkia.csproj", "{807CA255-796C-4783-ADC4-26B850F9CB17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65E0F8E9-7037-463E-ADFF-5231B321E80E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E0F8E9-7037-463E-ADFF-5231B321E80E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E0F8E9-7037-463E-ADFF-5231B321E80E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E0F8E9-7037-463E-ADFF-5231B321E80E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807CA255-796C-4783-ADC4-26B850F9CB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807CA255-796C-4783-ADC4-26B850F9CB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807CA255-796C-4783-ADC4-26B850F9CB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807CA255-796C-4783-ADC4-26B850F9CB17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2E9D3B3-52FB-457D-9463-251B23E780A3}
+	EndGlobalSection
+EndGlobal
