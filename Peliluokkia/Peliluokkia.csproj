@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
+    <Compile Include="Hawking.cs" />
     <Compile Include="Heikki.cs" />
     <Compile Include="Hejlsberg.cs" />
     <Compile Include="Item.cs" />
