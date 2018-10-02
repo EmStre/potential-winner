@@ -10,18 +10,19 @@ namespace Peliluokkia
     {
         static void Valinta()
         {
-            string vastaus = "";
-            Console.WriteLine("Olet Hejlsberg-huoneessa, ja voit siirtyä joko A) käytävään tai B) Hawking-luokkaan. Mikä on valintasi?");
-            vastaus = Console.ReadLine();
+
+            
+            Console.WriteLine("Olet Hejslberg-huoneessa, ja voit siirtyä joko A) käytävään tai B) Hawking-luokkaan. Mikä on valintasi?");
+            string vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
             switch(vastaus)
             {
                 case "A":
-                    Console.WriteLine("Valitsit A");
+                    // ladataan vaihtoehto A
                     break;
                 case "B":
-                    Console.WriteLine("Valitsit B");
+                    // ladataan vaihtoehto B
                     break;
             }
         }   
