@@ -24,6 +24,10 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "B":
+                    Console.WriteLine("Avaat oven Torvalds-huoneeseen.");
+                    Torvalds torvalds = new Torvalds();
+                    torvalds.Avaa();
+                    break;
                 case "D":
                     Console.WriteLine("Ovi on näköjään lukossa.");
                     break;

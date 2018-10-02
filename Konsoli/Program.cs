@@ -12,7 +12,7 @@ namespace Konsoli
         
         static void Main(string[] args)
         {
-            Console.WindowHeight = 60;
+            Console.WindowHeight = 50;
             Console.WindowWidth = 185;
             Hejlsberg hejlsberg = new Hejlsberg();
             Kaytava kaytava = new Kaytava();
