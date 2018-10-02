@@ -11,7 +11,9 @@ namespace Peliluokkia
         string vastaus;
         public void Avaa()
         {
-            Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista. Suutasi kuivaa ja muistat (A) jääkaappiin jääneen bisseä Terrific Thursdayn jäljiltä. Toki (B) vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään");
+            Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
+                "Suutasi kuivaa ja muistat (A) jääkaappiin jääneen bisseä Terrific Thursdayn jäljiltä.\n" + 
+                "Toki (B) vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 

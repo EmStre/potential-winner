@@ -20,7 +20,8 @@ namespace Peliluokkia
             {
                 case "A":
                     Console.WriteLine("Lähdet kävelemään kohti keittiötä.\n");
-                    Avaa();
+                    Keittio keittio = new Keittio();
+                    keittio.Avaa();
                     break;
                 case "B":
                     Console.WriteLine("Avaat käytävän perältä löytyvän hätäuloskäynnin oven porraskäytävään.");
