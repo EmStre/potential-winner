@@ -3,25 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Peliluokkia
 {
-    class Heikki
+    public class Heikki
     {
-        //Tämä on Heikki-Help, joka tarjoaa kullanarvoisia vihjeitä joihin tulisi
-        //suhtautua varauksella
-        //pllaaaa
-        private string _vihje;
+        public string Vihje { get; set; }
+        int indeksi = 0;
 
-        public string Vihje{get;set;}
+        string[] helpTekstit = File.ReadAllLines(@"..\..\..\Peliluokkia\HeikkiHelp.txt").ToArray();
+        Random random = new Random();
 
-        public string Vihje()
+        public string Help()
         {
-                return ("Tais tulla typo");
+        //Asettaa rivit random_järjestykseen
+        string[] randomTekstit = helpTekstit.OrderBy(x => random.Next()).ToArray();
+        foreach (var t in randomTekstit)
+            {
+                Console.WriteLine(t);
+                indeksi++;
+            }
+            return Vihje;
         }
-        
-        
-        
-            
     }
+            //Esim näin pääsee mainissa tätä käyttämään
+            //Heikki help = new Heikki();
+            //string syote = Console.ReadLine();
+            //if (syote.Equals("help"))
+            //{
+            //    help.Help();
+            //}
+            //Console.ReadKey();
 }
