@@ -53,12 +53,48 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Avaa();
                     break;
+                case "AVAA ENSIAPULAUKKU":
+                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös erään kookkaamman esineen.\n");
+                    Ensiapulaukku();
+                    break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
                     Console.ResetColor();
                     Avaa();
                     break;
+            }
+        }
+
+        public void Ensiapulaukku()
+        {
+            string komento;
+            string esine = "taskulamppu";
+            Console.WriteLine("Buranapaketissa (A) on onneksi vielä tabuja jäljellä. Voit myös tarkastella tuntematonta esinettä (B) tarkemmin.\n");
+            komento = Console.ReadLine();
+            komento = komento.ToUpper();
+
+            switch(komento)
+            {
+                case "A":
+                    Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                    Ensiapulaukku();
+                    break;
+                case "B":
+                    Console.WriteLine("Hittolainen, löysin taskulampun. Tästä voisi olla vielä hyötyä.");
+                    Ensiapulaukku();
+                    break;
+                case "LISÄÄ TASKULAMPPU":
+                    Console.WriteLine("Lamppu lisätty Academy-kassiin");
+                    Inventaario inventaario = new Inventaario();
+                    inventaario.LisaaEsine(esine);
+                    Avaa();
+                    break;
+                default:
+                    Console.WriteLine("Epäkelpo valinta.\n");
+                    Ensiapulaukku();
+                    break;
+
             }
         }
     }

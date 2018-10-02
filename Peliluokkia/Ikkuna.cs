@@ -12,7 +12,7 @@ namespace Peliluokkia
         public void Avaa()
         {
             Console.WriteLine("Ikkunasta puhaltaa viileää ilmaa ja hetkeksi yllesi saapuu synkkyys.\n" +
-                "Mieleen hiipii morkkis viime viikonlopun tanssimuuveista Rymy-Eetun pöydällä ja oksentamisesta taksiin.\n" +
+                "Mieleen hiipii morkkis viime viikonlopun tanssista Rymy-Eetun pöydällä ja oksentamisesta taksiin.\n" +
                 "Tästä olisi helppo nojata vaan eteenpäin (A) tai palata takaisin tutkiskelemaan luokkaa.\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
