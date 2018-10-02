@@ -34,6 +34,7 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Ovi on näköjään lukossa.");
                     Console.ResetColor();
+                    Avaa();
                     break;
                 case "C":
                     Console.ForegroundColor = ConsoleColor.Cyan;
