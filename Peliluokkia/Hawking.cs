@@ -19,17 +19,23 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Avaat oven hissikäytävään.\n");
+                    Console.ResetColor();
                     Hissikaytava hissikaytava = new Hissikaytava();
                     hissikaytava.Avaa();
                     break;
                 case "B":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Avaat oven C#-luokkaan.\n");
+                    Console.ResetColor();
                     Hejlsberg hejlsberg = new Hejlsberg();
                     hejlsberg.Avaa();
                     break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
+                    Console.ResetColor();
                     Avaa();
                     break;
             }

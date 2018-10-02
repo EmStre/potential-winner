@@ -20,22 +20,30 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Kompuroit sohvanurkkaukseen.\n");
+                    Console.ResetColor();
                     Sohvanurkkaus sohvanurkkaus = new Sohvanurkkaus();
                     sohvanurkkaus.Avaa();
                     break;
                 case "B":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Siirryt hissikäytävään.\n");
+                    Console.ResetColor();
                     Hissikaytava hissikaytava = new Hissikaytava();
                     hissikaytava.Avaa();
                     break;
                 case "C":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Siirryt WC-tilaan.\n");
+                    Console.ResetColor();
                     WC vessa = new WC();
                     vessa.Avaa();
                     break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
+                    Console.ResetColor();
                     Avaa();
                     break;
             }

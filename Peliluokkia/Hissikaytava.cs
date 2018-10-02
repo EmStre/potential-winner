@@ -20,7 +20,9 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet eivät avaudu milliäkään.");
+                    Console.ResetColor();
                     Avaa();
                     break;
                 case "B":
@@ -29,20 +31,28 @@ namespace Peliluokkia
                     torvalds.Avaa();
                     break;
                 case "D":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Ovi on näköjään lukossa.");
+                    Console.ResetColor();
                     break;
                 case "C":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Avaat oven Java-luokkaan.");
+                    Console.ResetColor();
                     Hawking hawking = new Hawking();
                     hawking.Avaa();
                     break;
                 case "E":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Siirryt keittiöön");
+                    Console.ResetColor();
                     Keittio keittio = new Keittio();
                     keittio.Avaa();
                     break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.");
+                    Console.ResetColor();
                     Avaa();
                     break;
             }

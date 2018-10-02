@@ -36,8 +36,11 @@ namespace Peliluokkia
                 sb.Append(e + "\n");
             }
             string kassinSisalto = sb.ToString();
+            if (kassinSisalto.Length == 0)
+                return "Kassisi on tyhjä.";
+            else
             return "Hienossa ACADEMY-kangaskassissasi on tällä hetkellä: \n" + kassinSisalto;
-        }
+                }
 
         //Main classissa luokka toimii jotenkuten näin
         //Inventaario inv = new Inventaario();
