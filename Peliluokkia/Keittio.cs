@@ -20,7 +20,7 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluet olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.");
+                    Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.\n");
                     Avaa();
                     break;
                 case "B":
@@ -29,7 +29,7 @@ namespace Peliluokkia
                     keittokomero.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Siirryt takaisin käytävään.");
+                    Console.WriteLine("Siirryt takaisin käytävään.\n");
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
                     break;
@@ -38,7 +38,7 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Avaa();
                     break;
             }
