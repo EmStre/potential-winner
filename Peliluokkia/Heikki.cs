@@ -15,9 +15,9 @@ namespace Peliluokkia
 
         public string Vihje{get;set;}
 
-        public Vihje()
+        public string Vihje()
         {
-                Console.WriteLine("Tais tulla typo");
+                return ("Tais tulla typo");
         }
         
         
