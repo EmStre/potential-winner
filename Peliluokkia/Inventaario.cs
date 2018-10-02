@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pelitesting
+namespace Peliluokkia
 {
     public class Inventaario
     {
@@ -22,7 +22,10 @@ namespace Pelitesting
         }
         public void LisaaEsine(string esine)
         {
-            esineet.Add(esine);
+            if (!esineet.Contains(esine))
+            {
+                esineet.Add(esine);
+            }
         }
 
         public override string ToString()
@@ -33,7 +36,7 @@ namespace Pelitesting
                 sb.Append(e + "\n");
             }
             string kassinSisalto = sb.ToString();
-            return "Academy kangaskassissasi on tällä hetkellä: \n" + kassinSisalto;
+            return "Hienossa ACADEMY-kangaskassissasi on tällä hetkellä: \n" + kassinSisalto;
         }
 
         //Main classissa luokka toimii jotenkuten näin
