@@ -10,6 +10,7 @@ namespace Peliluokkia
     {
         static void Valinta()
         {
+
             
             Console.WriteLine("Olet Hejslberg-huoneessa, ja voit siirtyä joko A) käytävään tai B) Hawking-luokkaan. Mikä on valintasi?");
             string vastaus = Console.ReadLine();
