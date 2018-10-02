@@ -20,7 +20,7 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluet olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.");
+                    Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.");
                     Avaa();
                     break;
                 case "B":
