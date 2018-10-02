@@ -24,7 +24,7 @@ namespace Peliluokkia
                     Console.WriteLine("Valitsit B");
                     break;
             }
-        }
+        }   
 
     }
 }
