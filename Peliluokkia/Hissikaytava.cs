@@ -11,22 +11,31 @@ namespace Peliluokkia
         string vastaus;
         public void Avaa()
         {
-            Console.WriteLine("Java-luokassa on aavemainen tunnelma. Ulkona on jo täysin pimeää, etkä oikein näe eteesi. Yhtäkkiä kompastut lattialla lojuvaan möykkyyn. (Tähän joku Tutki-metodi myöhemmin).\n" +
-                "Pääset Hawking-luokasta hissikäytävään (A) tai takaisin C#-luokkaan (B).");
+            Console.WriteLine("Hissikäytävällä sijaitsevien kahden hissin ovet (A) seisovat varsin järkähtämättömän oloisina kiinni.\n" +
+                "Vieressäsi ovat ovet Torvalds-huoneeseen (B), Java-ryhmän Hawking-luokkaan (C) ja vessaan (D).\n" +
+                "Voit myös palata takaisin keittiöön (E).");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Avaat oven hissikäytävään.");
-                    Porraskaytava porraskaytava = new Porraskaytava();
-                    porraskaytava.Avaa();
+                    Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet eivät avaudu milliäkään.");
+                    Avaa();
                     break;
                 case "B":
+                case "D":
+                    Console.WriteLine("Ovi on näköjään lukossa.");
+                    break;
+                case "C":
                     Console.WriteLine("Avaat oven Java-luokkaan.");
                     Hawking hawking = new Hawking();
                     hawking.Avaa();
+                    break;
+                case "E":
+                    Console.WriteLine("Siirryt keittiöön");
+                    Keittio keittio = new Keittio();
+                    keittio.Avaa();
                     break;
                 default:
                     Console.WriteLine("Epäkelpo valinta.");
