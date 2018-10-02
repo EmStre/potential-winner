@@ -10,7 +10,11 @@ namespace Konsoli
     class Program
     {
         static void Main(string[] args)
-        {
+
+        { 
+
+
+        
             Hejlsberg hejlsberg = new Hejlsberg();
             Kaytava kaytava = new Kaytava();
             hejlsberg.Avaa();
