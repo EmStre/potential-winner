@@ -19,17 +19,17 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Avaat oven hissikäytävään.");
+                    Console.WriteLine("Avaat oven hissikäytävään.\n");
                     Hissikaytava hissikaytava = new Hissikaytava();
                     hissikaytava.Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Avaat oven C#-luokkaan.");
+                    Console.WriteLine("Avaat oven C#-luokkaan.\n");
                     Hejlsberg hejlsberg = new Hejlsberg();
                     hejlsberg.Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Avaa();
                     break;
             }
