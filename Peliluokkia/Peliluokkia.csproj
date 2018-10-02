@@ -46,6 +46,7 @@
     <Compile Include="Hejlsberg.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Kaytava.cs" />
+    <Compile Include="Keittio.cs" />
     <Compile Include="Porraskaytava.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
