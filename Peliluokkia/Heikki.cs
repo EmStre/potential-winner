@@ -8,5 +8,19 @@ namespace Peliluokkia
 {
     class Heikki
     {
+        //Tämä on Heikki-Help, joka tarjoaa kullanarvoisia vihjeitä joihin tulisi
+        //suhtautua varauksella
+        private string _vihje;
+
+        public string Vihje{get;set;}
+
+        public Vihje()
+        {
+                Console.WriteLine("Tais tulla typo");
+        }
+        
+        
+        
+            
     }
 }
