@@ -12,7 +12,8 @@ namespace Peliluokkia
         public void Avaa()
         {
             Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n\n" +
-                "Joten kuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).");
+                "Joten kuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" + 
+                "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -36,6 +37,13 @@ namespace Peliluokkia
                     Console.WriteLine("Väännät Java-ryhmän huoneen oven kahvasta, mutta toteat oven olevan lukossa.\n");
                     Console.ResetColor();
                     Avaa();
+                    break;
+                case "D":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Astut ikkunan luo ja vilkaiset alas.\n");
+                    Console.ResetColor();
+                    Ikkuna ikkuna = new Ikkuna();
+                    ikkuna.Avaa();
                     break;
                 case "KASSI":
                     Inventaario inventaario = new Inventaario();
