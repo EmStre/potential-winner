@@ -28,7 +28,7 @@ namespace Peliluokkia
                     keittokomero.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Siirryt ruokailutilaan.");
+                    Console.WriteLine("Astut ruokailutilaan.");
                     Ruokailutila ruokailutila = new Ruokailutila();
                     ruokailutila.Avaa();
                     break;

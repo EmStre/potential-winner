@@ -25,12 +25,12 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Siirryt keittokomeron puolelle.");
+                    Console.WriteLine("Kävelet keittiöön.");
                     Keittio keittio = new Keittio();
                     keittio.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Siirryt WC-tilaan.");
+                    Console.WriteLine("Astut WC-tilaan.");
                     WC vessa = new WC();
                     vessa.Avaa();
                     break;
