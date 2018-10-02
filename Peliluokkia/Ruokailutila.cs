@@ -20,22 +20,22 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Siirryt sohvanurkkaukseen");
+                    Console.WriteLine("Kompuroit sohvanurkkaukseen.\n");
                     Sohvanurkkaus sohvanurkkaus = new Sohvanurkkaus();
                     sohvanurkkaus.Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Siirryt hissikäytävään.");
+                    Console.WriteLine("Siirryt hissikäytävään.\n");
                     Hissikaytava hissikaytava = new Hissikaytava();
                     hissikaytava.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Siirryt WC-tilaan.");
+                    Console.WriteLine("Siirryt WC-tilaan.\n");
                     WC vessa = new WC();
                     vessa.Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Avaa();
                     break;
             }

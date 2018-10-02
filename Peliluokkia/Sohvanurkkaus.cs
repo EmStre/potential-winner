@@ -19,17 +19,17 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Siirryt ruokailutilaan");
+                    Console.WriteLine("Astut kompuroiden ruokailutilaan.\n");
                     Ruokailutila ruokailutila = new Ruokailutila();
                     ruokailutila.Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Siirryt hissikäytävään.");
+                    Console.WriteLine("Kävelet hissikäytävään.\n");
                     Hissikaytava hissikaytava = new Hissikaytava();
                     hissikaytava.Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Avaa();
                     break;
             }

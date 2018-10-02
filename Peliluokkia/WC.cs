@@ -19,21 +19,21 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Pöntöstä ei löydy mitään");
+                    Console.WriteLine("Pöntöstä ei löydy mitään.\n");
                     Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Siirryt keittokomeron puolelle.");
+                    Console.WriteLine("Siirryt keittokomeron puolelle.\n");
                     Keittokomero keittokomero = new Keittokomero();
                     keittokomero.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Astut ruokailutilaan.");
+                    Console.WriteLine("Astut ruokailutilaan.\n");
                     Ruokailutila ruokailutila = new Ruokailutila();
                     ruokailutila.Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Avaa();
                     break;
             }

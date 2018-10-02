@@ -25,7 +25,7 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Siirryt keittokomeron puolelle.");
+                    Console.WriteLine("Siirryt keittokomeron puolelle.\n");
                     Keittokomero keittokomero = new Keittokomero();
                     keittokomero.Avaa();
                     break;
@@ -35,7 +35,7 @@ namespace Peliluokkia
                     kaytava.Avaa();
                     break;
                 case "D":
-                    Console.WriteLine("Törmäät pöytään etkä pääse etenemään.");
+                    Console.WriteLine("Törmäät pöytään etkä pääse etenemään.\n");
                     Avaa();
                     break;
                 default:

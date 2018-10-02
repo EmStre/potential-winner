@@ -21,21 +21,21 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Siirryt ruokailutilaan");
+                    Console.WriteLine("Siirryt ruokailutilaan.\n");
                     Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Kävelet keittiöön.");
+                    Console.WriteLine("Kävelet keittiöön.\n");
                     Keittio keittio = new Keittio();
                     keittio.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Astut WC-tilaan.");
+                    Console.WriteLine("Astut WC-tilaan.\n");
                     WC vessa = new WC();
                     vessa.Avaa();
                     break;
                 default:
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Avaa();
                     break;
             }
