@@ -11,28 +11,26 @@ namespace Peliluokkia
         public void Avaa()
         {
             string vastaus;
-            Console.WriteLine("Hapuilet pimeässä tiskipöydän luo.\n" +
-                "Pöydältä erottuu esine, jonka tunnistat ensiapulaukuksi.\n" +
-                "Kädelläsi tavoitat myös vesihanan. (A) vie sinut ruokailutilaan tai voit siirtyä takaisin (B) keittiön puolelle.\n" +
-                "WC-tilan (C) ovi näyttäisi olevan hieman raollaan. \n");
+            Console.WriteLine("Olet vessassa ja mietit voisiko avain ulospääsyyn löytyä vessanpöntöstä(A).\n" +
+                "Vessasta pääset jatkamaan haparointia takaisin keittokomeroon (B) tai ruokailutilaan (C).\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Siirryt ruokailutilaan");
+                    Console.WriteLine("Pöntöstä ei löydy mitään");
                     Avaa();
                     break;
                 case "B":
                     Console.WriteLine("Siirryt keittokomeron puolelle.");
-                    Keittio keittio = new Keittio();
-                    keittio.Avaa();
+                    Keittokomero keittokomero = new Keittokomero();
+                    keittokomero.Avaa();
                     break;
                 case "C":
-                    Console.WriteLine("Siirryt WC-tilaan.");
-                    WC vessa = new WC();
-                    vessa.Avaa();
+                    Console.WriteLine("Siirryt ruokailutilaan.");
+                    Ruokailutila ruokailutila = new Ruokailutila();
+                    ruokailutila.Avaa();
                     break;
                 default:
                     Console.WriteLine("Epäkelpo valinta.");

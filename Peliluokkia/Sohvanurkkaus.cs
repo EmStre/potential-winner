@@ -6,33 +6,27 @@ using System.Threading.Tasks;
 
 namespace Peliluokkia
 {
-    class Ruokailutila
+    class Sohvanurkkaus
     {
         public void Avaa()
         {
             string vastaus;
-            Console.WriteLine("Ruokailutilassa eteneminen on hankalaa pimeässä.\n +" +
-                "Parempi siis jatkaa eteenpäin sohvanurkkaukseen (A) tai hissikäytävään (B). \n +" +
-                "Voit myös palata WC-tilaan (C).\n");
+            Console.WriteLine("Sohvanurkkaukseen kajastaa hieman valoa ulkoa, mutta et näe mitään, mikä auttaisi ulospääsyyn.\n +" +
+                "Mietit pitäisikö palata ruokailutilaan (A) vai edetä hissikäytävään (B). \n +");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
             switch (vastaus)
             {
                 case "A":
-                    Console.WriteLine("Siirryt sohvanurkkaukseen");
-                    Sohvanurkkaus sohvanurkkaus = new Sohvanurkkaus();
-                    sohvanurkkaus.Avaa();
+                    Console.WriteLine("Siirryt ruokailutilaan");
+                    Ruokailutila ruokailutila = new Ruokailutila();
+                    ruokailutila.Avaa();
                     break;
                 case "B":
                     Console.WriteLine("Siirryt hissikäytävään.");
                     Hissikaytava hissikaytava = new Hissikaytava();
                     hissikaytava.Avaa();
-                    break;
-                case "C":
-                    Console.WriteLine("Siirryt WC-tilaan.");
-                    WC vessa = new WC();
-                    vessa.Avaa();
                     break;
                 default:
                     Console.WriteLine("Epäkelpo valinta.");

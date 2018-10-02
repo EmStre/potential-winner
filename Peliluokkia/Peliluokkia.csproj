@@ -54,6 +54,7 @@
     <Compile Include="Porraskaytava.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ruokailutila.cs" />
+    <Compile Include="Sohvanurkkaus.cs" />
     <Compile Include="WC.cs" />
   </ItemGroup>
   <ItemGroup>
