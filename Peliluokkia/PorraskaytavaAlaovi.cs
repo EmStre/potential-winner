@@ -11,7 +11,7 @@ namespace Peliluokkia
         string vastaus;
         public void Avaa()
         {
-            Console.WriteLine("Käveltyäsi kuusi kerrosta hämärää porraskäytävää alas saavut vihdoin rakennuksen takaovelle\n." +
+            Console.WriteLine("Käveltyäsi kuusi kerrosta hämärää porraskäytävää alas saavut vihdoin rakennuksen takaovelle.\n" +
                 "Avaatko oven (A) vai palaatko takaisin (B)?\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
@@ -30,6 +30,13 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Porraskaytava porraskaytava = new Porraskaytava();
                     porraskaytava.Avaa();
+                    break;
+                case "KASSI":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Inventaario inventaario = new Inventaario();
+                    Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    Avaa();
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
