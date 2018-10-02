@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konsoli", "Konsoli\Konsoli.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peliluokkia", "Peliluokkia\Peliluokkia.csproj", "{807CA255-796C-4783-ADC4-26B850F9CB17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeliluokkiaTests", "PeliluokkiaTests\PeliluokkiaTests.csproj", "{6C41DDF1-D03C-432E-A3DB-4CC2CD2B6E09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{807CA255-796C-4783-ADC4-26B850F9CB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{807CA255-796C-4783-ADC4-26B850F9CB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{807CA255-796C-4783-ADC4-26B850F9CB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C41DDF1-D03C-432E-A3DB-4CC2CD2B6E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C41DDF1-D03C-432E-A3DB-4CC2CD2B6E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C41DDF1-D03C-432E-A3DB-4CC2CD2B6E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C41DDF1-D03C-432E-A3DB-4CC2CD2B6E09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

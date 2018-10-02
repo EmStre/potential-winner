@@ -22,7 +22,10 @@ namespace Peliluokkia
         }
         public void LisaaEsine(string esine)
         {
-            esineet.Add(esine);
+            if (!esineet.Contains(esine))
+            {
+                esineet.Add(esine);
+            }
         }
 
         public override string ToString()
