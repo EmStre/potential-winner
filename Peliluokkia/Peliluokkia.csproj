@@ -48,8 +48,11 @@
     <Compile Include="Item.cs" />
     <Compile Include="Kaytava.cs" />
     <Compile Include="Keittio.cs" />
+    <Compile Include="Keittokomero.cs" />
     <Compile Include="Porraskaytava.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ruokailutila.cs" />
+    <Compile Include="WC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="esineet.txt" />

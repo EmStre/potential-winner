@@ -13,7 +13,7 @@ namespace Peliluokkia
         {
             Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
                 "Suutasi kuivaa ja muistat (A) jääkaappiin jääneen bisseä Terrific Thursdayn jäljiltä.\n" + 
-                "Toki (B) vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään\n");
+                "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään tai voit myös siirtyä (D) ruokailutilaan.\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -24,13 +24,18 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Menet kraanan luokse, mutta huomaat, että vesikin on poikki.");
-                    Avaa();
+                    Console.WriteLine("Siirryt keittokomeron puolelle.");
+                    Keittokomero keittokomero = new Keittokomero();
+                    keittokomero.Avaa();
                     break;
                 case "C":
                     Console.WriteLine("Siirryt takaisin käytävään.");
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
+                    break;
+                case "D":
+                    Console.WriteLine("Törmäät pöytään etkä pääse etenemään.");
+                    Avaa();
                     break;
                 default:
                     Console.WriteLine("Epäkelpo valinta.");
