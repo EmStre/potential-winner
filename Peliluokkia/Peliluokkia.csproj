@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hissikaytava.cs" />
+    <Compile Include="Inventaario.cs" />
     <Compile Include="PorraskaytavaAlaovi.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Hawking.cs" />
