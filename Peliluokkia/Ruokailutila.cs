@@ -44,14 +44,20 @@ namespace Peliluokkia
                         vessa.Avaa();
                         break;
                     case "OTA VESIPULLO":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
                         Inventaario invent = new Inventaario();
                         invent.LisaaEsine(esine);
+                        Console.ResetColor();
+                        Avaa();
                         break;
                     case "LISÄÄ VESIPULLO":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
                         Inventaario invent2 = new Inventaario();
                         invent2.LisaaEsine(esine);
+                        Console.ResetColor();
+                        Avaa();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -106,11 +112,15 @@ namespace Peliluokkia
                         Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
                         Inventaario invent = new Inventaario();
                         invent.LisaaEsine(esine);
+                        Console.ResetColor();
+                        Avaa();
                         break;
                     case "LISÄÄ VESIPULLO":
                         Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
                         Inventaario invent2 = new Inventaario();
                         invent2.LisaaEsine(esine);
+                        Console.ResetColor();
+                        Avaa();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
