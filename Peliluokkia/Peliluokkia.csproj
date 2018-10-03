@@ -44,6 +44,7 @@
     <Compile Include="Hissikaytava.cs" />
     <Compile Include="Ikkuna.cs" />
     <Compile Include="Inventaario.cs" />
+    <Compile Include="ISahko.cs" />
     <Compile Include="PorraskaytavaAlaovi.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Hawking.cs" />
