@@ -39,6 +39,7 @@ namespace Peliluokkia
                     Console.WriteLine("...viides kerros...\n");
                     Thread.Sleep(600);
                     Console.WriteLine("...ja kuudes kerros.\n");
+                    Thread.Sleep(600);
                     Porraskaytava porraskaytava = new Porraskaytava();
                     porraskaytava.Avaa();
                     break;
