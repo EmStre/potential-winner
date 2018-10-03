@@ -33,6 +33,7 @@ namespace Peliluokkia
                     Console.WriteLine("...toinen kerros...\n");
                     Thread.Sleep(600);
                     Console.WriteLine("...ja ensimmäinen kerros.\n");
+                    Thread.Sleep(600);
                     PorraskaytavaAlaovi porraskaytavaAlaovi = new PorraskaytavaAlaovi();
                     porraskaytavaAlaovi.Avaa();
                     break;

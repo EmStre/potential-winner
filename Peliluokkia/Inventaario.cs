@@ -41,7 +41,7 @@ namespace Peliluokkia
             }
             string kassinSisalto = sb.ToString();
             if (kassinSisalto.Length == 0)
-                return "Kassisi on tyhjä.\n";
+                return "\nKassisi on tyhjä.\n";
             else
             return "Hienossa ACADEMY-kangaskassissasi on tällä hetkellä: \n" + kassinSisalto;
                 }
