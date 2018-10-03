@@ -26,7 +26,7 @@ namespace Peliluokkia
         Love lamppu;
         public void Avaa()
         {
-            Console.WriteLine("Olet Lovelace-neuvotteluhuoneessa.\nPimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää, koska on PIMEÄÄ.Voit halutessasi palata takaisin käytävään(A)");
+            Console.WriteLine("Olet Lovelace-neuvotteluhuoneessa.\nPimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää, koska on PIMEÄÄ.\nVoit halutessasi palata takaisin käytävään(A)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             lamppu = new Love();
@@ -37,7 +37,7 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.WriteLine("Siirryt takaisin käytävään.\n");
                         Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
@@ -71,7 +71,7 @@ namespace Peliluokkia
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("En ymmärrä sinua :(");
+                        Console.WriteLine("En ymmärrä sinua :(\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -86,20 +86,20 @@ namespace Peliluokkia
 
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.WriteLine("Siirryt takaisin käytävään.\n");
                         Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
                     case "LAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
                         Console.ResetColor();
                         Avaa();
                         break;
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -112,7 +112,7 @@ namespace Peliluokkia
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("En ymmärrä sinua :(");
+                        Console.WriteLine("En ymmärrä sinua :(\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -127,7 +127,7 @@ namespace Peliluokkia
 
         public void ValoisaHuone()
         {
-            Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat konsultit ovat pelanneet risti-nollaa ja risteillä pelannut henkilö on voittanut joka kerta. Voit halutessasi palata takaisin käytävään (A)");
+            Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat konsultit ovat pelanneet risti-nollaa ja risteillä pelannut henkilö on voittanut joka kerta. \nVoit halutessasi palata takaisin käytävään (A)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -135,11 +135,19 @@ namespace Peliluokkia
             {
                 case "A":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Siirryt takaisin käytävään.");
+                    Console.WriteLine("Siirryt takaisin käytävään.\n");
                     Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     lamppu.PoisPäältä();
                     kaytava.Avaa();
+                    break;
+                case "SAMMUTA VALO":
+                    lamppu.PoisPäältä();
+                    Avaa();
+                    break;
+                case "SAMMUTA TASKULAMPPU":
+                    lamppu.PoisPäältä();
+                    Avaa();
                     break;
                 case "SAMMUTA LAMPPU":
                     lamppu.PoisPäältä();
@@ -155,7 +163,7 @@ namespace Peliluokkia
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("En ymmärrä sinua :(");
+                    Console.WriteLine("En ymmärrä sinua :(\n");
                     Console.ResetColor();
                     ValoisaHuone();
                     break;
@@ -169,17 +177,16 @@ namespace Peliluokkia
         {
             lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Sammutit taskulampun.");
+            Console.WriteLine("Sammutit taskulampun.\n");
             Console.ResetColor();
-            Console.ResetColor();
+       
         }
 
         public void Päällä()
         {
             lamppuPäällä = true;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Taskulamppu on päällä.");
-            Console.ResetColor();
+            Console.WriteLine("Taskulamppu on päällä.\n");
             Console.ResetColor();
         }
     }

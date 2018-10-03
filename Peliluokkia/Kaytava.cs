@@ -40,17 +40,23 @@ namespace Peliluokkia
                     hejlsberg.Avaa();
                     break;
                 case "D":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Avaat oven Lovelace-huoneeseen.");
+                    Console.ResetColor();
                     Love love = new Love();
                     love.Avaa();
                     break;
                 case "E":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Avaat oven Hopper-neukkariin");
+                    Console.ResetColor();
                     Hopper hopper = new Hopper();
                     hopper.Avaa();
                     break;
                 case "F":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Avaat oven Jobs-neukkariin");
+                    Console.ResetColor();
                     Jobs jobs = new Jobs();
                     jobs.Avaa();
                     break;

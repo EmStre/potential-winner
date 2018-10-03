@@ -49,7 +49,7 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
                     Console.ResetColor();
-                    Jatka();
+                    Avaa();
                     break;
             }
         }
