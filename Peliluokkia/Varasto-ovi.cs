@@ -128,7 +128,8 @@ namespace Peliluokkia
 
         public void ValoisaOvi()
         {
-            int kokeilu= 0;
+            lamppu = new VarastoOvi();
+            int kokeilu = 0;
             kokeilu++;
 
             if (kokeilu == 1)
@@ -136,10 +137,12 @@ namespace Peliluokkia
                 Console.WriteLine("Otat kassistasi fläppitaulun, vihkon ja CV:n\nNiiden avulla yrität keksiä 7-numeroisen koodin, jonka näppäilet lukon numeronäppäimistöön.\nHUOM! Järjestyksellä on väliä!\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
-                switch(vastaus)
+                switch (vastaus)
                 {
                     case "6910542":
                         Console.WriteLine("Tosi hyvä!! Ovi on auki!");
+                        lamppu.PoisPäältä();
+                        Varasto varasto = 
                         break;
 
                     case "SAMMUTA VALO":
@@ -183,12 +186,50 @@ namespace Peliluokkia
                 Console.WriteLine("Koodi oli väärin, yritä uudelleen!");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
-                switch(vastaus)
+                switch (vastaus)
                 {
+                    case "6910542":
+                        Console.WriteLine("Tosi hyvä!! Ovi on auki!");
 
-                }
+
+                        break;
+
+                    case "SAMMUTA VALO":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "SAMMUTA TASKULAMPPU":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "SAMMUTA LAMPPU":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
                 }
 
+            }
         }
 
         public void PoisPäältä()
