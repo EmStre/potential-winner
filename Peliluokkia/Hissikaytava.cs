@@ -26,7 +26,9 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "B":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Avaat oven Torvalds-huoneeseen.\n");
+                    Console.ResetColor();
                     Torvalds torvalds = new Torvalds();
                     torvalds.Avaa();
                     break;

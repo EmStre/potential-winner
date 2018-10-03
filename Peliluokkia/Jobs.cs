@@ -46,7 +46,7 @@ namespace Peliluokkia
                         break;
                     case "TASKULAMPPU PÄÄLLE":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -54,7 +54,7 @@ namespace Peliluokkia
                         break;
                     case "LAMPPU PÄÄLLE":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu...\nVoit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -62,7 +62,7 @@ namespace Peliluokkia
                         break;
                     case "AVAA LAMPPU":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -71,7 +71,7 @@ namespace Peliluokkia
 
                     case "LAITA LAMPPU PÄÄLLE":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -115,13 +115,13 @@ namespace Peliluokkia
                         break;
                     case "LAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.WriteLine("Sinulla ei ole lamppua.\n");
                         Console.ResetColor();
                         Avaa();
                         break;
                         case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.WriteLine("Sinulla ei ole lamppua.\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -156,7 +156,7 @@ namespace Peliluokkia
     {
         lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Taskulamppu sammui\n");
+            Console.WriteLine("Taskulamppu sammui.\n");
             Console.ResetColor();
     }
 
@@ -164,7 +164,7 @@ namespace Peliluokkia
     {
         lamppuPäällä = true;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Taskulamppu on päällä\n");
+            Console.WriteLine("Taskulamppu on päällä.\n");
             Console.ResetColor();
     }
 
