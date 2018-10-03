@@ -68,10 +68,10 @@ namespace Peliluokkia
                     break;
                 case "I":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    //Console.WriteLine("Väännät kahvasta, mutta toteat oven olevan lukossa.\n");
+                    //Console.WriteLine("Yllätykseksesi huomaat, että vaston ovi on lukittu ja siinä on koodilukko.\n");
                     Console.ResetColor();
-                    Varasto varasto = new Varasto();
-                    varasto.Avaa();
+                    VarastoOvi ovi = new VarastoOvi();
+                    ovi.Avaa();
                     break;
                 case "H":
                     Console.ForegroundColor = ConsoleColor.Cyan;
