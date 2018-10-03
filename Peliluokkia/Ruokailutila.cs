@@ -16,7 +16,7 @@ namespace Peliluokkia
                 string esine = "vesipullo";
                 Console.WriteLine("Ruokailutilassa eteneminen on hankalaa pimeässä. Törmäät pöytään ja saat vesipullon kaatumaan. \n" +
                     "Parempi siis jatkaa eteenpäin sohvanurkkaukseen (A) tai hissikäytävään (B).\n" +
-                    "Voit myös palata WC-tilaan (C).\n");
+                    "Voit myös siirtyä WC-tilaan (C) tai keittokomeroon (D).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
 
@@ -42,6 +42,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         WC vessa = new WC();
                         vessa.Avaa();
+                        break;
+                    case "D":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt keittokomeroon.\n");
+                        Console.ResetColor();
+                        Keittokomero keittokomero = new Keittokomero();
+                        keittokomero.Avaa();
                         break;
                     case "OTA VESIPULLO":
                         Console.ForegroundColor = ConsoleColor.Cyan;

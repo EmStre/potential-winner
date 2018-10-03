@@ -33,12 +33,13 @@ namespace Peliluokkia
                     Console.WriteLine("...toinen kerros...\n");
                     Thread.Sleep(600);
                     Console.WriteLine("...ja ensimmäinen kerros.\n");
+                    Thread.Sleep(600);
                     PorraskaytavaAlaovi porraskaytavaAlaovi = new PorraskaytavaAlaovi();
                     porraskaytavaAlaovi.Avaa();
                     break;
                 case "B":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Avaat oven käytävään\n.");
+                    Console.WriteLine("Avaat oven käytävään.\n");
                     Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();

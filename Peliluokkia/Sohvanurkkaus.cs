@@ -12,7 +12,7 @@ namespace Peliluokkia
         {
             string vastaus;
             Console.WriteLine("Sohvanurkkaukseen kajastaa hieman valoa ulkoa, mutta et näe mitään, mikä auttaisi ulospääsyyn.\n" +
-                "Mietit pitäisikö palata ruokailutilaan (A) vai edetä hissikäytävään (B).\n");
+                "Mietit pitäisikö palata ruokailutilaan (A) vai siirtyä hissikäytävään (B).\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 

@@ -15,7 +15,7 @@ namespace Peliluokkia
             {
                 Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
                 "Suutasi kuivaa ja muistat (A) jääkaappiin jääneen bisseä Terrific Thursdayn jäljiltä.\n" +
-                "Kahvi kyllä piristäisi, mutta sitten muistat sähköjen olevan poikki.\n" +
+                "Kahvi kyllä piristäisi, mutta ilman virtaa et saa kahvia koneesta.\n" +
                 "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään tai voit myös siirtyä (D) ruokailutilaan.\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -71,7 +71,7 @@ namespace Peliluokkia
             {
                 Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
              "Suutasi kuivaa ja arvelet jääkaappiin (A) jääneen bisseä Terrific Thursdayn jäljiltä.\n" +
-             "Kahvi kyllä piristäisi, mutta sitten muistat sähköjen olevan poikki.\n" +
+             "Kahvi kyllä piristäisi, mutta ilman virtaa et saa kahvia koneesta.\n" +
              "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään tai voit myös siirtyä (D) ruokailutilaan.\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();

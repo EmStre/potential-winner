@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Peliluokkia
 {
-    public class Game
+    interface ISahko
     {
-        public static int olutlaskuri = 3;
-        public static int kassilaskuri = 1;
-        public static int life = 1;
+        void SahkotPaalla();
 
+        void SahkotPois();
+
+        bool Electricity { get; }
     }
 }
-

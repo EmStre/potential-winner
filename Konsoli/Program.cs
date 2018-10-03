@@ -14,6 +14,9 @@ namespace Konsoli
         {
             Console.WindowHeight = 50;
             Console.WindowWidth = 185;
+            //Intro.KutsuIntro();
+            Console.ResetColor();
+            Console.BackgroundColor = ConsoleColor.Black;
             Hejlsberg hejlsberg = new Hejlsberg();
             Kaytava kaytava = new Kaytava();
             Console.WriteLine("Istut perjantai-iltana yksin C#-ryhmän Hejlsberg-luokassa kun huomaat kattolamppujen valon värisevän.\n" +
@@ -22,7 +25,7 @@ namespace Konsoli
                 "Vilkaiset kännykästäsi kelloa ja toteat sen olevan 23:18. Huomaat samalla kännykän kuuluvuuskentän olevan nollassa ja akkua jäljellä 1%. Juuri tuolloin puhelimesikin sammuu.\n");
             hejlsberg.Avaa();
 
-            
+            Inventaario.esineet.Contains("taskulamppu");
 
 
 

@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +22,7 @@ namespace Peliluokkia
         }
 
         Hejlsberg lamppu;
-
+        Ikkuna ikkuna = new Ikkuna();
         public void Avaa()
         {
             lamppu = new Hejlsberg();
@@ -62,7 +62,6 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Astut ikkunan luo ja vilkaiset alas.\n");
                         Console.ResetColor();
-                        Ikkuna ikkuna = new Ikkuna();
                         ikkuna.Avaa();
                         break;
                     case "LUE VIHKO":
