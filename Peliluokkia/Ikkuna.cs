@@ -20,13 +20,23 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
+                    Console.Write("Hyvästi julma Academy, for-loopit ja boolean-operaattorit. ");
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("GAME OVER.\n");
+                    Console.ResetColor();
                     Console.ReadKey();
                     break;
                 case "B":
                     Console.WriteLine("Huh helkkari, nyt oli synkkää! Astut takaisin keskelle C#-luokkaa.");
                     Hejlsberg hejlsberg = new Hejlsberg();
                     hejlsberg.Avaa();
+                    break;
+                case "KASSI":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Inventaario inventaario = new Inventaario();
+                    Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    Avaa();
                     break;
                 default:
                     Console.WriteLine("Epäkelpo valinta.\n");
