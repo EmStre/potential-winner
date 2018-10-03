@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Help.cs" />
     <Compile Include="Hissikaytava.cs" />
     <Compile Include="Ikkuna.cs" />
     <Compile Include="Inventaario.cs" />
