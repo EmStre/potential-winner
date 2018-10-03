@@ -58,25 +58,25 @@ namespace Peliluokkia
                     break;
                 case "AVAA ENSIAPULAUKKU":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös erään kookkaamman esineen.\n");
+                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
                     Console.ResetColor();
                     Ensiapulaukku();
                     break;
                 case "TUTKI ENSIAPULAUKKU":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös erään kookkaamman esineen.\n");
+                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
                     Console.ResetColor();
                     Ensiapulaukku();
                     break;
                 case "AVAA ENSIAPU":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös erään kookkaamman esineen.\n");
+                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
                     Console.ResetColor();
                     Ensiapulaukku();
                     break;
                 case "AVAA LAUKKU":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös erään kookkaamman esineen.\n");
+                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
                     Console.ResetColor();
                     Ensiapulaukku();
                     break;
@@ -122,7 +122,7 @@ namespace Peliluokkia
                         break;
                     case "B":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nice, löysin taskulampun. Tästä voisi olla vielä hyötyä.\n");
+                        Console.WriteLine("Nice, taskulamppu. Tästä voisi olla vielä hyötyä!\n");
                         Console.ResetColor();
                         Ensiapulaukku();
                         break;
@@ -218,8 +218,8 @@ namespace Peliluokkia
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
-                        Ensiapulaukku();
                         Console.ResetColor();
+                        Ensiapulaukku();
                         break;
                 }
             }
