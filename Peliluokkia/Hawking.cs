@@ -12,7 +12,7 @@ namespace Peliluokkia
         public void Avaa()
         {
             Console.WriteLine("Java-luokassa on aavemainen tunnelma. Ulkona on jo täysin pimeää, etkä oikein näe eteesi. Yhtäkkiä kompastut lattialla lojuvaan möykkyyn. (Tähän joku Tutki-metodi myöhemmin).\n" +
-                "Pääset Hawking-luokasta hissikäytävään (A) tai takaisin C#-luokkaan (B).");
+                "Pääset Hawking-luokasta hissikäytävään (A) tai C#-luokkaan (B).");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -27,10 +27,9 @@ namespace Peliluokkia
                     break;
                 case "B":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Avaat oven C#-luokkaan.\n");
+                    Console.WriteLine("Yrität avata ovea, mutta se on jostain syystä lukittu.\n");
                     Console.ResetColor();
-                    Hejlsberg hejlsberg = new Hejlsberg();
-                    hejlsberg.Avaa();
+                    Avaa();
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
