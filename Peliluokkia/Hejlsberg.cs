@@ -81,6 +81,7 @@ namespace Peliluokkia
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
                         Console.ResetColor();
                         Avaa();
                         break;

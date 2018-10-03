@@ -50,6 +50,7 @@ namespace Peliluokkia
                 Console.WriteLine("\n\n");
                 foreach (string line in kartta)
                     Console.WriteLine(line);
+                Console.WriteLine("Paina mitä vain näppäintä jatkaaksesi");
                 Console.ReadKey();
             }
 
