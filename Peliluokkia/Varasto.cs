@@ -141,7 +141,7 @@ namespace Peliluokkia
                 
             } else 
             {
-                Console.WriteLine("On tämä saatana työmaa, mutta onneksi näkee jo eteensä. Tekee mieli kahvia ja sit on pakko yrittää kyllä päästä viimein pois täältä.");
+                Console.WriteLine("On tämä saatana työmaa, mutta onneksi näkee jo eteensä. Tekee mieli kahvia ja sitten on pakko yrittää kyllä päästä viimein pois täältä.");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Astut takaisin käytävälle.\n");
                 Console.ResetColor();
@@ -171,6 +171,10 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "KYTKE SÄHKÖT":
+                    sahkot.SahkotPaalla();
+                    Avaa();
+                    break;
+                case "SÄHKÖT":
                     sahkot.SahkotPaalla();
                     Avaa();
                     break;

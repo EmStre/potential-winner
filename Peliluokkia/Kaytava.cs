@@ -55,11 +55,17 @@ namespace Peliluokkia
                     jobs.Avaa();
                     break;
                 case "G":
-                case "I":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Väännät kahvasta, mutta toteat oven olevan lukossa.\n");
+                    Console.WriteLine("Ovi näyttää olevan visusti kiinni.\n");
                     Console.ResetColor();
                     Avaa();
+                    break;
+                case "I":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    //Console.WriteLine("Väännät kahvasta, mutta toteat oven olevan lukossa.\n");
+                    Console.ResetColor();
+                    Varasto varasto = new Varasto();
+                    varasto.Avaa();
                     break;
                 case "H":
                     Console.ForegroundColor = ConsoleColor.Cyan;
