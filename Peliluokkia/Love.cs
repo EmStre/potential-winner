@@ -69,6 +69,14 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("En ymmärrä sinua :(\n");
@@ -107,6 +115,14 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -156,6 +172,14 @@ namespace Peliluokkia
                     Inventaario inventaario = new Inventaario();
                     Console.ResetColor();
                     Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+                case "HALP":
+                case "HELP":
+                    Help help = new Help();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(help);
                     Console.ResetColor();
                     Avaa();
                     break;

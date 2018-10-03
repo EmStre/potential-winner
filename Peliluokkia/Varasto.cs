@@ -85,6 +85,14 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -129,6 +137,14 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -185,6 +201,14 @@ namespace Peliluokkia
                 case "SÄHKÖT":
                     sahkot.SahkotPaalla();
                     ValoisaAcademy();
+                    break;
+                case "HALP":
+                case "HELP":
+                    Help help = new Help();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(help);
+                    Console.ResetColor();
+                    Avaa();
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;

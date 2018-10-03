@@ -69,6 +69,14 @@ namespace Peliluokkia
                         lamppu.Päällä();
                         ValoisaTorvalds();
                         break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -119,6 +127,14 @@ namespace Peliluokkia
                         lamppu.Päällä();
                         ValoisaTorvalds();
                         break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -158,6 +174,14 @@ namespace Peliluokkia
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -218,6 +242,14 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaTorvalds();
                         break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -258,6 +290,14 @@ namespace Peliluokkia
                         break;
                     case "SAMMUTA LAMPPU":
                         lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
                         Avaa();
                         break;
                     default:
