@@ -78,6 +78,12 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -259,10 +265,13 @@ namespace Peliluokkia
                             break;
                     }
                 }
-
             else
             {
-
+                    Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
+                    "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                    "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n");
+                    vastaus = Console.ReadLine();
+                    vastaus = vastaus.ToUpper();
                     switch (vastaus)
                     {
                         case "A":
@@ -341,7 +350,7 @@ namespace Peliluokkia
                 }
             }
         }
-
+        
         public void ValoisaHejsberg()
         {
             lamppuPäällä = true;
@@ -433,7 +442,7 @@ namespace Peliluokkia
             else
             {
                 Console.WriteLine("Taskulampun valossa katselet ympärillessi C#-luokkaa ja näet, että tussitaulut ovat edelleen täynnä mitä erikoisimpia for-looppeja ja if-lauseita,\n" +
-                " joiden syvällisempää tarkoitusta et jää miettimään." + " Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                "joiden syvällisempää tarkoitusta et jää miettimään." + " Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                 "Tunnet edelleen niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -501,7 +510,7 @@ namespace Peliluokkia
                         ValoisaHejsberg();
                         break;
                 }
-                }
+            }
         }
 
 
