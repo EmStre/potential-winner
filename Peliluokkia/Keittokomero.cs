@@ -35,7 +35,8 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Siirryt ruokailutilaan.\n");
                     Console.ResetColor();
-                    Avaa();
+                    Ruokailutila ruokailutila = new Ruokailutila();
+                    ruokailutila.Avaa();
                     break;
                 case "C":
                     Console.ForegroundColor = ConsoleColor.Cyan;

@@ -8,7 +8,7 @@ namespace Peliluokkia
 {
     //Avaa-metodi pohjautuen muihin huoneisiin -ES
 
-    public class Jobs
+    public class Jobs : ILamppu
     {
         //Avaa-metodi pohjautuen muihin huoneisiin -ES Lisätty lamppu rajapinnan toteutus
         string vastaus;
@@ -86,7 +86,13 @@ namespace Peliluokkia
                         vastaus = vastaus.ToUpper();
                         Avaa();
                         break;
-
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.WriteLine("En ymmärrä sinua :(");
                         Avaa();
@@ -103,6 +109,7 @@ namespace Peliluokkia
                         Console.WriteLine("Siirryt takaisin käytävään.");
                         Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
+                        lamppu.PoisPäältä();
                         kaytava.Avaa();
                         break;
                     case "LAMPPU PÄÄLLE":
@@ -114,6 +121,13 @@ namespace Peliluokkia
                         case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -140,7 +154,8 @@ namespace Peliluokkia
     public void PoisPäältä()
     {
         lamppuPäällä = false;
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ResetColor();
             Console.WriteLine("Taskulamppu sammui");
             Console.ResetColor();
         }
@@ -148,7 +163,8 @@ namespace Peliluokkia
     public void Päällä()
     {
         lamppuPäällä = true;
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ResetColor();
             Console.WriteLine("Taskulamppu on päällä");
             Console.ResetColor();
         }
