@@ -119,7 +119,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
-                        case "TASKULAMPPU PÄÄLLE":
+                    case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua.\n");
                         Console.ResetColor();
