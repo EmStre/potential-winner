@@ -14,6 +14,9 @@ namespace Konsoli
         {
             Console.WindowHeight = 50;
             Console.WindowWidth = 185;
+            Intro.KutsuIntro();
+            Console.ResetColor();
+            Console.BackgroundColor = ConsoleColor.Black;
             Hejlsberg hejlsberg = new Hejlsberg();
             Kaytava kaytava = new Kaytava();
             Console.WriteLine("Istut perjantai-iltana yksin C#-ryhmän Hejlsberg-luokassa kun huomaat kattolamppujen valon värisevän.\n" +

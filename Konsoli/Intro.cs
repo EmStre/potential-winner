@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Failaniemi
+namespace Konsoli
 {
-    class Intro
+    public class Intro
     {
         static void ConsoleDraw(IEnumerable<string> lines, int x, int y)
         {
@@ -38,9 +38,8 @@ namespace Failaniemi
                 Console.Write(line.Text);
             }
         }
-        public void KutsuIntro()
+        public static void KutsuIntro()
         {
-            Console.BackgroundColor = ConsoleColor.Red;
             var arr1 = new[]
             {
                     @"  _________________________________________________  ",
@@ -64,7 +63,7 @@ namespace Failaniemi
 
             };
 
-            Console.WindowWidth = 160;
+            Console.WindowWidth = 185;
             Console.WriteLine("\n\n");
             var maxLength = arr1.Aggregate(0, (max, line) => Math.Max(max, line.Length));
             var x = Console.BufferWidth / 2 - maxLength / 2;
@@ -74,8 +73,11 @@ namespace Failaniemi
                 Thread.Sleep(100);
             }
             Console.ResetColor();
+            Console.BackgroundColor = ConsoleColor.Black;
 
             Console.WriteLine("Paina enteriä!");
+                        Console.ResetColor();
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.ReadKey();
         }
     }
