@@ -80,6 +80,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Pahoittelut, en saanut selvää.\n");
@@ -128,6 +135,13 @@ namespace Peliluokkia
                         Console.WriteLine(help);
                         Console.ResetColor();
                         Avaa();
+                        break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
+                        Console.ResetColor();
+                       Avaa();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -201,6 +215,13 @@ namespace Peliluokkia
                     Help help = new Help();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(help);
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+                case "KARTTA":
+                    Kartta kartta = new Kartta();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    kartta.KutsuKartta();
                     Console.ResetColor();
                     Avaa();
                     break;

@@ -70,7 +70,7 @@ namespace Peliluokkia
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "HALP":
                     case "HELP":
@@ -78,14 +78,14 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
                         Console.ResetColor();
-                        Avaa();
+                       Jatka();
                         break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         kartta.KutsuKartta();
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -157,6 +157,25 @@ namespace Peliluokkia
                         lamppu.PoisPäältä();
                         Avaa();
                         break;
+                    case "VIHKO":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Selaat vihkoa:\n" +
+                            "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "FLÄPPITAULU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Tutkit punastellen fläppitaulua, jolloin kuva mieeleesi aiemmin tuoma kaskisnumeroinen luku palaa ajatuksiisi\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "CV":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Julius Caesar ja CV...\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
@@ -188,7 +207,7 @@ namespace Peliluokkia
                 }
 
             }
-            else if (kokeilu < 15)
+            else if (kokeilu < 20)
             {
                 Console.WriteLine("Koodi oli väärin, yritä uudelleen!");
                 vastaus = Console.ReadLine();
@@ -212,6 +231,25 @@ namespace Peliluokkia
                     case "SAMMUTA LAMPPU":
                         lamppu.PoisPäältä();
                         Avaa();
+                        break;
+                    case "VIHKO":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Selaat vihkoa:\n" +
+                            "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "FLÄPPITAULU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Tutkit punastellen fläppitaulua, jolloin kuva mieeleesi aiemmin tuoma kaskisnumeroinen luku palaa ajatuksiisi\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "CV":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Julius Caesar ja CV...\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -268,6 +306,25 @@ namespace Peliluokkia
                     case "SAMMUTA LAMPPU":
                         lamppu.PoisPäältä();
                         Avaa();
+                        break;
+                    case "VIHKO":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Selaat vihkoa:\n" +
+                            "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "FLÄPPITAULU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Tutkit punastellen fläppitaulua, jolloin kuva mieeleesi aiemmin tuoma kaskisnumeroinen luku palaa ajatuksiisi\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "CV":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Julius Caesar ja CV...\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;

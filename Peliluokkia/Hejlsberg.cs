@@ -9,7 +9,7 @@ namespace Peliluokkia
     public class Hejlsberg : ILamppu
     { 
         string vastaus;
-        string esine;
+        string esine = "vihko";
         private bool lamppuPäällä = false;
 
         public bool LamppuPäällä
@@ -179,6 +179,13 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Avaa();
                             break;
+                        case "KARTTA":
+                            Kartta kartta = new Kartta();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            kartta.KutsuKartta();
+                            Console.ResetColor();
+                            Avaa();
+                            break;
                         default:
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Epäkelpo valinta.\n");
@@ -257,6 +264,13 @@ namespace Peliluokkia
                             Help help = new Help();
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine(help);
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        case "KARTTA":
+                            Kartta kartta = new Kartta();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            kartta.KutsuKartta();
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -342,6 +356,13 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Avaa();
                             break;
+                        case "KARTTA":
+                            Kartta kartta = new Kartta();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            kartta.KutsuKartta();
+                            Console.ResetColor();
+                            Avaa();
+                            break;
                         default:
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Epäkelpo valinta.\n");
@@ -380,6 +401,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Avaat oven käytävään.\n");
                         Console.ResetColor();
+                        lamppu.PoisPäältä();
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
@@ -387,7 +409,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Väännät Java-ryhmän huoneen oven kahvasta, mutta toteat oven olevan lukossa.\n");
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaHejsberg();
                         break;
                     case "D":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -402,7 +424,7 @@ namespace Peliluokkia
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaHejsberg();
                         break;
                     case "SAMMUTA VALO":
                         lamppu.PoisPäältä();
@@ -431,13 +453,20 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaHejsberg();
+                        break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
+                        Console.ResetColor();
+                        ValoisaHejsberg();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaHejsberg();
                         break;
                 }
 
@@ -496,7 +525,7 @@ namespace Peliluokkia
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaHejsberg();
                         break;
                     case "HALP":
                     case "HELP":
@@ -504,7 +533,14 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaHejsberg();
+                        break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
+                        Console.ResetColor();
+                        ValoisaHejsberg();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -522,6 +558,7 @@ namespace Peliluokkia
             lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Taskulamppu sammui");
+            Console.ResetColor();
         }
 
         public void Päällä()
@@ -536,8 +573,9 @@ namespace Peliluokkia
         public void Vihko()
         {
             Console.WriteLine("Selatessasi vihkoa ymmärrät, ettei sen omistaja ole kovin ahkera muistiinpanojen kirjoittaja.\n Toisaalta koodaamaan oppii koodaamaalla, eikä muistiinpanoja tekemällä...\n" +
-                "Yhdelle sivulle on kirjoitettu isoilla kirjaimilla sana 'VIREYTYMINEN'\nja mieleesi palaa eräs huippuhyödyllinen vuorovaikutuskoulutus ja huomaat olevasi erityisen vireytynyt juuri nyt, yrittäessäsi löytää ulospääsyä tästä rakennuksesta. \n" + "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n" +
-                "Onpa merkillistä! Mietit, että vihkosta saattaisi olla hyötyöä myöhemmin.\n");
+                "Yhdelle sivulle on kirjoitettu isoilla kirjaimilla sana 'VIREYTYMINEN'\nja mieleesi palaa eräs huippuhyödyllinen vuorovaikutuskoulutus ja huomaat olevasi erityisen vireytynyt juuri nyt, yrittäessäsi löytää ulospääsyä tästä rakennuksesta. \n" +
+                "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n" +
+                "Onpa merkillistä! Mietit, että vihkosta saattaisi olla hyötyä myöhemmin.\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -576,7 +614,21 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(help);
                     Console.ResetColor();
-                    Avaa();
+                    Vihko();
+                    break;
+                case "KARTTA":
+                    Kartta kartta = new Kartta();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    kartta.KutsuKartta();
+                    Console.ResetColor();
+                    Vihko();
+                    break;
+                case "KASSI":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Inventaario inventaario4 = new Inventaario();
+                    Console.WriteLine(inventaario4);
+                    Console.ResetColor();
+                    ValoisaHejsberg();
                     break;
                 default:
                         Console.ForegroundColor = ConsoleColor.Cyan;

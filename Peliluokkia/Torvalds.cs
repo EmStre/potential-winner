@@ -22,15 +22,22 @@ namespace Peliluokkia
         }
 
         Torvalds lamppu;
+
         public void Avaa()
+        {
+            Console.WriteLine("Astut sisään Torvalds-huoneeseen. Siirryt ikkunaa kohti.\n");
+            Jatka();
+        }
+
+
+        public void Jatka()
         {
             lamppu = new Torvalds();
 
 
             if (Inventaario.esineet.Contains("taskulamppu") && !Inventaario.esineet.Contains("fläppitaulu"))
             {
-                Console.WriteLine("Astut sisään Torvalds-huoneeseen. Siirryt ikkunaa kohti ja melkein kompastut fläppitauluun.\n" +
-                    "Taulussa on tekstiä, mutta et saa siitä selvää, koska on liian pimeää. Takanasi on ovi takaisin hissikäytävään (A).\n");
+                Console.WriteLine("Kävellessäsi melkein kompastut fläppitauluun. Taulussa on tekstiä, mutta et saa siitä selvää, koska on liian pimeää. Takanasi on ovi takaisin hissikäytävään (A).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -159,8 +166,7 @@ namespace Peliluokkia
             }
             else
             {
-                Console.WriteLine("Astut sisään Torvalds-huoneeseen. Siirryt ikkunaa kohti ja melkein kompastut fläppitauluun.\n" +
-                   "Taulussa on tekstiä, mutta et saa siitä selvää, koska on liian pimeää. Takanasi on ovi takaisin hissikäytävään (A).\n");
+                Console.WriteLine("Taulussa on tekstiä, mutta et saa siitä selvää, koska on liian pimeää. Takanasi on ovi takaisin hissikäytävään (A).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -233,6 +239,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Astut takaisin hissikäytävään.\n");
                         Console.ResetColor();
+                        lamppu.PoisPäältä();
                         Hissikaytava hissikaytava = new Hissikaytava();
                         hissikaytava.Avaa();
                         break;
@@ -241,7 +248,7 @@ namespace Peliluokkia
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaTorvalds();
                         break;
                     case "SAMMUTA VALO":
                         lamppu.PoisPäältä();
@@ -269,26 +276,26 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaTorvalds();
                         break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         kartta.KutsuKartta();
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaTorvalds();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaTorvalds();
                         break;
                 }
             }
             else
             {
-                Console.WriteLine("Tarkastelet Torvalds-huonetta taskunlampun valossa.\n" +
+                Console.WriteLine("Tarkastelet Torvalds-huonetta taskulampun valossa.\n" +
                     "Vietyäsi fläppitaulun, huone on melko tyhjä. Takanasi on ovi takaisin hissikäytävään (A).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -298,6 +305,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Astut takaisin hissikäytävään.\n");
                         Console.ResetColor();
+                        lamppu.PoisPäältä();
                         Hissikaytava hissikaytava = new Hissikaytava();
                         hissikaytava.Avaa();
                         break;
@@ -306,7 +314,7 @@ namespace Peliluokkia
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaTorvalds();
                         break;
                     case "SAMMUTA VALO":
                         lamppu.PoisPäältä();
@@ -326,14 +334,14 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaTorvalds();
                         break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         kartta.KutsuKartta();
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaTorvalds();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;

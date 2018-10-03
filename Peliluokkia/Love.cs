@@ -187,7 +187,7 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Console.WriteLine(inventaario);
                     Console.ResetColor();
-                    Avaa();
+                    ValoisaHuone();
                     break;
                 case "HALP":
                 case "HELP":
@@ -195,14 +195,14 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(help);
                     Console.ResetColor();
-                    Avaa();
+                    ValoisaHuone();
                     break;
                 case "KARTTA":
                     Kartta kartta = new Kartta();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     kartta.KutsuKartta();
                     Console.ResetColor();
-                    Avaa();
+                    ValoisaHuone();
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;

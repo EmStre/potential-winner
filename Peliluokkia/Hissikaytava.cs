@@ -21,7 +21,7 @@ namespace Peliluokkia
             {
                 case "A":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet eivät avaudu milliäkään.\n");
+                    Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet avaudu milliäkään suurista ponnisteluista huolimatta.\n");
                     Console.ResetColor();
                     Avaa();
                     break;
