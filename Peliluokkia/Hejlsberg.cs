@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace Peliluokkia
 {
     public class Hejlsberg : ILamppu
-    {
+    { 
         string vastaus;
-        string esine = "vihko";
 
         private bool lamppuPäällä = false;
 
@@ -22,15 +21,14 @@ namespace Peliluokkia
         }
 
         Hejlsberg lamppu;
-        Ikkuna ikkuna = new Ikkuna();
+
         public void Avaa()
         {
-            lamppu = new Hejlsberg();
             if (Game.kassilaskuri > 0)
             {
-                Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
+                Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n\n" +
                 "Kätesi ulottuvilla on Academyn kangaskassi. Päätät pitää sen, jotta voit säilyttää siellä tavaroitasi.\n" +
-                "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                "Joten kuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                 "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n" +
                 "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
                 vastaus = Console.ReadLine();
@@ -62,19 +60,8 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Astut ikkunan luo ja vilkaiset alas.\n");
                         Console.ResetColor();
+                        Ikkuna ikkuna = new Ikkuna();
                         ikkuna.Avaa();
-                        break;
-                    case "LUE VIHKO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("On pimeää etkä saa selvää vihkon sisällöstä.\n");
-                        Console.ResetColor();
-                        Avaa();
-                        break;
-                    case "VIHKO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Mitä haluat tehdä viholle?\n");
-                        Console.ResetColor();
-                        Avaa();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -273,15 +260,8 @@ namespace Peliluokkia
                     }
                 }
 
-                else
-                {
-                    Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
-                    "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
-                    "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n" +
-                    "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
-                    vastaus = Console.ReadLine();
-                    vastaus = vastaus.ToUpper();
-
+            else
+            {
 
                     switch (vastaus)
                     {
@@ -361,6 +341,7 @@ namespace Peliluokkia
                 }
             }
         }
+
         public void ValoisaHejsberg()
         {
             lamppuPäällä = true;
@@ -528,8 +509,7 @@ namespace Peliluokkia
         {
             lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Taskulamppu sammui\n");
-            Console.ResetColor();
+            Console.WriteLine("Taskulamppu sammui");
         }
 
         public void Päällä()
@@ -597,7 +577,6 @@ namespace Peliluokkia
             
 
         }
-
     }
 }
 
