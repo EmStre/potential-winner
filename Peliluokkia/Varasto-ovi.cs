@@ -98,7 +98,7 @@ namespace Peliluokkia
 
             else if ((!Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu")) || (Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu")) || (Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu")))
             {
-                Console.WriteLine("Sinulta puuttuu yksi esine. Et voi saadaa ovea auki ilman sitä. Jatka etsimistä.\nMuistathan lisätä löytämäsi esineet kassiin.\n");
+                Console.WriteLine("Sinulta puuttuu yksi oven avaamiseen tarvittava esine. Jatka etsimistä.\nMuistathan lisätä löytämäsi esineet kassiin.\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Tarkastelet taas käytävää.\n");
                 Console.ResetColor();
@@ -108,7 +108,7 @@ namespace Peliluokkia
             }
             else if ((!Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu")) || (Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu")) || (!Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu")))
             {
-                Console.WriteLine("Sinulta puuttuu esineitä. Et voi saadaa ovea auki ilman niitä. Jatkahan etsimistä.\nMuistathan lisätä löytämäsi esineet kassiin.\n");
+                Console.WriteLine("Sinulta puuttuu esineitä, joita ilman et voi saadaa ovea auki. Jatkahan etsimistä.\nMuistathan lisätä löytämäsi esineet kassiin.\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Tarkastelet taas käytävää.\n");
                 Console.ResetColor();
@@ -117,7 +117,7 @@ namespace Peliluokkia
             }
             else if (!Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu"))
             {
-                Console.WriteLine("Sinulta puuttuu KAIKKI esineet. Yritäppäs löytää ne!");
+                Console.WriteLine("Sinulta puuttuu KAIKKI oven avaamiseen tarvittavat esineet. Yritäppäs löytää ne!");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Tarkastelet taas käytävää.\n");
                 Console.ResetColor();
@@ -128,7 +128,8 @@ namespace Peliluokkia
 
         public void ValoisaOvi()
         {
-            int kokeilu= 0;
+            lamppu = new VarastoOvi();
+            int kokeilu = 0;
             kokeilu++;
 
             if (kokeilu == 1)
@@ -136,10 +137,124 @@ namespace Peliluokkia
                 Console.WriteLine("Otat kassistasi fläppitaulun, vihkon ja CV:n\nNiiden avulla yrität keksiä 7-numeroisen koodin, jonka näppäilet lukon numeronäppäimistöön.\nHUOM! Järjestyksellä on väliä!\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
-                switch(vastaus)
+                switch (vastaus)
                 {
                     case "6910542":
                         Console.WriteLine("Tosi hyvä!! Ovi on auki!");
+                        lamppu.PoisPäältä();
+                        Varasto varasto = new Varasto();
+                        varasto.Avaa();
+                        break;
+                    case "SAMMUTA VALO":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "SAMMUTA TASKULAMPPU":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "SAMMUTA LAMPPU":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                }
+
+            }
+            else if (kokeilu < 15)
+            {
+                Console.WriteLine("Koodi oli väärin, yritä uudelleen!");
+                vastaus = Console.ReadLine();
+                vastaus = vastaus.ToUpper();
+                switch (vastaus)
+                {
+                    case "6910542":
+                        lamppu.PoisPäältä();
+                        Varasto varasto = new Varasto();
+                        varasto.Avaa();
+                        break;
+
+                    case "SAMMUTA VALO":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "SAMMUTA TASKULAMPPU":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "SAMMUTA LAMPPU":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Koodi oli väärin, yritä uudelleen! Huomaa, että numeroiden oikea järjestys on fläppitaulu, CV ja vihko.");
+                vastaus = Console.ReadLine();
+                vastaus = vastaus.ToUpper();
+                switch (vastaus)
+                {
+                    case "6910542":
+                        lamppu.PoisPäältä();
+                        Varasto varasto = new Varasto();
+                        varasto.Avaa();
                         break;
 
                     case "SAMMUTA VALO":
@@ -169,6 +284,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -178,17 +300,6 @@ namespace Peliluokkia
                 }
 
             }
-            else if (kokeilu < 15)
-            {
-                Console.WriteLine("Koodi oli väärin, yritä uudelleen!");
-                vastaus = Console.ReadLine();
-                vastaus = vastaus.ToUpper();
-                switch(vastaus)
-                {
-
-                }
-                }
-
         }
 
         public void PoisPäältä()
