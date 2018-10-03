@@ -18,6 +18,7 @@ namespace Peliluokkia
 
         public void Jatka()
         {
+            if (!Inventaario.esineet.Contains("taskulamppu")) { 
             string vastaus;
             Console.WriteLine("Pöydältä erottuu esine, jonka tunnistat ensiapulaukuksi (A).\n" +
                 "Kädelläsi tavoitat myös vesihanan (B). Voit myös siirtyä ruokailutilaan (C) tai voit palata takaisin keittiön (D) puolelle.\n" +
@@ -99,8 +100,8 @@ namespace Peliluokkia
                     Jatka();
                     break;
             }
-
-            } else
+            }
+            else
             {
                 Console.WriteLine("Hapuilet pimeässä tiskipöydän luo.\n" +
                "Pöydältä erottuu esine, jonka tunnistat ensiapulaukuksi.\n" +
@@ -176,7 +177,7 @@ namespace Peliluokkia
                         Avaa();
                         break;
                 }
-
+                
 
             }
         }
