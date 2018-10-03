@@ -20,7 +20,8 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
-                    Console.Write("Hyvästi julma Academy, for-loopit ja boolean-operaattorit. ");
+                    Console.WriteLine("Hyvästi julma Academy ja kaiken maailman for-loopit ja boolean-operaattorit!\n");
+                    Console.Write("Voitit pelin, hävisit elämän. ");
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("GAME OVER.\n");
                     Console.ResetColor();
