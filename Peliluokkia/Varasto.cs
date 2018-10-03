@@ -146,6 +146,8 @@ namespace Peliluokkia
 
         public void ValoisaAcademy()
         {
+            sahkoPaalla = true;
+            Game.sahkoa = 1; // tämä asettaa sähköt päälle, jotta voi operoida keittiössä
             Console.WriteLine("On tämä saatana työmaa, mutta onneksi näkee jo eteensä. Tekee mieli kahvia ja sitten on pakko yrittää kyllä päästä viimein pois täältä.");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Astut takaisin käytävälle.\n");
