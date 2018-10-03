@@ -38,6 +38,7 @@ namespace Peliluokkia
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
@@ -64,6 +65,7 @@ namespace Peliluokkia
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("En ymmärrä sinua :(");
+                        Console.ResetColor();
                         Avaa();
                         break;
                 }
@@ -78,22 +80,26 @@ namespace Peliluokkia
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
                     case "LAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.ResetColor();
                         Avaa();
                         break;
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.ResetColor();
                         Avaa();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("En ymmärrä sinua :(");
+                        Console.ResetColor();
                         Avaa();
                         break;
                 }
