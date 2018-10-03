@@ -24,6 +24,7 @@ namespace Peliluokkia
 
         public void Avaa()
         {
+
             if (Game.kassilaskuri > 0)
             {
                 Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n\n" +
@@ -33,7 +34,6 @@ namespace Peliluokkia
                 "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
-                Game.kassilaskuri--;
 
                 switch (vastaus)
                 {

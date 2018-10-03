@@ -68,7 +68,7 @@ namespace Peliluokkia
                     break;
                 case "I":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    //Console.WriteLine("Yllätykseksesi huomaat, että vaston ovi on lukittu ja siinä on koodilukko.\n");
+                    Console.WriteLine("Yllätykseksesi huomaat, että vaston ovi on lukittu ja siinä on koodilukko.\n");
                     Console.ResetColor();
                     VarastoOvi ovi = new VarastoOvi();
                     ovi.Avaa();

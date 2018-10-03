@@ -33,7 +33,7 @@ namespace Peliluokkia
             if(Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu"))
             {
                 Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joden avulla voit saada oven auki.. On kuitenkin melko pimeää!\nVoit toki halutessasi palata" +
-                    "tutkimaan käytää (A).");
+                    "tutkimaan käytävää (A).");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
