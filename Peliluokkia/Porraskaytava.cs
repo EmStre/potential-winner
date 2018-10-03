@@ -38,7 +38,7 @@ namespace Peliluokkia
                     break;
                 case "B":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Avaat oven käytävään\n.");
+                    Console.WriteLine("Avaat oven käytävään.\n");
                     Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();

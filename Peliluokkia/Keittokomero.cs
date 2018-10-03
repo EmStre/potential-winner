@@ -15,7 +15,7 @@ namespace Peliluokkia
             string vastaus;
             Console.WriteLine("Hapuilet pimeässä tiskipöydän luo.\n" +
                 "Pöydältä erottuu esine, jonka tunnistat ensiapulaukuksi.\n" +
-                "Kädelläsi tavoitat myös vesihanan (A). (B) vie sinut ruokailutilaan tai voit siirtyä takaisin (C) keittiön puolelle.\n" +
+                "Kädelläsi tavoitat myös vesihanan (A). Voit myös siirtyä ruokailutilaan (B) tai voit palata takaisin keittiön (C) puolelle.\n" +
                 "WC-tilan (D) ovi näyttäisi olevan hieman raollaan. \n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();

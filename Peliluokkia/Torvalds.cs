@@ -12,7 +12,7 @@ namespace Peliluokkia
         public void Avaa()
         {
             Console.WriteLine("Astut sisään Torvalds-huoneeseen. Siirryt ikkunaa kohti ja melkein kompastut fläppitauluun.\n" +
-                "Taulussa on tekstiä, mutta et saa siitä selvää, koska on liian pimeää. Takanasi on ovi takaisin hissikäytävään(A).\n");
+                "Taulussa on tekstiä, mutta et saa siitä selvää, koska on liian pimeää. Takanasi on ovi takaisin hissikäytävään (A).\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
