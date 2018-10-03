@@ -11,7 +11,7 @@ namespace Peliluokkia
         public void Avaa()
         {
             string vastaus;
-            Console.WriteLine("Olet vessassa ja mietit voisiko avain ulospääsyyn löytyä vessanpöntöstä(A).\n" +
+            Console.WriteLine("Olet vessassa ja mietit voisiko avain ulospääsyyn löytyä vessanpöntöstä (A)?\n" +
                 "Voit myös jatkaa haparointia takaisin keittokomeroon (B) tai ruokailutilaan (C).\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();

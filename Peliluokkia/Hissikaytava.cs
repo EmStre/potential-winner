@@ -21,31 +21,31 @@ namespace Peliluokkia
             {
                 case "A":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet eivät avaudu milliäkään.");
+                    Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet eivät avaudu milliäkään.\n");
                     Console.ResetColor();
                     Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Avaat oven Torvalds-huoneeseen.");
+                    Console.WriteLine("Avaat oven Torvalds-huoneeseen.\n");
                     Torvalds torvalds = new Torvalds();
                     torvalds.Avaa();
                     break;
                 case "D":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Ovi on näköjään lukossa.");
+                    Console.WriteLine("Ovi on näköjään lukossa.\n");
                     Console.ResetColor();
                     Avaa();
                     break;
                 case "C":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Avaat oven Java-luokkaan.");
+                    Console.WriteLine("Avaat oven Java-luokkaan.\n");
                     Console.ResetColor();
                     Hawking hawking = new Hawking();
                     hawking.Avaa();
                     break;
                 case "E":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Siirryt keittiöön");
+                    Console.WriteLine("Siirryt keittiöön.\n");
                     Console.ResetColor();
                     Keittio keittio = new Keittio();
                     keittio.Avaa();
@@ -59,7 +59,7 @@ namespace Peliluokkia
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Epäkelpo valinta.");
+                    Console.WriteLine("Epäkelpo valinta.\n");
                     Console.ResetColor();
                     Avaa();
                     break;
