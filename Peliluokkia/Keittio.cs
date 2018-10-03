@@ -11,37 +11,116 @@ namespace Peliluokkia
         string vastaus;
         public void Avaa()
         {
-            Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
-                "Suutasi kuivaa ja muistat (A) jääkaappiin jääneen bisseä Terrific Thursdayn jäljiltä.\n" + 
+            if (Game.olutlaskuri > 0)
+            {
+                Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
+                "Suutasi kuivaa ja muistat (A) jääkaappiin jääneen bisseä Terrific Thursdayn jäljiltä.\n" +
                 "Kahvi kyllä piristäisi, mutta sitten muistat sähköjen olevan poikki.\n" +
                 "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään tai voit myös siirtyä (D) ruokailutilaan.\n");
-            vastaus = Console.ReadLine();
-            vastaus = vastaus.ToUpper();
-
-            switch (vastaus)
+                vastaus = Console.ReadLine();
+                vastaus = vastaus.ToUpper();
+                switch (vastaus)
+                {
+                    case "A":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.\n");
+                        Console.ResetColor();
+                        Game.olutlaskuri--;
+                        Avaa();
+                        break;
+                    case "B":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt keittokomeron puolelle.\n");
+                        Console.ResetColor();
+                        Keittokomero keittokomero = new Keittokomero();
+                        keittokomero.Avaa();
+                        break;
+                    case "C":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt takaisin käytävään.\n");
+                        Console.ResetColor();
+                        Kaytava kaytava = new Kaytava();
+                        kaytava.Avaa();
+                        break;
+                    case "D":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Törmäät pöytään etkä pääse etenemään.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "OLUT":
+                        Console.WriteLine(Game.olutlaskuri.ToString());
+                        Avaa();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                }
+            }
+            else
             {
-                case "A":
-                    Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.\n");
-                    Avaa();
-                    break;
-                case "B":
-                    Console.WriteLine("Siirryt keittokomeron puolelle.\n");
-                    Keittokomero keittokomero = new Keittokomero();
-                    keittokomero.Avaa();
-                    break;
-                case "C":
-                    Console.WriteLine("Siirryt takaisin käytävään.\n");
-                    Kaytava kaytava = new Kaytava();
-                    kaytava.Avaa();
-                    break;
-                case "D":
-                    Console.WriteLine("Törmäät pöytään etkä pääse etenemään.\n");
-                    Avaa();
-                    break;
-                default:
-                    Console.WriteLine("Epäkelpo valinta.\n");
-                    Avaa();
-                    break;
+                Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
+             "Suutasi kuivaa ja arvelet jääkaappiin (A) jääneen bisseä Terrific Thursdayn jäljiltä.\n" +
+             "Kahvi kyllä piristäisi, mutta sitten muistat sähköjen olevan poikki.\n" +
+             "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään tai voit myös siirtyä (D) ruokailutilaan.\n");
+                vastaus = Console.ReadLine();
+                vastaus = vastaus.ToUpper();
+                switch (vastaus)
+                {
+                    case "A":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Avaat jääkaapin todetaksesi sen ammottavan tyhjyyttään - juotuasi itse sieltä kaikki oluet.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "B":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt keittokomeron puolelle.\n");
+                        Console.ResetColor();
+                        Keittokomero keittokomero = new Keittokomero();
+                        keittokomero.Avaa();
+                        break;
+                    case "C":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt takaisin käytävään.\n");
+                        Console.ResetColor();
+                        Kaytava kaytava = new Kaytava();
+                        kaytava.Avaa();
+                        break;
+                    case "D":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Törmäät pöytään etkä pääse etenemään.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "OLUT":
+                        Console.WriteLine(Game.olutlaskuri.ToString());
+                        Avaa();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                }
             }
         }
     }

@@ -6,24 +6,19 @@ using System.Threading.Tasks;
 
 namespace Peliluokkia
 {
-    class Torvalds
+    class Varasto
     {
         string vastaus;
         public void Avaa()
         {
-            Console.WriteLine("Astut sisään Torvalds-huoneeseen. Siirryt ikkunaa kohti ja melkein kompastut fläppitauluun.\n" +
-                "Taulussa on tekstiä, mutta et saa siitä selvää, koska on liian pimeää. Takanasi on ovi takaisin hissikäytävään (A).\n");
+            Console.WriteLine("Varasto on pilkkopimeä ja täynnä viinalaatikoita. Pimeässä on hankala lähteä etenemään.\n" +
+                "Muistat, että sähkökaappi löytyy varaston perältä! Olisikohan siellä sellainen varavirtakytkin kuten leffoissa.");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
             switch (vastaus)
             {
-                case "A":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Astut takaisin hissikäytävään.\n");
-                    Console.ResetColor();
-                    Hissikaytava hissikaytava = new Hissikaytava();
-                    hissikaytava.Avaa();
+                case "A":    
                     break;
                 case "KASSI":
                     Console.ForegroundColor = ConsoleColor.Yellow;

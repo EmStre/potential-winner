@@ -9,9 +9,11 @@ namespace Peliluokkia
     public class Love : ILamppu
     {
         //Avaa-metodi pohjautuen muihin huoneisiin -ES Lisätty lamppu rajapinnan toteutus
-       string vastaus;
+        string vastaus;
 
-       private bool lamppuPäällä = false;
+        private bool lamppuPäällä = false;
+
+       
 
         public bool LamppuPäällä
         {
@@ -21,120 +23,164 @@ namespace Peliluokkia
             }
         }
 
-
-
+        Love lamppu;
         public void Avaa()
         {
-            Console.WriteLine("Astut sisään Lovelace-neuvotteluhuoneeseen.\n Pimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää pimeässä. Voit halutessasi palata takaisin käytävään (A)");
+            Console.WriteLine("Olet Lovelace-neuvotteluhuoneessa.\nPimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää, koska on PIMEÄÄ.Voit halutessasi palata takaisin käytävään(A)");
+            vastaus = Console.ReadLine();
+            vastaus = vastaus.ToUpper();
+            lamppu = new Love();
+            if (Inventaario.esineet.Contains("taskulamppu"))
+            {
+
+                switch (vastaus)
+                {
+                    case "A":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.ResetColor();
+                        Kaytava kaytava = new Kaytava();
+                        kaytava.Avaa();
+                        break;
+                    case "TASKULAMPPU PÄÄLLE":
+                        lamppu.Päällä();
+                        ValoisaHuone();
+                        break;
+                    case "LAMPPU PÄÄLLE":
+                        lamppu.Päällä();
+                        ValoisaHuone();
+                        break;
+                    case "AVAA LAMPPU":
+                        lamppu.Päällä();
+                        ValoisaHuone();
+                        break;
+                    case "LAITA LAMPPU PÄÄLLE":
+                        lamppu.Päällä();
+                        ValoisaHuone();
+                        break;
+                    case "KYTKE LAMPPU PÄÄLLE":
+                        lamppu.Päällä();
+                        ValoisaHuone();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("En ymmärrä sinua :(");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                }
+            }
+
+            else
+            {
+
+              switch(vastaus)
+                    {
+
+                    case "A":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.ResetColor();
+                        Kaytava kaytava = new Kaytava();
+                        kaytava.Avaa();
+                        break;
+                    case "LAMPPU PÄÄLLE":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "TASKULAMPPU PÄÄLLE":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("En ymmärrä sinua :(");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                }
+
+            }
+
+        }
+
+
+
+
+        public void ValoisaHuone()
+        {
+            Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat konsultit ovat pelanneet risti-nollaa ja risteillä pelannut henkilö on voittanut joka kerta. Voit halutessasi palata takaisin käytävään (A)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
-            Love lamppu = new Love();
-
-            while (vastaus != "A")
-            {
-             string [] lause = vastaus.Split(' ');
-
-                if (lause.Length == 2 || lause.Length == 3)
-                {
-                    if ((lause[0].Contains("AVAA") && lause[1].Contains("LAMPPU")) || (lause[0].Contains("LAITA") && lause[1].Contains("LAMPPU") && lause[2].Contains("PÄÄL")))
-                    {
-
-                        lamppu.Päällä();
-                        Console.WriteLine(lamppu.LamppuPäällä);
-
-                        Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat opiskelijat ovat pelanneet risti-nollaa... Voit halutessasi palata takaisin käytävään (A)");
-                        string vastaus2 = Console.ReadLine();
-                        vastaus2 = vastaus2.ToUpper();
-                        switch (vastaus2)
-                        {
-                            case "A":
-                                Console.WriteLine("Siirryt takaisin käytävään.");
-                                Kaytava kaytava = new Kaytava();
-                                kaytava.Avaa();
-                                break;
-
-                            default:
-                                Console.WriteLine("En ymmärrä sinua o: palataan alkuun");
-                                Avaa();
-                                break;
-
-
-                        }
-
-
-
-                    }
-                    else
-                    {
-                        Console.WriteLine("Huoneessa on pimeää. Näet, että fläppitaululle on kirjoitettu asioita, mutta et saa niistä selvää. Voit halutessasi palata takaisin käytävään (A)");
-                        vastaus = Console.ReadLine();
-                        vastaus = vastaus.ToUpper();
-                        switch (vastaus)
-                        {
-                            case "A":
-                                Console.WriteLine("Siirryt takaisin käytävään.");
-                                Kaytava kaytava = new Kaytava();
-                                kaytava.Avaa();
-                                break;
-                            default:
-                                Console.WriteLine("En ymmärrä sinua o: aloitataan alusata");
-                                Avaa();
-                                break;
-                        }
-
-                    }
-
-                }
-
-                else
-                {
-                    Console.WriteLine("En ymmärrä sinua :( ");
-                    Console.WriteLine("On pimeää... Voit halutessasi palata takaisin käytävään (A)");
-                    vastaus = Console.ReadLine();
-                    vastaus = vastaus.ToUpper();
-                    switch (vastaus)
-                    {
-                        case "A":
-                            Console.WriteLine("Siirryt takaisin käytävään.");
-                            Kaytava kaytava = new Kaytava();
-                            kaytava.Avaa();
-                            break;
-                        default:
-                            Console.WriteLine("En ymmärrä sinua o: Aloitetaan alusta");
-                            Avaa();
-                            break;
-                    }
-                }
-            }
-
-
             switch (vastaus)
             {
-                 case "A":
-
+                case "A":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Siirryt takaisin käytävään.");
+                    Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
+                    lamppu.PoisPäältä();
                     kaytava.Avaa();
                     break;
-                default:
-                    Console.WriteLine("En ymmärrä sinua");
+                case "SAMMUTA LAMPPU":
+                    lamppu.PoisPäältä();
                     Avaa();
                     break;
+                case "KASSI":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Inventaario inventaario = new Inventaario();
+                    Console.ResetColor();
+                    Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+                default:
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("En ymmärrä sinua :(");
+                    Console.ResetColor();
+                    ValoisaHuone();
+                    break;
+
+
             }
-          
-        }
+            }
+
 
         public void PoisPäältä()
         {
             lamppuPäällä = false;
-            Console.WriteLine("Taskulamppu sammui");    
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Sammutit taskulampun.");
+            Console.ResetColor();
+            Console.ResetColor();
         }
 
         public void Päällä()
         {
             lamppuPäällä = true;
-            Console.WriteLine("Taskulamppu on päällä");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Taskulamppu on päällä.");
+            Console.ResetColor();
+            Console.ResetColor();
         }
     }
 }

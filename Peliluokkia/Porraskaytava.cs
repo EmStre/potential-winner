@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Peliluokkia
 {
@@ -19,17 +20,40 @@ namespace Peliluokkia
             switch (vastaus)
             {
                 case "A":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Lähdet kävelemään portaita alas kelmeän vihertävässä valossa.\n");
+                    Console.ResetColor();
+                    Thread.Sleep(600);
+                    Console.WriteLine("...viides kerros...\n");
+                    Thread.Sleep(600);
+                    Console.WriteLine("...neljäs kerros...\n");
+                    Thread.Sleep(600);
+                    Console.WriteLine("...kolmas kerros...\n");
+                    Thread.Sleep(600);
+                    Console.WriteLine("...toinen kerros...\n");
+                    Thread.Sleep(600);
+                    Console.WriteLine("...ja ensimmäinen kerros.\n");
                     PorraskaytavaAlaovi porraskaytavaAlaovi = new PorraskaytavaAlaovi();
                     porraskaytavaAlaovi.Avaa();
                     break;
                 case "B":
-                    Console.WriteLine("Avaat oven käytävään\n.");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Avaat oven käytävään.\n");
+                    Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
                     break;
+                case "KASSI":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Inventaario inventaario = new Inventaario();
+                    Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    Avaa();
+                    break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
+                    Console.ResetColor();
                     Avaa();
                     break;
             }

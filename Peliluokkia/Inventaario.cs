@@ -8,9 +8,9 @@ namespace Peliluokkia
 {
     public class Inventaario
     {
-        //Inventaario luokka, lisää löydetyt esineet kassiin
+        //Inventaario-luokka, lisää löydetyt esineet kassiin
         public string Esine { get; set; }
-        List<string> esineet = new List<string>();
+        public static List<string> esineet = new List<string>();
 
         public Inventaario()
         {
@@ -26,6 +26,10 @@ namespace Peliluokkia
             {
                 esineet.Add(esine);
             }
+            else
+            {
+                Console.WriteLine("Oops, tämä esine on jo kassissasi!");
+            }
         }
 
         public override string ToString()
@@ -36,8 +40,11 @@ namespace Peliluokkia
                 sb.Append(e + "\n");
             }
             string kassinSisalto = sb.ToString();
+            if (kassinSisalto.Length == 0)
+                return "Kassisi on tyhjä.\n";
+            else
             return "Hienossa ACADEMY-kangaskassissasi on tällä hetkellä: \n" + kassinSisalto;
-        }
+                }
 
         //Main classissa luokka toimii jotenkuten näin
         //Inventaario inv = new Inventaario();

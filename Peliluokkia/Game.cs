@@ -8,7 +8,9 @@ namespace Peliluokkia
 {
     public class Game
     {
-         
+        public static int olutlaskuri = 3;
+        public static int kassilaskuri = 1;
 
     }
 }
+

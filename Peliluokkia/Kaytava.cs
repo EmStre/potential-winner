@@ -12,7 +12,7 @@ namespace Peliluokkia
         public void Avaa()
         {
             Console.WriteLine("Olet hämärässä käytävässä, jonka toisessa päässä on keittiö (A), toisessa porraskäytävä (B).\n" +
-                "Lisäksi käytävän varrelta löytyy C#-ryhmän Hejlsberg-luokka (C), pienet huoneet Lovelace (D), Hopper (E), Jobs (F) ja Gosling (G) sekä konsolipelinurkkaus (H) ja varasto (I).");
+                "Lisäksi käytävän varrelta löytyy C#-ryhmän Hejlsberg-luokka (C), neuvotteluhuoneet Lovelace (D), Hopper (E), Jobs (F) ja Gosling (G) sekä konsolipelinurkkaus (H) ja varasto (I).");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -64,6 +64,13 @@ namespace Peliluokkia
                 case "H":
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Koska sähkö on poikki, pysyy pelikonsoli mykkänä.\n");
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+                case "KASSI":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Inventaario inventaario = new Inventaario();
+                    Console.WriteLine(inventaario);
                     Console.ResetColor();
                     Avaa();
                     break;
