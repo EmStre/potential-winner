@@ -56,6 +56,7 @@ namespace Peliluokkia
                     Console.WriteLine(inventaario);
                     Console.ResetColor();
                     Avaa();
+                    break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.");
