@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace Peliluokkia
 {
     class Keittokomero
+
     {
+
         public void Avaa()
         {
             string vastaus;
@@ -17,6 +19,9 @@ namespace Peliluokkia
                 "WC-tilan (D) ovi näyttäisi olevan hieman raollaan. \n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
+
+      
+           
 
             switch (vastaus)
             {
