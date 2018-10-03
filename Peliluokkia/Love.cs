@@ -173,13 +173,17 @@ namespace Peliluokkia
         public void PoisPäältä()
         {
             lamppuPäällä = false;
-            Console.WriteLine("Taskulamppu sammui");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Sammutit taskulampun.");
+            Console.ResetColor();
         }
 
         public void Päällä()
         {
             lamppuPäällä = true;
-            Console.WriteLine("Taskulamppu on päällä");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Taskulamppu on päällä.");
+            Console.ResetColor();
         }
     }
 }

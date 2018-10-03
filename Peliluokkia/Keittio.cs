@@ -79,7 +79,7 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Avaat jääkaapin todetaksesi sen ammottavan tyhjyyttään juotuasi sieltä kaikki oluet.\n");
+                        Console.WriteLine("Avaat jääkaapin todetaksesi sen ammottavan tyhjyyttään - juotuasi itse sieltä kaikki oluet.\n");
                         Console.ResetColor();
                         Avaa();
                         break;
