@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace Peliluokkia
 {
     public class Hejlsberg : ILamppu
-    {
+    { 
         string vastaus;
-        string esine = "vihko";
 
         private bool lamppuPäällä = false;
 
@@ -22,15 +21,14 @@ namespace Peliluokkia
         }
 
         Hejlsberg lamppu;
-        Ikkuna ikkuna = new Ikkuna();
+
         public void Avaa()
         {
-            lamppu = new Hejlsberg();
             if (Game.kassilaskuri > 0)
             {
-                Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
+                Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n\n" +
                 "Kätesi ulottuvilla on Academyn kangaskassi. Päätät pitää sen, jotta voit säilyttää siellä tavaroitasi.\n" +
-                "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                "Joten kuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                 "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n" +
                 "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
                 vastaus = Console.ReadLine();
@@ -62,24 +60,21 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Astut ikkunan luo ja vilkaiset alas.\n");
                         Console.ResetColor();
+                        Ikkuna ikkuna = new Ikkuna();
                         ikkuna.Avaa();
-                        break;
-                    case "LUE VIHKO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("On pimeää etkä saa selvää vihkon sisällöstä.\n");
-                        Console.ResetColor();
-                        Avaa();
-                        break;
-                    case "VIHKO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Mitä haluat tehdä viholle?\n");
-                        Console.ResetColor();
-                        Avaa();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -168,6 +163,14 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Avaa();
                             break;
+                        case "HALP":
+                        case "HELP":
+                            Help help = new Help();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(help);
+                            Console.ResetColor();
+                            Avaa();
+                            break;
                         default:
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Epäkelpo valinta.\n");
@@ -240,6 +243,14 @@ namespace Peliluokkia
                             lamppu.Päällä();
                             ValoisaHejsberg();
                             break;
+                        case "HALP":
+                        case "HELP":
+                            Help help = new Help();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(help);
+                            Console.ResetColor();
+                            Avaa();
+                            break;
                         default:
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Epäkelpo valinta.\n");
@@ -249,15 +260,8 @@ namespace Peliluokkia
                     }
                 }
 
-                else
-                {
-                    Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
-                    "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
-                    "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n" +
-                    "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
-                    vastaus = Console.ReadLine();
-                    vastaus = vastaus.ToUpper();
-
+            else
+            {
 
                     switch (vastaus)
                     {
@@ -318,6 +322,14 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Avaa();
                             break;
+                        case "HALP":
+                        case "HELP":
+                            Help help = new Help();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(help);
+                            Console.ResetColor();
+                            Avaa();
+                            break;
                         default:
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Epäkelpo valinta.\n");
@@ -329,6 +341,7 @@ namespace Peliluokkia
                 }
             }
         }
+
         public void ValoisaHejsberg()
         {
             lamppuPäällä = true;
@@ -400,7 +413,14 @@ namespace Peliluokkia
                     case "LUE VIHKO":
                         Vihko();
                         break;
-
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -466,6 +486,14 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -481,8 +509,7 @@ namespace Peliluokkia
         {
             lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Taskulamppu sammui\n");
-            Console.ResetColor();
+            Console.WriteLine("Taskulamppu sammui");
         }
 
         public void Päällä()
@@ -507,7 +534,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Vihko lisätty Academy-kassiin.\n");
                         Inventaario inventaario = new Inventaario();
-                        inventaario.LisaaEsine(esine);
+                        //inventaario.LisaaEsine(esine);
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;
@@ -515,7 +542,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Vihko lisätty Academy-kassiin.\n");
                         Inventaario inventaario2 = new Inventaario();
-                        inventaario2.LisaaEsine(esine);
+                        //inventaario2.LisaaEsine(esine);
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;
@@ -531,7 +558,15 @@ namespace Peliluokkia
                         lamppu.PoisPäältä();
                         Avaa();
                         break;
-                    default:
+                case "HALP":
+                case "HELP":
+                    Help help = new Help();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(help);
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+                default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
                         Console.ResetColor();
@@ -542,7 +577,6 @@ namespace Peliluokkia
             
 
         }
-
     }
 }
 

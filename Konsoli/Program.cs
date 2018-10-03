@@ -19,6 +19,9 @@ namespace Konsoli
             Console.BackgroundColor = ConsoleColor.Black;
             Hejlsberg hejlsberg = new Hejlsberg();
             Kaytava kaytava = new Kaytava();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Pelissä käytettävät komennot saat näkyviin kirjoittamalla HELP\n");
+            Console.ResetColor();
             Console.WriteLine("Istut perjantai-iltana yksin C#-ryhmän Hejlsberg-luokassa kun huomaat kattolamppujen valon värisevän.\n" +
                 "Hetken päästä säpsähdät, kun suuren pamauksen saattelemana valot yhtäkkiä sammuvat ja kannettava tietokoneesi samalla pimenee.\n" +
                 "Istut hetken yllättyneenä pimeässä luokassa ihmetellen tapahtunutta.\n" +
