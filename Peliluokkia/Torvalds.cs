@@ -11,7 +11,7 @@ namespace Peliluokkia
     {
         string vastaus;
         private bool lamppuPäällä = false;
-        string esine;
+        string esine = "fläppitaulu";
 
         public bool LamppuPäällä
         {
