@@ -270,6 +270,14 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaTorvalds();
                         break;
+                    case "LISÄÄ FLÄPPITAULU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Fläppitaulu lisätty Academy-kassiin.\n");
+                        Inventaario inventaario3 = new Inventaario();
+                        inventaario3.LisaaEsine(esine);
+                        Console.ResetColor();
+                        ValoisaTorvalds();
+                        break;
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
