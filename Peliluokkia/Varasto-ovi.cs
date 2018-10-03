@@ -142,9 +142,9 @@ namespace Peliluokkia
                     case "6910542":
                         Console.WriteLine("Tosi hyvä!! Ovi on auki!");
                         lamppu.PoisPäältä();
-                        Varasto varasto = 
+                        Varasto varasto = new Varasto();
+                        varasto.Avaa();
                         break;
-
                     case "SAMMUTA VALO":
                         lamppu.PoisPäältä();
                         Avaa();
