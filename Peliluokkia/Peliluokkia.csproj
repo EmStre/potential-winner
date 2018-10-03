@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Help.cs" />
     <Compile Include="Hissikaytava.cs" />
     <Compile Include="Ikkuna.cs" />
     <Compile Include="Inventaario.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Ruokailutila.cs" />
     <Compile Include="Sohvanurkkaus.cs" />
     <Compile Include="Torvalds.cs" />
+    <Compile Include="Varasto-ovi.cs" />
     <Compile Include="Varasto.cs" />
     <Compile Include="WC.cs" />
   </ItemGroup>

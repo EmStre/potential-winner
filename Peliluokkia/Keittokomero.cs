@@ -93,7 +93,15 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Ensiapulaukku();
                     break;
-                default:
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
                     Console.ResetColor();
@@ -169,6 +177,14 @@ namespace Peliluokkia
                         Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin.\n");
                         Console.ResetColor();
                         Ensiapulaukku();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -256,6 +272,14 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -297,6 +321,14 @@ namespace Peliluokkia
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
                         Jatka();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -362,6 +394,14 @@ namespace Peliluokkia
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
                         Jatka();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -438,6 +478,14 @@ namespace Peliluokkia
                         Console.WriteLine(inventaario4);
                         Console.ResetColor();
                         Jatka();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
