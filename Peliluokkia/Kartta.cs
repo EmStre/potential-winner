@@ -14,7 +14,7 @@ namespace Peliluokkia
 
     public class Kartta
     {
-        public static void Main(String[] Args)
+        public void KutsuKartta()
         {
             {
                 var kartta = new[]
