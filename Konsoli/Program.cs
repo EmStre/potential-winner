@@ -24,7 +24,7 @@ namespace Konsoli
                 "Istut hetken yllättyneenä pimeässä luokassa ihmetellen tapahtunutta.\n" +
                 "Vilkaiset kännykästäsi kelloa ja toteat sen olevan 23:18. Huomaat samalla kännykän kuuluvuuskentän olevan nollassa ja akkua jäljellä 1%. Juuri tuolloin puhelimesikin sammuu.\n");
             hejlsberg.Avaa();
-
+            GameOver.KutsuGameOver();
             Inventaario.esineet.Contains("taskulamppu");
 
 
