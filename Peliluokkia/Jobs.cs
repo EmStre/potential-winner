@@ -40,6 +40,7 @@ namespace Peliluokkia
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
@@ -85,7 +86,13 @@ namespace Peliluokkia
                         vastaus = vastaus.ToUpper();
                         Avaa();
                         break;
-
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.WriteLine("En ymmärrä sinua :(");
                         Avaa();
@@ -100,6 +107,7 @@ namespace Peliluokkia
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
                         lamppu.PoisPäältä();
                         kaytava.Avaa();
@@ -107,16 +115,26 @@ namespace Peliluokkia
                     case "LAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.ResetColor();
                         Avaa();
                         break;
                         case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
                         Avaa();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("En ymmärrä sinua :(");
+                        Console.ResetColor();
                         Avaa();
                         break;
                 }
@@ -136,14 +154,16 @@ namespace Peliluokkia
     public void PoisPäältä()
     {
         lamppuPäällä = false;
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ResetColor();
             Console.WriteLine("Taskulamppu sammui");
     }
 
     public void Päällä()
     {
         lamppuPäällä = true;
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ResetColor();
             Console.WriteLine("Taskulamppu on päällä");
     }
 

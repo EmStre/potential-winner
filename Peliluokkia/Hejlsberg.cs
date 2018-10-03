@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Peliluokkia
 {
-    public class Hejlsberg: ILamppu
+    public class Hejlsberg : ILamppu
     {
         string vastaus;
 
@@ -20,6 +20,7 @@ namespace Peliluokkia
             }
         }
 
+        Hejlsberg lamppu;
 
         public void Avaa()
         {
@@ -85,62 +86,141 @@ namespace Peliluokkia
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
-            switch (vastaus)
+            if (Inventaario.esineet.Contains("taskulamppu"))
             {
-                case "A":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Painat valonkatkaisijaa, mutta mitään ei tapahdu. Sähköt tosiaan taitavat olla poikki.\n");
-                    Console.ResetColor();
-                    Avaa();
-                    break;
-                case "B":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Avaat oven käytävään.\n");
-                    Console.ResetColor();
-                    Kaytava kaytava = new Kaytava();
-                    kaytava.Avaa();
-                    break;
-                case "C":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Väännät Java-ryhmän huoneen oven kahvasta, mutta toteat oven olevan lukossa.\n");
-                    Console.ResetColor();
-                    Avaa();
-                    break;
-                case "D":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Astut ikkunan luo ja vilkaiset alas.\n");
-                    Console.ResetColor();
-                    Ikkuna ikkuna = new Ikkuna();
-                    ikkuna.Avaa();
-                    break;
-                case "KASSI":
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Inventaario inventaario = new Inventaario();
-                    Console.WriteLine(inventaario);
-                    Console.ResetColor();
-                    Avaa();
-                    break;
-                default:
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Epäkelpo valinta.\n");
-                    Console.ResetColor();
-                    Avaa();
-                    break;
+                switch (vastaus)
+                {
+                    case "A":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Painat valonkatkaisijaa, mutta mitään ei tapahdu. Sähköt tosiaan taitavat olla poikki.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "B":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Avaat oven käytävään.\n");
+                        Console.ResetColor();
+                        Kaytava kaytava = new Kaytava();
+                        kaytava.Avaa();
+                        break;
+                    case "C":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Väännät Java-ryhmän huoneen oven kahvasta, mutta toteat oven olevan lukossa.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "D":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Astut ikkunan luo ja vilkaiset alas.\n");
+                        Console.ResetColor();
+                        Ikkuna ikkuna = new Ikkuna();
+                        ikkuna.Avaa();
+                        break;
+
+
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "TASKULAMPPU PÄÄLLE":
+                        lamppu.Päällä();
+                        ValoisaHejsberg();
+                        break;
+                    case "LAMPPU PÄÄLLE":
+                        lamppu.Päällä();
+                        ValoisaHejsberg();
+                        break;
+                    case "AVAA LAMPPU":
+                        lamppu.Päällä();
+                        ValoisaHejsberg();
+                        break;
+                    case "LAITA LAMPPU PÄÄLLE":
+                        lamppu.Päällä();
+                        ValoisaHejsberg();
+                        break;
+                    case "KYTKE LAMPPU PÄÄLLE":
+                        lamppu.Päällä();
+                        ValoisaHejsberg();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                }
+            }
+
+            else
+            {
+
+                switch (vastaus)
+                {
+                    case "A":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Painat valonkatkaisijaa, mutta mitään ei tapahdu. Sähköt tosiaan taitavat olla poikki.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "B":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Avaat oven käytävään.\n");
+                        Console.ResetColor();
+                        Kaytava kaytava = new Kaytava();
+                        kaytava.Avaa();
+                        break;
+                    case "C":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Väännät Java-ryhmän huoneen oven kahvasta, mutta toteat oven olevan lukossa.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "D":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Astut ikkunan luo ja vilkaiset alas.\n");
+                        Console.ResetColor();
+                        Ikkuna ikkuna = new Ikkuna();
+                        ikkuna.Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                }
             }
         }
+
+        public void ValoisaHejsberg()
+        {
+
+        }
+
 
         public void PoisPäältä()
         {
             lamppuPäällä = false;
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Taskulamppu sammui");
         }
 
         public void Päällä()
         {
             lamppuPäällä = true;
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Taskulamppu on päällä");
         }
     }
 }
+
