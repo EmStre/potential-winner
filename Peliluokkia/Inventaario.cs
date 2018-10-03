@@ -8,7 +8,7 @@ namespace Peliluokkia
 {
     public class Inventaario
     {
-        //Inventaario luokka, lisää löydetyt esineet kassiin
+        //Inventaario-luokka, lisää löydetyt esineet kassiin
         public string Esine { get; set; }
         public static List<string> esineet = new List<string>();
 
@@ -25,6 +25,10 @@ namespace Peliluokkia
             if (!esineet.Contains(esine))
             {
                 esineet.Add(esine);
+            }
+            else
+            {
+                Console.WriteLine("Oops, tämä esine on jo kassissasi!");
             }
         }
 
