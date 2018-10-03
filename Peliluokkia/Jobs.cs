@@ -27,7 +27,7 @@ namespace Peliluokkia
 
         public void Avaa()
         {
-            Console.WriteLine("Astut sisään Pixarin perustajan mukaan nimettyyn Jobs-huoneeseen.\nPimeässä näet flappitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. Voit halutessasi palata takaisin käytävään (A).");
+            Console.WriteLine("Astut sisään Pixarin perustajan mukaan nimettyyn Jobs-huoneeseen.\nPimeässä näet flappitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. \nVoit halutessasi palata takaisin käytävään (A).");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             Jobs lamppu = new Jobs();
@@ -39,14 +39,14 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.WriteLine("Siirryt takaisin käytävään.\n");
                         Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
                     case "TASKULAMPPU PÄÄLLE":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... Voit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -54,7 +54,7 @@ namespace Peliluokkia
                         break;
                     case "LAMPPU PÄÄLLE":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... Voit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu...\nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -62,7 +62,7 @@ namespace Peliluokkia
                         break;
                     case "AVAA LAMPPU":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... Voit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -71,7 +71,7 @@ namespace Peliluokkia
 
                     case "LAITA LAMPPU PÄÄLLE":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... Voit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt näe, että fläppitaululle on piirretty  huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -80,7 +80,7 @@ namespace Peliluokkia
 
                     case "KYTKE LAMPPU PÄÄLLE":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... Voit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -94,7 +94,9 @@ namespace Peliluokkia
                         Avaa();
                         break;
                     default:
-                        Console.WriteLine("En ymmärrä sinua :(");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("En ymmärrä sinua :(\n");
+                        Console.ResetColor();
                         Avaa();
                         break;
                 }
@@ -106,21 +108,20 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Siirryt takaisin käytävään.");
+                        Console.WriteLine("Siirryt takaisin käytävään.\n");
                         Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
-                        lamppu.PoisPäältä();
                         kaytava.Avaa();
                         break;
                     case "LAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
                         Console.ResetColor();
                         Avaa();
                         break;
                         case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua");
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -133,7 +134,7 @@ namespace Peliluokkia
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("En ymmärrä sinua :(");
+                        Console.WriteLine("En ymmärrä sinua :(\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -155,16 +156,16 @@ namespace Peliluokkia
     {
         lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Taskulamppu sammui\n");
             Console.ResetColor();
-            Console.WriteLine("Taskulamppu sammui");
     }
 
     public void Päällä()
     {
         lamppuPäällä = true;
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Taskulamppu on päällä\n");
             Console.ResetColor();
-            Console.WriteLine("Taskulamppu on päällä");
     }
 
 }

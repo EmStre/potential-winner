@@ -19,10 +19,10 @@ namespace Konsoli
             Console.WriteLine("Istut perjantai-iltana yksin C#-ryhmän Hejlsberg-luokassa kun huomaat kattolamppujen valon värisevän.\n" +
                 "Hetken päästä säpsähdät, kun suuren pamauksen saattelemana valot yhtäkkiä sammuvat ja kannettava tietokoneesi samalla pimenee.\n" +
                 "Istut hetken yllättyneenä pimeässä luokassa ihmetellen tapahtunutta.\n" +
-                "Vilkaiset kännykästäsi kelloa ja toteat sen olevan 23:18. Huomaat samalla kännykän kuuluvuuskentän olevan nollassa.");
+                "Vilkaiset kännykästäsi kelloa ja toteat sen olevan 23:18. Huomaat samalla kännykän kuuluvuuskentän olevan nollassa ja akkua jäljellä 1%. Juuri tuolloin puhelimesikin sammuu.\n");
             hejlsberg.Avaa();
 
-            Inventaario.esineet.Contains("taskulamppu");
+            
 
 
 
