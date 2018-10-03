@@ -12,9 +12,10 @@ namespace Peliluokkia
         public void Avaa()
         {
             Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n\n" +
+                "Kätesi ulottuvilla on Academyn kangaskassi. Päätät pitää sen, jotta voit säilyttää siellä tavaroitasi.\n" +
                 "Joten kuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" + 
                 "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n" +
-                "Tuuli saa pöydällä olevsn vihkon sivut lepattamaan äänekkäästi.");
+                "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
