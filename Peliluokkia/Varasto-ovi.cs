@@ -33,7 +33,7 @@ namespace Peliluokkia
             if(Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu"))
             {
                 Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joden avulla voit saada oven auki.. On kuitenkin melko pimeää!\nVoit toki halutessasi palata" +
-                    "tutkimaan käytää (A).");
+                    "tutkimaan käytävää (A).");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -69,6 +69,21 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -113,8 +128,66 @@ namespace Peliluokkia
 
         public void ValoisaOvi()
         {
+            int kokeilu= 0;
+            kokeilu++;
+
+            if (kokeilu == 1)
+            {
+                Console.WriteLine("Otat kassistasi fläppitaulun, vihkon ja CV:n\nNiiden avulla yrität keksiä 7-numeroisen koodin, jonka näppäilet lukon numeronäppäimistöön.\nHUOM! Järjestyksellä on väliä!\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
+                switch(vastaus)
+                {
+                    case "6910542":
+                        Console.WriteLine("Tosi hyvä!! Ovi on auki!");
+                        break;
+
+                    case "SAMMUTA VALO":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "SAMMUTA TASKULAMPPU":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "SAMMUTA LAMPPU":
+                        lamppu.PoisPäältä();
+                        Avaa();
+                        break;
+                    case "KASSI":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Inventaario inventaario = new Inventaario();
+                        Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "HALP":
+                    case "HELP":
+                        Help help = new Help();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                }
+
+            }
+            else if (kokeilu < 15)
+            {
+                Console.WriteLine("Koodi oli väärin, yritä uudelleen!");
+                vastaus = Console.ReadLine();
+                vastaus = vastaus.ToUpper();
+                switch(vastaus)
+                {
+
+                }
+                }
 
         }
 

@@ -50,46 +50,96 @@ namespace Peliluokkia
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
-                        Avaa();
-                        break;
+                        if (vastaus == "A")
+                        {
+                            Kaytava kaytava2 = new Kaytava();
+                            kaytava2.Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Avaa();
+                            break;
+                        }
                     case "LAMPPU PÄÄLLE":
                         lamppu.Päällä();
                         Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
-                        Avaa();
-                        break;
+                        if (vastaus == "A")
+                        {
+                            Kaytava kaytava2 = new Kaytava();
+                            kaytava2.Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Avaa();
+                            break;
+                        }
                     case "AVAA LAMPPU":
                         lamppu.Päällä();
                         Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
-                        Avaa();
-                        break;
-
+                        if (vastaus == "A")
+                        {
+                            Kaytava kaytava2 = new Kaytava();
+                            kaytava2.Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Avaa();
+                            break;
+                        }
                     case "LAITA LAMPPU PÄÄLLE":
                         lamppu.Päällä();
                         Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
-                        Avaa();
-                        break;
-
+                        if (vastaus == "A")
+                        {
+                            Kaytava kaytava2 = new Kaytava();
+                            kaytava2.Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Avaa();
+                            break;
+                        }
                     case "KYTKE LAMPPU PÄÄLLE":
                         lamppu.Päällä();
                         Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
-                        Avaa();
-                        break;
+                        if (vastaus == "A")
+                        {
+                            Kaytava kaytava2 = new Kaytava();
+                            kaytava2.Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Avaa();
+                            break;
+                        }
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -137,6 +187,13 @@ namespace Peliluokkia
                         Help help = new Help();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        kartta.KutsuKartta();
                         Console.ResetColor();
                         Avaa();
                         break;
