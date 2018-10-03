@@ -178,7 +178,7 @@ namespace Peliluokkia
 
             if (!Inventaario.esineet.Contains("fläppitaulu"))
             {
-                Console.WriteLine("Tarkastelet Torvalds-huonetta taskunlampun valossa.\n" +
+                Console.WriteLine("Tarkastelet Torvalds-huonetta taskulampun valossa.\n" +
                     "Fläppitaulussa oleva teksti paljastuukin hyvin eksplisiittiseksi kuvaksi, jonka seurauksena mieleesi juolahtaa kaksinumeroinen luku. \nKenties tästäkin voisi olla hyötyä... Takanasi on ovi takaisin hissikäytävään (A).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();

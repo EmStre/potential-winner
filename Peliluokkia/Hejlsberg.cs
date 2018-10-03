@@ -34,7 +34,7 @@ namespace Peliluokkia
                 "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
-
+                Game.kassilaskuri--;
                 switch (vastaus)
                 {
                     case "A":

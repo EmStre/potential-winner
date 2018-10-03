@@ -113,8 +113,14 @@ namespace Peliluokkia
 
         public void ValoisaOvi()
         {
+            int kokeilu;
+            
+            //if(kokeilu == 1)
+
+                Console.WriteLine("Otat kassistasi fläppitaulun, vihkon ja CV:n\nNiiden avulla yrität keksiä 7-numeroisen koodin, jonka näppäilet lukon numeronäppäimistöön.\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
+            
 
         }
 
