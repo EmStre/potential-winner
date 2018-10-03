@@ -26,6 +26,10 @@ namespace Peliluokkia
             {
                 esineet.Add(esine);
             }
+            else
+            {
+                Console.WriteLine("Oops, tämä esine on jo kassissasi!");
+            }
         }
 
         public override string ToString()
