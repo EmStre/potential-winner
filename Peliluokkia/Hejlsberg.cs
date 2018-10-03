@@ -97,6 +97,7 @@ namespace Peliluokkia
             {
                 if (Inventaario.esineet.Contains("taskulamppu") && !Inventaario.esineet.Contains("vihko"))
                 {
+                    lamppu = new Hejlsberg();
                     Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
                     "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                     "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n" +
@@ -189,6 +190,7 @@ namespace Peliluokkia
 
                 else if (Inventaario.esineet.Contains("taskulamppu") && Inventaario.esineet.Contains("vihko"))
                 {
+                    lamppu = new Hejlsberg();
                    
                     Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
                    "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
