@@ -9,7 +9,7 @@ namespace Peliluokkia
     public class Hejlsberg : ILamppu
     { 
         string vastaus;
-
+        string esine;
         private bool lamppuPäällä = false;
 
         public bool LamppuPäällä
@@ -24,6 +24,7 @@ namespace Peliluokkia
 
         public void Avaa()
         {
+
             if (Game.kassilaskuri > 0)
             {
                 Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n\n" +
@@ -33,7 +34,6 @@ namespace Peliluokkia
                 "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
-                Game.kassilaskuri--;
 
                 switch (vastaus)
                 {
@@ -75,6 +75,12 @@ namespace Peliluokkia
                         Help help = new Help();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "KARTTA":
+                        Kartta kartta = new Kartta();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -259,10 +265,13 @@ namespace Peliluokkia
                             break;
                     }
                 }
-
             else
             {
-
+                    Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
+                    "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                    "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n");
+                    vastaus = Console.ReadLine();
+                    vastaus = vastaus.ToUpper();
                     switch (vastaus)
                     {
                         case "A":
@@ -341,7 +350,7 @@ namespace Peliluokkia
                 }
             }
         }
-
+        
         public void ValoisaHejsberg()
         {
             lamppuPäällä = true;
@@ -433,7 +442,7 @@ namespace Peliluokkia
             else
             {
                 Console.WriteLine("Taskulampun valossa katselet ympärillessi C#-luokkaa ja näet, että tussitaulut ovat edelleen täynnä mitä erikoisimpia for-looppeja ja if-lauseita,\n" +
-                " joiden syvällisempää tarkoitusta et jää miettimään." + " Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                "joiden syvällisempää tarkoitusta et jää miettimään." + " Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                 "Tunnet edelleen niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -501,7 +510,7 @@ namespace Peliluokkia
                         ValoisaHejsberg();
                         break;
                 }
-                }
+            }
         }
 
 
@@ -534,7 +543,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Vihko lisätty Academy-kassiin.\n");
                         Inventaario inventaario = new Inventaario();
-                        //inventaario.LisaaEsine(esine);
+                        inventaario.LisaaEsine(esine);
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;
@@ -542,7 +551,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Vihko lisätty Academy-kassiin.\n");
                         Inventaario inventaario2 = new Inventaario();
-                        //inventaario2.LisaaEsine(esine);
+                        inventaario2.LisaaEsine(esine);
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;

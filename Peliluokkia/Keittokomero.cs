@@ -124,7 +124,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Helkkarin kiva, juoksevaa vettä ei tule.\n");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "B":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -152,7 +152,7 @@ namespace Peliluokkia
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "AVAA ENSIAPULAUKKU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -190,7 +190,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                 }
                 
@@ -270,7 +270,7 @@ namespace Peliluokkia
                         Inventaario inventaario4 = new Inventaario();
                         Console.WriteLine(inventaario4);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "HALP":
                     case "HELP":
@@ -307,20 +307,20 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "JUO VETTÄ":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "HALP":
                     case "HELP":
@@ -374,26 +374,26 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Kassissasi on jo taskulamppu.\n");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "OTA LAMPPU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Kassissasi on jo taskulamppu.\n");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "LISÄÄ LAMPPU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Kassissasi on jo taskulamppu.\n");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "HALP":
                     case "HELP":
@@ -477,7 +477,7 @@ namespace Peliluokkia
                         Inventaario inventaario4 = new Inventaario();
                         Console.WriteLine(inventaario4);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "HALP":
                     case "HELP":
