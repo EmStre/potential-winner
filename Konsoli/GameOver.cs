@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Konsoli
 {
-    class GameOver
+    public class GameOver
     {
         static void ConsoleDraw(IEnumerable<string> lines, int x, int y)
         {
@@ -38,7 +38,7 @@ namespace Konsoli
                 Console.Write(line.Text);
             }
         }
-        public void KutsuGameOver()
+        public static void KutsuGameOver()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             var arr1 = new[]
@@ -74,7 +74,7 @@ namespace Konsoli
                 Thread.Sleep(100);
             }
             Console.ResetColor();
-            Console.WriteLine("Paina enteriä!");
+            Console.WriteLine("\tPaina enteriä!");
             Console.ReadKey();
         }
     }

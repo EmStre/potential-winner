@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Peliluokkia
 {
@@ -23,6 +19,7 @@ namespace Peliluokkia
                 case "A":
                     Console.WriteLine("Hyvästi julma Academy ja kaiken maailman for-loopit ja boolean-operaattorit!\n");
                     Console.Write("Voitit pelin, hävisit elämän. ");
+                    Game.life--;
                     Thread.Sleep(1000);
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Beep(988, 300);
@@ -31,7 +28,7 @@ namespace Peliluokkia
                     Console.Beep(740, 300);
                     Console.Beep(698, 600);
                     Console.ResetColor();
-                    Console.ReadKey();
+                    Thread.Sleep(1500);
                     break;
                 case "B":
                     Console.WriteLine("Huh helkkari, nyt oli synkkää! Astut ikkunan äärestä takaisin keskelle C#-luokkaa.");
@@ -51,5 +48,6 @@ namespace Peliluokkia
                     break;
             }
         }
+    
     }
 }

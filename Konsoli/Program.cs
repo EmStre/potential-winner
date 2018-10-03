@@ -14,7 +14,7 @@ namespace Konsoli
         {
             Console.WindowHeight = 50;
             Console.WindowWidth = 185;
-            Intro.KutsuIntro();
+            //Intro.KutsuIntro();
             Console.ResetColor();
             Console.BackgroundColor = ConsoleColor.Black;
             Hejlsberg hejlsberg = new Hejlsberg();
@@ -23,13 +23,10 @@ namespace Konsoli
                 "Hetken päästä säpsähdät, kun suuren pamauksen saattelemana valot yhtäkkiä sammuvat ja kannettava tietokoneesi samalla pimenee.\n" +
                 "Istut hetken yllättyneenä pimeässä luokassa ihmetellen tapahtunutta.\n" +
                 "Vilkaiset kännykästäsi kelloa ja toteat sen olevan 23:18. Huomaat samalla kännykän kuuluvuuskentän olevan nollassa.");
-            hejlsberg.Avaa();
-
             Inventaario.esineet.Contains("taskulamppu");
-
-
-
-
+            hejlsberg.Avaa();
+            GameOver.KutsuGameOver();
+            Console.ReadKey();
         }
     }
 }

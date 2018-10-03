@@ -75,7 +75,7 @@ namespace Konsoli
             Console.ResetColor();
             Console.BackgroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("Paina enteriä!");
+            Console.WriteLine("\tPaina enteriä!");
                         Console.ResetColor();
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ReadKey();
