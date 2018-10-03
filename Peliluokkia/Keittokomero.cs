@@ -312,7 +312,8 @@ namespace Peliluokkia
             }
             else if (Inventaario.esineet.Contains("vesipullo") && Inventaario.esineet.Contains("taskulamppu"))
             {
-                Console.WriteLine("Buranapaketissa (A) on onneksi vielä tabuja jäljellä.\n");
+                Console.WriteLine("Buranapaketissa on onneksi vielä tabuja jäljellä. Voit halutessasi ottaa särkylääkkeen ja vettä olisi hyvä olla myös.\n" +
+                    "Voit myös sulkea laukun ja jatkaa keittokomeron (A) tutkimista");
                 komento = Console.ReadLine();
                 komento = komento.ToUpper();
 
@@ -320,9 +321,16 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                        Console.WriteLine("Suljet ensiapulaukun ja seisot edelleen keittokomerossa.\n");
                         Console.ResetColor();
-                        Ensiapulaukku();
+                        Keittokomero keittokomero = new Keittokomero();
+                        keittokomero.Jatka();
+                        break;
+                    case "OTA BURANA":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Nyt on lääke, mutta olikohan sitä vettä missään.\n");
+                        Console.ResetColor();
+                        Jatka();
                         break;
                     case "OTA VESIPULLO":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -381,10 +389,10 @@ namespace Peliluokkia
                         break;
                     case "B":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                        Console.WriteLine("Suljet ensiapulaukun ja seisot edelleen keittokomerossa.\n");
                         Console.ResetColor();
                         Keittokomero keittokomero = new Keittokomero();
-                        keittokomero.Avaa();
+                        keittokomero.Jatka();
                         break;
                     case "OTA VESIPULLO":
                         Console.ForegroundColor = ConsoleColor.Cyan;
