@@ -123,8 +123,6 @@ namespace Peliluokkia
         }
 
 
-
-
         public void ValoisaHuone()
         {
             Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat konsultit ovat pelanneet risti-nollaa ja risteillä pelannut henkilö on voittanut joka kerta. \nVoit halutessasi palata takaisin käytävään (A)");

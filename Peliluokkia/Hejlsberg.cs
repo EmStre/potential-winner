@@ -9,7 +9,7 @@ namespace Peliluokkia
     public class Hejlsberg : ILamppu
     { 
         string vastaus;
-
+        string esine;
         private bool lamppuPäällä = false;
 
         public bool LamppuPäällä
@@ -543,7 +543,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Vihko lisätty Academy-kassiin.\n");
                         Inventaario inventaario = new Inventaario();
-                        //inventaario.LisaaEsine(esine);
+                        inventaario.LisaaEsine(esine);
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;
@@ -551,7 +551,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Vihko lisätty Academy-kassiin.\n");
                         Inventaario inventaario2 = new Inventaario();
-                        //inventaario2.LisaaEsine(esine);
+                        inventaario2.LisaaEsine(esine);
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;

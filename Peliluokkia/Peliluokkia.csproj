@@ -65,6 +65,7 @@
     <Compile Include="Ruokailutila.cs" />
     <Compile Include="Sohvanurkkaus.cs" />
     <Compile Include="Torvalds.cs" />
+    <Compile Include="Varasto-ovi.cs" />
     <Compile Include="Varasto.cs" />
     <Compile Include="WC.cs" />
   </ItemGroup>
