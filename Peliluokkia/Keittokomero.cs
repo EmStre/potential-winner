@@ -53,12 +53,72 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Avaa();
                     break;
+                case "AVAA ENSIAPULAUKKU":
+                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös erään kookkaamman esineen.\n");
+                    Ensiapulaukku();
+                    break;
+                case "TUTKI ENSIAPULAUKKU":
+                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös erään kookkaamman esineen.\n");
+                    Ensiapulaukku();
+                    break;
+                case "AVAA ENSIAPU":
+                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös erään kookkaamman esineen.\n");
+                    Ensiapulaukku();
+                    break;
+                case "AVAA LAUKKU":
+                    Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös erään kookkaamman esineen.\n");
+                    Ensiapulaukku();
+                    break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
                     Console.ResetColor();
                     Avaa();
                     break;
+            }
+        }
+
+        public void Ensiapulaukku()
+        {
+            string komento;
+            string esine = "taskulamppu";
+            Console.WriteLine("Buranapaketissa (A) on onneksi vielä tabuja jäljellä. Voit myös tarkastella tuntematonta esinettä (B) tarkemmin.\n");
+            komento = Console.ReadLine();
+            komento = komento.ToUpper();
+
+            switch(komento)
+            {
+                case "A":
+                    Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                    Ensiapulaukku();
+                    break;
+                case "B":
+                    Console.WriteLine("Hittolainen, löysin taskulampun. Tästä voisi olla vielä hyötyä.\n");
+                    Ensiapulaukku();
+                    break;
+                case "LISÄÄ TASKULAMPPU":
+                    Console.WriteLine("Taskulamppu lisätty Academy-kassiin.\n");
+                    Inventaario inventaario = new Inventaario();
+                    inventaario.LisaaEsine(esine);
+                    Avaa();
+                    break;
+                case "OTA LAMPPU":
+                    Console.WriteLine("Taskuamppu lisätty Academy-kassiin.\n");
+                    Inventaario inventaario2 = new Inventaario();
+                    inventaario2.LisaaEsine(esine);
+                    Avaa();
+                    break;
+                case "LISÄÄ LAMPPU":
+                    Console.WriteLine("LTaskuamppu lisätty Academy-kassiin.\n");
+                    Inventaario inventaario3 = new Inventaario();
+                    inventaario3.LisaaEsine(esine);
+                    Avaa();
+                    break;
+                default:
+                    Console.WriteLine("Epäkelpo valinta.\n");
+                    Ensiapulaukku();
+                    break;
+
             }
         }
     }

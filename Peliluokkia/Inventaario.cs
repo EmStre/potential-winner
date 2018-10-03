@@ -10,7 +10,7 @@ namespace Peliluokkia
     {
         //Inventaario-luokka, lisää löydetyt esineet kassiin
         public string Esine { get; set; }
-        List<string> esineet = new List<string>();
+        public static List<string> esineet = new List<string>();
 
         public Inventaario()
         {

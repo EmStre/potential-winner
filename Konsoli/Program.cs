@@ -21,6 +21,9 @@ namespace Konsoli
                 "Istut hetken yllättyneenä pimeässä luokassa ihmetellen tapahtunutta.\n" +
                 "Vilkaiset kännykästäsi kelloa ja toteat sen olevan 23:18. Huomaat samalla kännykän kuuluvuuskentän olevan nollassa.");
             hejlsberg.Avaa();
+
+
+
         }
     }
 }
