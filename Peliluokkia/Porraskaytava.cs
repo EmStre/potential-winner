@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Peliluokkia
 {
@@ -22,6 +23,16 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Lähdet kävelemään portaita alas kelmeän vihertävässä valossa.\n");
                     Console.ResetColor();
+                    Thread.Sleep(600);
+                    Console.WriteLine("...viides kerros...\n");
+                    Thread.Sleep(600);
+                    Console.WriteLine("...neljäs kerros...\n");
+                    Thread.Sleep(600);
+                    Console.WriteLine("...kolmas kerros...\n");
+                    Thread.Sleep(600);
+                    Console.WriteLine("...toinen kerros...\n");
+                    Thread.Sleep(600);
+                    Console.WriteLine("...ja ensimmäinen kerros.\n");
                     PorraskaytavaAlaovi porraskaytavaAlaovi = new PorraskaytavaAlaovi();
                     porraskaytavaAlaovi.Avaa();
                     break;
