@@ -36,58 +36,117 @@ namespace Peliluokkia
 
         public void Avaa()
         {
-            Console.WriteLine("Varasto on pilkkopimeä ja täynnä viinalaatikoita. Pimeässä on hankala lähteä etenemään.\n" +
+            if (sahkoPaalla == false) {
+
+                Console.WriteLine("Varasto on pilkkopimeä ja täynnä viinalaatikoita. Pimeässä on hankala lähteä etenemään.\n" +
                 "Muistat, että sähkökaappi löytyy varaston perältä! Olisikohan siellä sellainen varavirtakytkin kuten leffoissa." +
                 "Voit myös poistua takaisin käytävälle (A).");
-            vastaus = Console.ReadLine();
-            vastaus = vastaus.ToUpper();
+                vastaus = Console.ReadLine();
+                vastaus = vastaus.ToUpper();
 
-            if (Inventaario.esineet.Contains("taskulamppu"))
-            {
-
-                switch (vastaus)
+                if (Inventaario.esineet.Contains("taskulamppu"))
                 {
-                    case "TASKULAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaVarasto();
-                        break;
-                    case "LAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaVarasto();
-                        break;
-                    case "AVAA LAMPPU":
-                        lamppu.Päällä();
-                        ValoisaVarasto();
-                        break;
-                    case "LAITA LAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaVarasto();
-                        break;
-                    case "KYTKE LAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaVarasto();
-                        break;
-                    case "A":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Astut takaisin käytävään.\n");
-                        Console.ResetColor();
-                        Kaytava kaytava = new Kaytava();
-                        kaytava.Avaa();
-                        break;
-                    case "KASSI":
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Inventaario inventaario = new Inventaario();
-                        Console.WriteLine(inventaario);
-                        Console.ResetColor();
-                        Avaa();
-                        break;
-                    default:
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Epäkelpo valinta.\n");
-                        Console.ResetColor();
-                        Avaa();
-                        break;
+
+                    switch (vastaus)
+                    {
+                        case "TASKULAMPPU PÄÄLLE":
+                            lamppu.Päällä();
+                            ValoisaVarasto();
+                            break;
+                        case "LAMPPU PÄÄLLE":
+                            lamppu.Päällä();
+                            ValoisaVarasto();
+                            break;
+                        case "AVAA LAMPPU":
+                            lamppu.Päällä();
+                            ValoisaVarasto();
+                            break;
+                        case "LAITA LAMPPU PÄÄLLE":
+                            lamppu.Päällä();
+                            ValoisaVarasto();
+                            break;
+                        case "KYTKE LAMPPU PÄÄLLE":
+                            lamppu.Päällä();
+                            ValoisaVarasto();
+                            break;
+                        case "A":
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Astut takaisin käytävään.\n");
+                            Console.ResetColor();
+                            Kaytava kaytava = new Kaytava();
+                            kaytava.Avaa();
+                            break;
+                        case "KASSI":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Inventaario inventaario = new Inventaario();
+                            Console.WriteLine(inventaario);
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        default:
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Epäkelpo valinta.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                    }
+
                 }
+                else
+                {
+                    switch (vastaus)
+                    {
+                        case "TASKULAMPPU PÄÄLLE":
+                            Console.WriteLine("Sinulla ei ole taskulamppua.");
+                            Avaa();
+                            break;
+                        case "LAMPPU PÄÄLLE":
+                            Console.WriteLine("Sinulla ei ole taskulamppua.");
+                            Avaa();
+                            break;
+                        case "AVAA LAMPPU":
+                            Console.WriteLine("Sinulla ei ole taskulamppua.");
+                            Avaa();
+                            break;
+                        case "LAITA LAMPPU PÄÄLLE":
+                            Console.WriteLine("Sinulla ei ole taskulamppua.");
+                            Avaa();
+                            break;
+                        case "KYTKE LAMPPU PÄÄLLE":
+                            Console.WriteLine("Sinulla ei ole taskulamppua.");
+                            Avaa();
+                            break;
+                        case "A":
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Astut takaisin käytävään.\n");
+                            Console.ResetColor();
+                            Kaytava kaytava = new Kaytava();
+                            kaytava.Avaa();
+                            break;
+                        case "KASSI":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Inventaario inventaario = new Inventaario();
+                            Console.WriteLine(inventaario);
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        default:
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Epäkelpo valinta.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                    }
+                }
+                
+            } else 
+            {
+                Console.WriteLine("On tämä saatana työmaa, mutta onneksi näkee jo eteensä. Tekee mieli kahvia ja sit on pakko yrittää kyllä päästä viimein pois täältä.");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("Astut takaisin käytävälle.\n");
+                Console.ResetColor();
+                Kaytava kaytava = new Kaytava();
+                kaytava.Avaa();
             }
         }
 
@@ -101,9 +160,27 @@ namespace Peliluokkia
             {
                 case "SÄHKÖT PÄÄLLE":
                     sahkot.SahkotPaalla();
-
+                    Avaa();
                     break;
-                     
+                case "LAITA SÄHKÖT PÄÄLLE":
+                    sahkot.SahkotPaalla();
+                    Avaa();
+                    break;
+                case "AVAA SÄHKÖT":
+                    sahkot.SahkotPaalla();
+                    Avaa();
+                    break;
+                case "KYTKE SÄHKÖT":
+                    sahkot.SahkotPaalla();
+                    Avaa();
+                    break;
+                default:
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Epäkelpo valinta.\n");
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+
             }
         }
 
