@@ -8,7 +8,7 @@ namespace Peliluokkia
 {
     //Avaa-metodi pohjautuen muihin huoneisiin -ES
 
-    public class Jobs
+    public class Jobs : ILamppu
     {
         //Avaa-metodi pohjautuen muihin huoneisiin -ES Lisätty lamppu rajapinnan toteutus
         string vastaus;
@@ -101,6 +101,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Siirryt takaisin käytävään.");
                         Kaytava kaytava = new Kaytava();
+                        lamppu.PoisPäältä();
                         kaytava.Avaa();
                         break;
                     case "LAMPPU PÄÄLLE":

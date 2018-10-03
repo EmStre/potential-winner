@@ -6,9 +6,21 @@ using System.Threading.Tasks;
 
 namespace Peliluokkia
 {
-    public class Hejlsberg
+    public class Hejlsberg: ILamppu
     {
         string vastaus;
+
+        private bool lamppuPäällä = false;
+
+        public bool LamppuPäällä
+        {
+            get
+            {
+                return lamppuPäällä;
+            }
+        }
+
+
         public void Avaa()
         {
             Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n\n" +
@@ -60,6 +72,20 @@ namespace Peliluokkia
                     Avaa();
                     break;
             }
+        }
+
+        public void PoisPäältä()
+        {
+            lamppuPäällä = false;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Taskulamppu sammui");
+        }
+
+        public void Päällä()
+        {
+            lamppuPäällä = true;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Taskulamppu on päällä");
         }
     }
 }

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Peliluokkia
 {
 
     //Avaa-metodi pohjautuen muihin huoneisiin -ES
-    public class Hopper
+    public class Hopper: ILamppu
     {
         //Avaa-metodi pohjautuen muihin huoneisiin -ES Lisätty lamppu rajapinnan toteutus ja tarkistus, onko pelaajalla lammpua.
         string vastaus;
@@ -119,6 +120,7 @@ namespace Peliluokkia
                 case "A":
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Siirryt takaisin käytävään.");
+                    lamppu.PoisPäältä();
                     kaytava.Avaa();
                     break;
                 case "SAMMUTA LAMPPU":
@@ -126,9 +128,17 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "YODA":
+                    lamppu.PoisPäältä();
+                    Console.WriteLine("Pimeässä huoneessa kuuluu kummia...");
+                    Thread.Sleep(1000);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
                     Console.WriteLine("'Patience you must have, my young padawan.'");
+                    Thread.Sleep(1000);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
                     Console.WriteLine("'Clear your mind must be, if you are to find the villains behind this plot.'");
-                    Console.WriteLine("Nämä syvälliset ajatukset antavat sinulle ajattelemisen aihetta ja samalla työntävät sinut takaisin käytävään.");
+                    Thread.Sleep(1000);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Nämä syvälliset sanat antavat sinulle ajattelemisen (ja ehkä vähän huolen) aihetta ja samalla työnnyt takaisin käytävään.");
                     kaytava.Avaa();
                     break;
                 default:
