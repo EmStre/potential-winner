@@ -74,11 +74,23 @@ namespace Peliluokkia
                     Avaa();
                     break;
                 case "I":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Yllätykseksesi huomaat, että varaston ovi on lukittu ja siinä on koodilukko.\n");
-                    Console.ResetColor();
-                    VarastoOvi ovi = new VarastoOvi();
-                    ovi.Avaa();
+                    if (Game.varastonOvi == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Yllätykseksesi huomaat, että varaston ovi on lukittu ja siinä on koodilukko.\n");
+                        Console.ResetColor();
+                        VarastoOvi ovi = new VarastoOvi();
+                        ovi.Avaa();
+                    }
+                    else if (Game.varastonOvi == true)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt varastoon\n");
+                        Console.ResetColor();
+                        Varasto varasto = new Varasto();
+                        varasto.Avaa();
+                        break;
+                    }
                     break;
                 case "H":
                     Console.ForegroundColor = ConsoleColor.Cyan;

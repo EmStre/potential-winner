@@ -33,7 +33,7 @@ namespace Peliluokkia
             lamppu = new VarastoOvi();
             if(Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu"))
             {
-                Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joiden avulla voit saada oven auki...\nOn kuitenkin melko pimeää etkä näe näppäillä numeroita!\nVoit toki halutessasi palata" +
+                Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joiden avulla voit saada oven auki...\nOn kuitenkin melko pimeää etkä näe näppäillä numeroita!\nVoit toki halutessasi palata\n" +
                     "tutkimaan käytävää (A).");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -133,13 +133,15 @@ namespace Peliluokkia
 
             if (kokeilu == 1)
             {
-                Console.WriteLine("Otat kassistasi fläppitaulun, vihkon ja CV:n\nNiiden avulla yrität keksiä 7-numeroisen koodin, jonka näppäilet lukon numeronäppäimistöön.\nHUOM! Järjestyksellä on väliä!\n");
+                Console.WriteLine("Otat kassistasi fläppitaulun, vihkon ja CV:n\n" +
+                    "Niiden avulla yrität keksiä 7-numeroisen koodin, jonka näppäilet lukon numeronäppäimistöön.\nHUOM! Järjestyksellä on väliä!\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
                 {
                     case "6910542":
                         Console.WriteLine("Tosi hyvä!! Ovi on auki!\n");
+                        Game.varastonOvi = true;
                         lamppu.PoisPäältä();
                         Varasto varasto = new Varasto();
                         varasto.Avaa();
@@ -211,7 +213,6 @@ namespace Peliluokkia
                         ValoisaOvi();
                         break;
                 }
-
             }
             else if (kokeilu <10)
             {
@@ -222,9 +223,14 @@ namespace Peliluokkia
                 {
                     case "6910542":
                         Console.WriteLine("Tosi hyvä!! Ovi on auki!\n");
+                        Game.varastonOvi = true;
                         lamppu.PoisPäältä();
                         Varasto varasto = new Varasto();
                         varasto.Avaa();
+                        break;
+                    case "666":
+                        Console.WriteLine("Hyvä yritys...\n");
+                        Console.ReadLine();
                         break;
                     case "SAMMUTA VALO":
                     case "SAMMUTA TASKULAMPPU":
@@ -245,7 +251,7 @@ namespace Peliluokkia
                     case "LUE FLÄPPITAULU":
                     case "FLÄPPITAULU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Tutkit punastellen fläppitaulua, jolloin kuvan aiemmin mieleesi tuoma kaskisnumeroinen luku palaa ajatuksiisi.\n");
+                        Console.WriteLine("Tutkit punastellen fläppitaulua, jolloin kuvan aiemmin mieleesi tuoma kaksinumeroinen luku palaa ajatuksiisi.\n");
                         Console.ResetColor();
                         ValoisaOvi();
                         break;
@@ -304,9 +310,14 @@ namespace Peliluokkia
                 {
                     case "6910542":
                         Console.WriteLine("Tosi hyvä!! Ovi on auki!\n");
+                        Game.varastonOvi = true;
                         lamppu.PoisPäältä();
                         Varasto varasto = new Varasto();
                         varasto.Avaa();
+                        break;
+                    case "666":
+                        Console.WriteLine("Hyvä yritys...\n");
+                        Console.ReadLine();
                         break;
                     case "SAMMUTA VALO":
                     case "SAMMUTA TASKULAMPPU":

@@ -31,7 +31,7 @@ namespace Peliluokkia
                 Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n\n" +
                 "Kätesi ulottuvilla on Academyn kangaskassi. Päätät pitää sen, jotta voit säilyttää siellä tavaroitasi.\n" +
                 "Joten kuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
-                "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n" +
+                "Tunnet niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n" +
                 "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -120,7 +120,7 @@ namespace Peliluokkia
                     lamppu = new Hejlsberg();
                     Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
                     "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
-                    "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n" +
+                    "Tunnet niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n" +
                     "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
                     vastaus = Console.ReadLine();
                     vastaus = vastaus.ToUpper();
@@ -219,7 +219,7 @@ namespace Peliluokkia
                    
                     Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
                    "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
-                   "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n");
+                   "Tunnet niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n");
                     vastaus = Console.ReadLine();
                     vastaus = vastaus.ToUpper();
                     switch (vastaus)
@@ -300,7 +300,7 @@ namespace Peliluokkia
             {
                     Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
                     "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
-                    "Tunnet niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n");
+                    "Tunnet niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n");
                     vastaus = Console.ReadLine();
                     vastaus = vastaus.ToUpper();
                     switch (vastaus)
@@ -388,26 +388,22 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Avaa();
                             break;
-
                     }
                 }
             }
         }
-        
         public void ValoisaHejsberg()
         {
             lamppuPäällä = true;
             lamppu = new Hejlsberg();
-
-            if(!Inventaario.esineet.Contains("vihko"))
-            { 
-            Console.WriteLine("Taskulampun valossa katselet ympärillessi C#-luokkaa ja näet, että tussitaulut ovat täynnä mitä erikoisimpia for-looppeja ja if-lauseita,\n" +
-                " joiden syvällisempää tarkoitusta et jää miettimään." + " Huomiosi kiinnittyy pöydällä olevaan vihkoon.\n" + " Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
-                "Tunnet edelleen niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n");
-            vastaus = Console.ReadLine();
-            vastaus = vastaus.ToUpper();
-              
-
+            if (!Inventaario.esineet.Contains("vihko"))
+            {
+                Console.WriteLine("Taskulampun valossa katselet ympärillessi C#-luokkaa ja näet, että tussitaulut ovat täynnä mitä erikoisimpia for-looppeja ja if-lauseita,\n" +
+                    "joiden syvällisempää tarkoitusta et jää miettimään." + " Huomiosi kiinnittyy pöydällä olevaan vihkoon.\n" + 
+                    "Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                    "Tunnet edelleen niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n");
+                vastaus = Console.ReadLine();
+                vastaus = vastaus.ToUpper();
                 switch (vastaus)
                 {
                     case "A":
@@ -487,7 +483,7 @@ namespace Peliluokkia
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.WriteLine("Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia");
+                            Console.Write("Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia");
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine(" <3 <3 ");
                             Console.ResetColor();
@@ -508,13 +504,12 @@ namespace Peliluokkia
                         ValoisaHejsberg();
                         break;
                 }
-
             }
             else
             {
                 Console.WriteLine("Taskulampun valossa katselet ympärillessi C#-luokkaa ja näet, että tussitaulut ovat edelleen täynnä mitä erikoisimpia for-looppeja ja if-lauseita,\n" +
                 "joiden syvällisempää tarkoitusta et jää miettimään." + " Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
-                "Tunnet edelleen niskassasi tuulenvireen takanasi auki olevata ikkunasta (D).\n");
+                "Tunnet edelleen niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -609,8 +604,6 @@ namespace Peliluokkia
                 }
             }
         }
-
-
         public void PoisPäältä()
         {
             lamppuPäällä = false;
@@ -618,7 +611,6 @@ namespace Peliluokkia
             Console.WriteLine("Taskulamppu sammui");
             Console.ResetColor();
         }
-
         public void Päällä()
         {
             lamppuPäällä = true;
@@ -626,12 +618,11 @@ namespace Peliluokkia
             Console.WriteLine("Taskulamppu on päällä\n");
             Console.ResetColor();
         }
-
-
         public void Vihko()
         {
             Console.Write("Selatessasi vihkoa ymmärrät, ettei sen omistaja ole kovin ahkera muistiinpanojen kirjoittaja.\nToisaalta koodaamaan oppii koodaamaalla, eikä muistiinpanoja tekemällä...\n\n" +
-                "Yhdelle sivulle on kirjoitettu isoilla kirjaimilla sana 'VIREYTYMINEN'\nja mieleesi palaa eräs huippuhyödyllinen vuorovaikutuskoulutus ja huomaat olevasi erityisen vireytynyt juuri nyt, yrittäessäsi löytää ulospääsyä tästä rakennuksesta.\n\n" +
+                "Yhdelle sivulle on kirjoitettu isoilla kirjaimilla sana 'VIREYTYMINEN'\n" +
+                "ja mieleesi palaa eräs huippuhyödyllinen vuorovaikutuskoulutus ja huomaat olevasi erityisen vireytynyt juuri nyt, yrittäessäsi löytää ulospääsyä tästä rakennuksesta.\n\n" +
                 "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n" +
                 "Onpa merkillistä! Mietit, että ");
             Console.ForegroundColor = ConsoleColor.Cyan;

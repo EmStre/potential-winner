@@ -27,6 +27,7 @@ namespace Peliluokkia
 
         public static int buranaLaskuri = 0;
         public static int vesiHuikat = 0;
+        public static bool varastonOvi = false;
 
     }
 }

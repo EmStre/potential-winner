@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Peliluokkia
 {
@@ -29,8 +30,18 @@ namespace Peliluokkia
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Sihautat pullon auki ja nautit ravitsevan virvokkeen.\n");
-                        Console.ResetColor();
                         Game.olutlaskuri--;
+                        if (Game.olutlaskuri == 0)
+                        {
+                            Thread.Sleep(1000);
+                            Console.WriteLine("...hik!");
+                        }
+                        else if (Game.olutlaskuri>0)
+                        {
+                            Thread.Sleep(1000);
+                            Console.WriteLine("...aaahh...");
+                        }
+                        Console.ResetColor();
                         Game.oluet++;
                         Avaa();
                         break;
@@ -89,7 +100,7 @@ namespace Peliluokkia
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Täällä tuskin kannattaa kuluttaa rajallista akkua taskulampussa...\n");
+                            Console.WriteLine("Täällä tuskin kannattaa kuluttaa lampun rajallista akkua...\n");
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -188,6 +199,7 @@ namespace Peliluokkia
                     case "LAMPPU PÄÄLLE":
                     case "SYTYTÄ LAMPPU":
                     case "AVAA LAMPPU":
+                    case "LAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
                     case "SYTYTÄ TASKULAMPPU":
                     case "AVAA TASKULAMPPU":
@@ -299,7 +311,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle jämäkän espresson. Puhaltelet kahvia viileämmäksi, huitaiset kupillisen kerralla huiviin ja tunnet, kuinka kofeiini virkistää väsyneitä aivojasi.\n");
                         Console.ResetColor();
-                        Game.kahvipavut=-2;
+                        Game.kahvipavut-=2;
                         Game.juodutKahvit++;
                         Kahvihetki();
                     }
@@ -354,7 +366,7 @@ namespace Peliluokkia
                         Console.WriteLine("Mikä hitto edes on Red Eye? No, kokeillaan.\n" +
                             "Kone ruksuttaa hetken ja puskee sinulle kahvin ja siihen perään vielä espresson. Pärisee!\n");
                         Console.ResetColor();
-                        Game.kahvipavut=-3;
+                        Game.kahvipavut-=3;
                         Game.juodutKahvit++;
                         Kahvihetki();
                     }
@@ -458,7 +470,6 @@ namespace Peliluokkia
                     Kahvihetki();
                     break;
             }
-
         }
         public void KahvihetkiJaKaljaa()
         {
@@ -531,7 +542,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle jämäkän espresson. Puhaltelet kahvia viileämmäksi, huitaiset kupillisen kerralla huiviin ja tunnet, kuinka kofeiini piristää.\n");
                         Console.ResetColor();
-                        Game.kahvipavut=-2;
+                        Game.kahvipavut-=2;
                         Game.juodutKahvit++;
                         KahvihetkiJaKaljaa();
                     }
@@ -586,7 +597,7 @@ namespace Peliluokkia
                         Console.WriteLine("Mikä hitto edes on Red Eye? No, kokeillaan.\n" +
                             "Kone ruksuttaa hetken ja puskee sinulle kahvin ja siihen perään vielä espresson. Pärisee!\n");
                         Console.ResetColor();
-                        Game.kahvipavut=-3;
+                        Game.kahvipavut-=3;
                         Game.juodutKahvit++;
                         KahvihetkiJaKaljaa();
                     }
@@ -690,7 +701,6 @@ namespace Peliluokkia
                     KahvihetkiJaKaljaa();
                     break;
             }
-
         }
     }
 }
