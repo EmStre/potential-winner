@@ -68,6 +68,7 @@
     <Compile Include="Varasto-ovi.cs" />
     <Compile Include="Varasto.cs" />
     <Compile Include="WC.cs" />
+    <Compile Include="Winner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="esineet.txt" />
