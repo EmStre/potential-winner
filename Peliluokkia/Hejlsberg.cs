@@ -119,7 +119,7 @@ namespace Peliluokkia
                 {
                     lamppu = new Hejlsberg();
                     Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
-                    "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                    "Joten kuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                     "Tunnet niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n" +
                     "Tuuli saa pöydällä olevan vihkon sivut lepattamaan äänekkäästi.");
                     vastaus = Console.ReadLine();
@@ -218,7 +218,7 @@ namespace Peliluokkia
                     lamppu = new Hejlsberg();
                    
                     Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
-                   "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                   "Joten kuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                    "Tunnet niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n");
                     vastaus = Console.ReadLine();
                     vastaus = vastaus.ToUpper();
@@ -299,7 +299,7 @@ namespace Peliluokkia
             else
             {
                     Console.WriteLine("C#-ryhmän luokka on tyhjä ja hämärä, lähes täysin pimeä.\n" +
-                    "Jotenkuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                    "Joten kuten erotat valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                     "Tunnet niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n");
                     vastaus = Console.ReadLine();
                     vastaus = vastaus.ToUpper();
@@ -484,7 +484,7 @@ namespace Peliluokkia
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia.\n");
+                            Console.WriteLine("Pyyhit parit sulut pois. Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia.\n");
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine(" <3 <3 \n");
                             Console.ResetColor();
@@ -509,7 +509,8 @@ namespace Peliluokkia
             else
             {
                 Console.WriteLine("Taskulampun valossa katselet ympärillessi C#-luokkaa ja näet, että tussitaulut ovat edelleen täynnä mitä erikoisimpia for-looppeja ja if-lauseita,\n" +
-                "joiden syvällisempää tarkoitusta et jää miettimään." + " Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                "joiden syvällisempää tarkoitusta et jää miettimään.\n" +
+                "Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                 "Tunnet edelleen niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
