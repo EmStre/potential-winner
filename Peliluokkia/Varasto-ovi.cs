@@ -33,7 +33,7 @@ namespace Peliluokkia
             lamppu = new VarastoOvi();
             if(Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu"))
             {
-                Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joden avulla voit saada oven auki.. On kuitenkin melko pimeää!\nVoit toki halutessasi palata" +
+                Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joiden avulla voit saada oven auki...\nOn kuitenkin melko pimeää etkä näe näppäillä numeroita!\nVoit toki halutessasi palata" +
                     "tutkimaan käytävää (A).");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -86,7 +86,7 @@ namespace Peliluokkia
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.WriteLine("Epäkelpo valinta. Huomaathan, että koodilukko ei toimi pimeässä.\n");
                         Console.ResetColor();
                         Jatka();
                         break;
@@ -137,7 +137,7 @@ namespace Peliluokkia
                 switch (vastaus)
                 {
                     case "6910542":
-                        Console.WriteLine("Tosi hyvä!! Ovi on auki!");
+                        Console.WriteLine("Tosi hyvä!! Ovi on auki!\n");
                         lamppu.PoisPäältä();
                         Varasto varasto = new Varasto();
                         varasto.Avaa();
@@ -219,11 +219,11 @@ namespace Peliluokkia
                 switch (vastaus)
                 {
                     case "6910542":
+                        Console.WriteLine("Tosi hyvä!! Ovi on auki!\n");
                         lamppu.PoisPäältä();
                         Varasto varasto = new Varasto();
                         varasto.Avaa();
                         break;
-
                     case "SAMMUTA VALO":
                     case "SAMMUTA TASKULAMPPU":
                     case "SAMMUTA LAMPPU":
@@ -301,6 +301,7 @@ namespace Peliluokkia
                 switch (vastaus)
                 {
                     case "6910542":
+                        Console.WriteLine("Tosi hyvä!! Ovi on auki!\n");
                         lamppu.PoisPäältä();
                         Varasto varasto = new Varasto();
                         varasto.Avaa();

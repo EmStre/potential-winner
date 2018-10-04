@@ -230,9 +230,9 @@ namespace Peliluokkia
             {
                 Console.WriteLine("Tarkastelet Torvalds-huonetta taskulampun valossa.\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write("Fläppitaulussa");
+                Console.Write("Fläppitaulussa ");
                 Console.ResetColor();
-                Console.WriteLine("oleva teksti paljastuukin hyvin rivoksi, kahta henkilöä esittäväksi kuvaksi, jonka seurauksena mieleesi juolahtaa kaksinumeroinen luku. \n" +
+                Console.WriteLine("oleva teksti paljastuukin hyvin rivoksi, kahta henkilöä esittäväksi kuvaksi, jonka seurauksena mieleesi juolahtaa kaksinumeroinen luku.\n" +
                     "Kenties tästäkin voisi olla hyötyä... Takanasi on ovi takaisin hissikäytävään (A).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();

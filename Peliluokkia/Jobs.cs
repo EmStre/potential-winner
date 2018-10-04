@@ -25,7 +25,7 @@ namespace Peliluokkia
         }
         public void Avaa()
         {
-            Console.WriteLine("Astut sisään Pixarin perustajan mukaan nimettyyn Jobs-huoneeseen.\nPimeässä näet fläppitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. \nVoit halutessasi palata takaisin käytävään (A).\n");
+            Console.WriteLine("Astut sisään Pixarin perustajan mukaan nimettyyn Jobs-huoneeseen.\nPimeässä näet fläppitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä.\nVoit halutessasi palata takaisin käytävään (A).\n");
             Jatka();
         }
         public void Jatka()
@@ -34,7 +34,7 @@ namespace Peliluokkia
             laskuri++;
             if (laskuri != 1)
             {
-                Console.WriteLine("Olet (B)Jobs-huoneessa.\nPimeässä näet fläppitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. \nVoit halutessasi palata takaisin käytävään (A).");
+                Console.WriteLine("Olet (B)Jobs-huoneessa.\nPimeässä näet fläppitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. \nVoit halutessasi palata takaisin käytävään (A).\n");
             }
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -58,7 +58,7 @@ namespace Peliluokkia
                     case "LAMPPU":
                         lamppu.Päällä();
                         Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvia. Silmiisi sattuu... \n" +
-                            "Voit halutessasi palata takaisin käytävään (A)");
+                            "Voit halutessasi palata takaisin käytävään (A)\n");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();

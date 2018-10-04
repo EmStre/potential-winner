@@ -92,19 +92,19 @@ namespace Peliluokkia
                     }
                 case "PISSAA":
                 case "KÄY VESSASSA":
-                    
+                case "KÄY PISSALLA":
                     int juomat = (3 - Game.olutlaskuri + Game.juodutKahvit);
                     juomat = juomat - Game.nollaa;
                         if(juomat >= 3)
                         {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Tässähän olikin jo kova hätä!!");
+                        Console.WriteLine("Tässähän olikin jo kova hätä!!\n");
                         Console.ResetColor();
                     }
                         else
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Kaverilla on vähän pienempi rakko! Ei kai siinä...");
+                        Console.WriteLine("Kaverilla on vähän pienempi rakko! Ei kai siinä...\n");
                         Console.ResetColor();
                     }
                     Game.nollaa = juomat;
@@ -161,6 +161,48 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(help);
                     Console.ResetColor();
+                    Avaa();
+                    break;
+                case "LAMPPU PÄÄLLE":
+                case "SYTYTÄ LAMPPU":
+                case "AVAA LAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                case "SYTYTÄ TASKULAMPPU":
+                case "AVAA TASKULAMPPU":
+                    if (!Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Taskulamppu syttyy, jolloin näet, että WC-tila on törkysessä kunnossa. Mietitkin sisään astuessasi, että siellä haisi kovin pahalta\nPäätät sulkea lampun saman tien.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    }
+                case "PISSAA":
+                case "KÄY VESSASSA":
+                case "KÄY PISSALLA":
+                    int juomat = (3 - Game.olutlaskuri + Game.juodutKahvit);
+                    juomat = juomat - Game.nollaa;
+                    if (juomat >= 3)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Tässähän olikin jo kova hätä!!\n");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kaverilla on vähän pienempi rakko! Ei kai siinä...\n");
+                        Console.ResetColor();
+                    }
+                    Game.nollaa = juomat;
                     Avaa();
                     break;
                 case "H-HELP":
