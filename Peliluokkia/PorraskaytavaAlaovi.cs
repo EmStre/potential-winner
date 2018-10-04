@@ -192,7 +192,7 @@ namespace Peliluokkia
                         Console.WriteLine("Sinulla ei ole lamppua.\n");
                     }
                     Console.ResetColor();
-                    Avaa();
+                    Jatka();
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
