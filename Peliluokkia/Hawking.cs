@@ -110,7 +110,11 @@ namespace Peliluokkia
             {
                 if (!Inventaario.esineet.Contains("CV"))
                 {
-                    Console.WriteLine("Kompastalet lattialla lojuvaan möykkyyn. Pääset pimeästä Hawking-luokasta hissikäytävään (A) tai C#-luokkaan (B).\n");
+                    Console.Write("Kompastalet lattialla lojuvaan ");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("möykkyyn. ");
+                    Console.ResetColor();
+                    Console.WriteLine("Pääset pimeästä Hawking-luokasta hissikäytävään (A) tai C#-luokkaan (B).\n");
                     vastaus = Console.ReadLine();
                     vastaus = vastaus.ToUpper();
                     switch (vastaus)
@@ -261,7 +265,11 @@ namespace Peliluokkia
             lamppuPäällä = true;
             if (!Inventaario.esineet.Contains("CV"))
             {
-                Console.WriteLine("Nyt on valoisaa ja näet möykyn selvästi lattialla. Pääset Hawking-luokasta hissikäytävään (A) tai C#-luokkaan (B).\n");
+                Console.Write("Nyt on valoisaa ja näet ");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("möykyn. ");
+                Console.ResetColor();
+                Console.WriteLine("Pääset Hawking-luokasta hissikäytävään(A) tai C#-luokkaan (B).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)

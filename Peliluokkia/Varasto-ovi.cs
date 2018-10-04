@@ -34,7 +34,7 @@ namespace Peliluokkia
             lamppu = new VarastoOvi();
             if(Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu"))
             {
-                Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joiden avulla voit saada oven auki...\nOn kuitenkin melko pimeää etkä näe näppäillä numeroita!\nVoit toki halutessasi palata\n" +
+                Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joiden avulla voit saada oven auki...\nOn kuitenkin melko PIMÄÄ etkä näe näppäillä numeroita!\nVoit toki halutessasi palata " +
                     "tutkimaan käytävää (A).");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
