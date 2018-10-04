@@ -152,6 +152,10 @@ namespace Peliluokkia
                         lamppu.PoisPäältä();
                         Jatka();
                         break;
+                    case "666":
+                        Console.WriteLine("Hyvä yritys...\n");
+                        Console.ReadLine();
+                        break;
                     case "OTA VIHKO":
                     case "LUE VIHKO":
                     case "VIHKO":
@@ -216,7 +220,7 @@ namespace Peliluokkia
             }
             else if (kokeilu <10)
             {
-                Console.WriteLine("Koodi oli väärin, yritä uudelleen! (7-numeroinen koodi)\n)");
+                Console.WriteLine("Koodi oli väärin, yritä uudelleen! (7-numeroinen koodi)\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
