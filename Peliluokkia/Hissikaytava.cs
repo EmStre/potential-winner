@@ -12,7 +12,7 @@ namespace Peliluokkia
         public void Avaa()
         {
             Console.WriteLine("Hissikäytävällä sijaitsevien kahden hissin ovet (A) seisovat varsin järkähtämättömän oloisina kiinni.\n" +
-                "Vieressäsi ovat ovet Torvalds-huoneeseen (B), , Java-ryhmän Hawking-luokkaan (C) ja pikkuvessaan (D).\n" +
+                "Vieressäsi ovat ovet Torvalds-huoneeseen (B), Java-ryhmän Hawking-luokkaan (C) ja pikkuvessaan (D).\n" +
                 "Lisäksi voit halutessasi siirtyä sohvanurkkaan (E) tai ruokailutilaan (F)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
@@ -90,7 +90,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         if (Inventaario.esineet.Contains("taskulamppu"))
                         {
-                            Console.WriteLine("Taskulamppu välähtää, mutta koska se on älykäs, se ymmärtää, ettet oikeasti halua käyttää sitä hissikäytävässä ja sammuu...\n");
+                            Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
                         }
                         else
                         {

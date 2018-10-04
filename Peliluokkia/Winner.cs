@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Peliluokkia
 {
-    class Winner
+    public class Winner
     {
             static void ConsoleDraw(IEnumerable<string> lines, int x, int y)
             {
@@ -38,7 +38,7 @@ namespace Peliluokkia
                     Console.Write(line.Text);
                 }
             }
-            public void KutsuWinner()
+            public static void KutsuWinner()
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 var arr1 = new[]
