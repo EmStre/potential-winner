@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace Peliluokkia
 {
     class Keittokomero
-
     {
         string vastaus;
         public void Avaa()
@@ -15,7 +14,6 @@ namespace Peliluokkia
             Console.WriteLine("Hapuilet pimeässä tiskipöydän luo. Pöydältä erottuu esine, jonka tunnistat ensiapulaukuksi. Kädelläsi tavoitat myös vesihanan.\n");
             Jatka();
         }
-
         public void Jatka()
         {
             if (!Inventaario.esineet.Contains("taskulamppu"))
@@ -83,24 +81,16 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "OTA LAUKKU":
+                    case "OTA ENSIAPULAUKKU":
+                    case "LISÄÄ LAUKKU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla on jo hieno Academy-kassi, miksi vaihtaisit sen tähän? Löydät ensiapulaukun täältä jatkossakin.\n");
+                        Console.ResetColor();
+                        break;
                     case "AVAA ENSIAPULAUKKU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
-                        Console.ResetColor();
-                        Ensiapulaukku();
-                        break;
-                    case "TUTKI ENSIAPULAUKKU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
-                        Console.ResetColor();
-                        Ensiapulaukku();
-                        break;
+                    case "TUTKI ENSIAPULAUKKU":                       
                     case "AVAA ENSIAPU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
-                        Console.ResetColor();
-                        Ensiapulaukku();
-                        break;
                     case "AVAA LAUKKU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
@@ -208,24 +198,16 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "OTA LAUKKU":
+                    case "OTA ENSIAPULAUKKU":
+                    case "LISÄÄ LAUKKU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla on jo hieno Academy-kassi, miksi vaihtaisit sen tähän? Löydät ensiapulaukun täältä jatkossakin.\n");
+                        Console.ResetColor();
+                        break;
                     case "AVAA ENSIAPULAUKKU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin.\n");
-                        Console.ResetColor();
-                        Ensiapulaukku();
-                        break;
                     case "TUTKI ENSIAPULAUKKU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin.\n");
-                        Console.ResetColor();
-                        Ensiapulaukku();
-                        break;
-                    case "AVAA ENSIAPU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin.\n");
-                        Console.ResetColor();
-                        Ensiapulaukku();
-                        break;
+                    case "AVAA ENSIAPU":                      
                     case "AVAA LAUKKU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin.\n");
@@ -274,21 +256,61 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                        Console.WriteLine("Nyt on tabletti, mutta jostain pitäisi saada vielä vettä.\n");
                         Console.ResetColor();
                         Ensiapulaukku();
                         break;
-                    case "OTA VESIPULLO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saan päänsäryn pois.");
-                        Console.ResetColor();
-                        Jatka();
+                    case "VESIPULLO":
+                    case "JUO VESI":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat == 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+
                         break;
-                    case "JUO VETTÄ":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
-                        Console.ResetColor();
-                        Jatka();
+                    case "OTA LÄÄKE":
+                    case "OTA BURANA":
+                        Game.buranaLaskuri++;
+                        if (Game.buranaLaskuri == 1)
+
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Nyt on tabletti, mutta olikohan sitä vettä missään.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Ai lisää lääkettä? No anna palaa, Frank.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
                         break;
                     case "B":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -303,26 +325,12 @@ namespace Peliluokkia
                         Jatka();
                         break;
                     case "LISÄÄ TASKULAMPPU":
+                    case "LISÄÄ LAMPPU":
+                    case "OTA LAMPPU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Taskulamppu lisätty Academy-kassiin.\n");
                         Inventaario inventaario = new Inventaario();
                         inventaario.LisaaEsine(esine);
-                        Console.ResetColor();
-                        Jatka();
-                        break;
-                    case "OTA LAMPPU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Taskulamppu lisätty Academy-kassiin.\n");
-                        Inventaario inventaario2 = new Inventaario();
-                        inventaario2.LisaaEsine(esine);
-                        Console.ResetColor();
-                        Jatka();
-                        break;
-                    case "LISÄÄ LAMPPU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Taskulamppu lisätty Academy-kassiin.\n");
-                        Inventaario inventaario3 = new Inventaario();
-                        inventaario3.LisaaEsine(esine);
                         Console.ResetColor();
                         Jatka();
                         break;
@@ -381,22 +389,53 @@ namespace Peliluokkia
                         keittokomero.Jatka();
                         break;
                     case "OTA BURANA":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on lääke, mutta olikohan sitä vettä missään.\n");
-                        Console.ResetColor();
-                        Jatka();
+                    case "OTA LÄÄKE":
+                        Game.buranaLaskuri++;
+                        if (Game.buranaLaskuri == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Nyt on lääke, mutta olikohan sitä vettä missään.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Ai lisää lääkettä? No anna palaa, Frank.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
                         break;
-                    case "OTA VESIPULLO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
-                        Console.ResetColor();
-                        Jatka();
-                        break;
+                    case "VESIPULLO":
                     case "JUO VETTÄ":
+                    case "JUO VESI":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        { 
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
                         Console.ResetColor();
-                        Jatka();
+                        Ensiapulaukku();
+                        } else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        } else if (Game.vesiHuikat == 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        } else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -445,7 +484,7 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                        Console.WriteLine("Nyt on tabletti, mutta jostain pitäisi saada vielä vettä. Palaa ottamaan lääke sitten.\n");
                         Console.ResetColor();
                         Ensiapulaukku();
                         break;
@@ -456,12 +495,7 @@ namespace Peliluokkia
                         Keittokomero keittokomero = new Keittokomero();
                         keittokomero.Jatka();
                         break;
-                    case "OTA VESIPULLO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Hanasta ei tule mitään. Vettä pitäisi löytää jostain.");
-                        Console.ResetColor();
-                        Ensiapulaukku();
-                        break;
+                    case "JUO VESI":
                     case "JUO VETTÄ":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Hanasta ei tule mitään. Vettä pitäisi löytää jostain.");
@@ -469,17 +503,7 @@ namespace Peliluokkia
                         Ensiapulaukku();
                         break;
                     case "LISÄÄ TASKULAMPPU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Kassissasi on jo taskulamppu.\n");
-                        Console.ResetColor();
-                        Jatka();
-                        break;
                     case "OTA LAMPPU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Kassissasi on jo taskulamppu.\n");
-                        Console.ResetColor();
-                        Jatka();
-                        break;
                     case "LISÄÄ LAMPPU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Kassissasi on jo taskulamppu.\n");
@@ -526,23 +550,18 @@ namespace Peliluokkia
             }
             else //kun ei ole kumpaakaan esinettä kassissa
             {
-                Console.WriteLine("Buranapaketissa (A) on onneksi vielä tabuja jäljellä. Voit myös tarkastella tuntematonta esinettä (B) tarkemmin.\n");
+                Console.WriteLine("Buranapaketissa (A) on onneksi vielä tabuja jäljellä. Voit myös tarkastella tuntematonta esinettä (B) tarkemmin tai jättää ensiapulaukun sikseen (C).\n");
                 komento = Console.ReadLine();
                 komento = komento.ToUpper();
                 switch (komento)
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä. Palaa ottamaan lääke sitten. \n");
                         Console.ResetColor();
                         Ensiapulaukku();
                         break;
-                    case "OTA VESIPULLO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Hanasta ei tule mitään. Vettä pitäisi löytää jostain.");
-                        Console.ResetColor();
-                        Ensiapulaukku();
-                        break;
+                    case "JUO VESI":
                     case "JUO VETTÄ":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Hanasta ei tule mitään. Vettä pitäisi löytää jostain.");
@@ -550,9 +569,11 @@ namespace Peliluokkia
                         Ensiapulaukku();
                         break;
                     case "B":
+                        Console.Write("Nice, löysin "); 
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nice, löysin taskulampun. Tästä voisi olla vielä hyötyä.\n");
+                        Console.Write("taskulampun.");
                         Console.ResetColor();
+                        Console.WriteLine("Tästä voisi olla vielä hyötyä.\n");
                         Ensiapulaukku();
                         break;
                     case "C":
@@ -561,27 +582,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "LISÄÄ LAMPPU":
                     case "LISÄÄ TASKULAMPPU":
+                    case "OTA LAMPPU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Taskulamppu lisätty Academy-kassiin.\n");
                         Inventaario inventaario = new Inventaario();
                         inventaario.LisaaEsine(esine);
-                        Console.ResetColor();
-                        Jatka();
-                        break;
-                    case "OTA LAMPPU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Taskulamppu lisätty Academy-kassiin.\n");
-                        Inventaario inventaario2 = new Inventaario();
-                        inventaario2.LisaaEsine(esine);
-                        Console.ResetColor();
-                        Jatka();
-                        break;
-                    case "LISÄÄ LAMPPU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Taskulamppu lisätty Academy-kassiin.\n");
-                        Inventaario inventaario3 = new Inventaario();
-                        inventaario3.LisaaEsine(esine);
                         Console.ResetColor();
                         Jatka();
                         break;

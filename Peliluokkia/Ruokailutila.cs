@@ -51,13 +51,6 @@ namespace Peliluokkia
                         keittokomero.Avaa();
                         break;
                     case "OTA VESIPULLO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
-                        Inventaario invent = new Inventaario();
-                        invent.LisaaEsine(esine);
-                        Console.ResetColor();
-                        Avaa();
-                        break;
                     case "LISÄÄ VESIPULLO":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
@@ -66,6 +59,60 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "JUO VESI":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else if (Game.vesiHuikat == 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+
+                        break;
+                    case "LAMPPU PÄÄLLE":
+                    case "SYTYTÄ LAMPPU":
+                    case "AVAA LAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                    case "SYTYTÄ TASKULAMPPU":
+                    case "AVAA TASKULAMPPU":
+                        if (!Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Sinulla ei ole lamppua.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
@@ -110,7 +157,7 @@ namespace Peliluokkia
                 string esine = "vesipullo";
                 Console.WriteLine("Ruokailutilassa eteneminen on hankalaa pimeässä.\n" +
                     "Parempi siis jatkaa eteenpäin sohvanurkkaukseen (A) tai hissikäytävään (B).\n" +
-                    "Voit myös palata WC-tilaan (C).\n");
+                    "Voit myös palata WC-tilaan (C), keittokomeroon (D) tai siirtyä keittiöön (E).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
 
@@ -137,20 +184,82 @@ namespace Peliluokkia
                         WC vessa = new WC();
                         vessa.Avaa();
                         break;
+                    case "D":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kävelet keittokomeron puolelle.\n");
+                        Console.ResetColor();
+                        Keittokomero keittokomero = new Keittokomero();
+                        keittokomero.Avaa();
+                        break;
+                    case "E":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kävelet keittiöön.\n");
+                        Console.ResetColor();
+                        Keittio keittio = new Keittio();
+                        keittio.Avaa();
+                        break;
                     case "OTA VESIPULLO":
-                        Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
-                        Inventaario invent = new Inventaario();
-                        invent.LisaaEsine(esine);
-                        Console.ResetColor();
-                        Avaa();
-                        break;
                     case "LISÄÄ VESIPULLO":
+                    case "LISÄÄ VESI":
                         Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
-                        Inventaario invent2 = new Inventaario();
-                        invent2.LisaaEsine(esine);
+                        Inventaario inventaar = new Inventaario();
+                        inventaar.LisaaEsine(esine);
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "JUO VESI":
+                        Game.vesiHuikat++;
+                        if (Inventaario.esineet.Contains("vesipullo") && Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else if (Game.vesiHuikat == 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        break;
+                    case "LAMPPU PÄÄLLE":
+                    case "SYTYTÄ LAMPPU":
+                    case "AVAA LAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                    case "SYTYTÄ TASKULAMPPU":
+                    case "AVAA TASKULAMPPU":
+                        if (!Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Sinulla ei ole lamppua.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();

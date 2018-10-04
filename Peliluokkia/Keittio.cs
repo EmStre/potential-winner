@@ -16,13 +16,12 @@ namespace Peliluokkia
             {
                 ValoisaAcademy();
             }
-
             else if (Game.olutlaskuri > 0)
             {
                 Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
                 "Suutasi kuivaa ja muistat jääkaappiin jääneen bisseä (A) Terrific Thursdayn jäljiltä.\n" +
                 "Kahvi kyllä piristäisi, mutta ilman virtaa et saa kahvia koneesta.\n" +
-                "Toki keittokomeron vesihanasta (B) saisi myös raikasta vettä. Voit myös siirtyä takaisin C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E).\n");
+                "Toki keittokomeron vesihanasta (B) saisi myös raikasta vettä. Voit myös siirtyä takaisin C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -32,6 +31,7 @@ namespace Peliluokkia
                         Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.\n");
                         Console.ResetColor();
                         Game.olutlaskuri--;
+                        Game.oluet++;
                         Avaa();
                         break;
                     case "B":
@@ -69,9 +69,31 @@ namespace Peliluokkia
                         Avaa();
                         break;
                     case "OLUT":
-                        Console.WriteLine(Game.olutlaskuri.ToString());
+                        Console.WriteLine("Jääkaapin oluttilanne: " + Game.olutlaskuri.ToString());
                         Avaa();
                         break;
+                    case "LAMPPU PÄÄLLE":
+                    case "SYTYTÄ LAMPPU":
+                    case "AVAA LAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                    case "SYTYTÄ TASKULAMPPU":
+                    case "AVAA TASKULAMPPU":
+                        if (!Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Sinulla ei ole lamppua\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Täällä tuskin kannattaa kuluttaa rajallista akkua taskulampussa...\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
@@ -107,7 +129,7 @@ namespace Peliluokkia
                 Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
              "Suutasi kuivaa ja arvelet jääkaappiin (A) jääneen bisseä Terrific Thursdayn jäljiltä.\n" +
              "Kahvi kyllä piristäisi, mutta ilman virtaa et saa kahvia koneesta.\n" +
-             "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään tai voit myös siirtyä (D) ruokailutilaan.\n");
+             "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. Voit myös siirtyä C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -160,9 +182,31 @@ namespace Peliluokkia
                         Avaa();
                         break;
                     case "OLUT":
-                        Console.WriteLine(Game.olutlaskuri.ToString());
+                        Console.WriteLine("Jääkaapin oluttilanne: " + Game.olutlaskuri.ToString());
                         Avaa();
                         break;
+                    case "LAMPPU PÄÄLLE":
+                    case "SYTYTÄ LAMPPU":
+                    case "AVAA LAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                    case "SYTYTÄ TASKULAMPPU":
+                    case "AVAA TASKULAMPPU":
+                        if (!Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Sinulla ei ole lamppua\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Täällä tuskin kannattaa kuluttaa rajallista akkua taskulampussa...\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
@@ -187,7 +231,6 @@ namespace Peliluokkia
                 }
             }
         }
-
         public void ValoisaAcademy()
         {
             Console.WriteLine("Jaahas. Kahvikoneessa palaa valo ja nyt voit laittaa espressot tulille firman piikkiin.\n");
@@ -196,15 +239,14 @@ namespace Peliluokkia
             else
                 Kahvihetki();    
         }
-
         public void Kahvihetki()
         {
             Console.Write("Valitse mieleisesi tuote (");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("espresso, maitokahvi, kahvi, red eye");
             Console.ResetColor();
-            Console.Write(")\n" + 
-                "Voit myös kävellä keittokomeron puolelle (A) tai siirtyä käytävään (B).\n");
+            Console.Write(")\n" +
+                "Voit myös siirtyä keittokomeroon (A), C#-luokan käytävään (B), ruokailutilaan (C) tai hissikäytävään (D)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -219,10 +261,24 @@ namespace Peliluokkia
                     break;
                 case "B":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Kävelet keittokomeron puolelle.\n");
+                    Console.WriteLine("Kävelet C#-luokan käytävään.\n");
                     Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
+                    break;
+                case "C":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Tallustelet ruokailutilaan.\n");
+                    Console.ResetColor();
+                    Ruokailutila ruokailutila = new Ruokailutila();
+                    ruokailutila.Avaa();
+                    break;
+                case "D":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Siirryt hissikäytävään.\n");
+                    Console.ResetColor();
+                    Hissikaytava hissikaytava = new Hissikaytava();
+                    hissikaytava.Avaa();
                     break;
                 case "ESPRESSO":
                     if (Game.kahvipavut == 0)
@@ -235,9 +291,9 @@ namespace Peliluokkia
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle jämäkän espresson. Puhaltelet kahvia viileämmäksi, huitaiset kupillisen kerralla huiviin ja tunnet, kuinka kofeiini piristää.\n");
+                        Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle jämäkän espresson. Puhaltelet kahvia viileämmäksi, huitaiset kupillisen kerralla huiviin ja tunnet, kuinka kofeiini virkistää väsyneitä aivojasi.\n");
                         Console.ResetColor();
-                        Game.kahvipavut--;
+                        Game.kahvipavut=-2;
                         Game.juodutKahvit++;
                         Kahvihetki();
                     }
@@ -292,7 +348,7 @@ namespace Peliluokkia
                         Console.WriteLine("Mikä hitto edes on Red Eye? No, kokeillaan.\n" +
                             "Kone ruksuttaa hetken ja puskee sinulle kahvin ja siihen perään vielä espresson. Pärisee!\n");
                         Console.ResetColor();
-                        Game.kahvipavut--;
+                        Game.kahvipavut=-3;
                         Game.juodutKahvit++;
                         Kahvihetki();
                     }
@@ -303,7 +359,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Papuja lisätessäsi kuuluu erikoinen kolaus. Papupussin sisältä tupsahti avain!\n");
                         Console.ResetColor();
-                        Game.kahvipavut += 10;
+                        Game.kahvipavut += 8;
                         Game.avain++;
                         Kahvihetki();
                     }
@@ -312,7 +368,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Lisäät papuja kahvikoneeseen\n");
                         Console.ResetColor();
-                        Game.kahvipavut += 10;
+                        Game.kahvipavut += 9;
                         Kahvihetki();
                     }
                     break;
@@ -324,6 +380,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Inventaario inventaario = new Inventaario();
                         inventaario.LisaaEsine(avain);
+                        Game.avain = -5;
                         Kahvihetki();
                     }
                     else
@@ -335,12 +392,22 @@ namespace Peliluokkia
                     }
                     break;
                 case "LISÄÄ AVAIN":
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Avain lisätty Academy-kassiin.\n");
-                    Console.ResetColor();
-                    Inventaario inventaario2 = new Inventaario();
-                    inventaario2.LisaaEsine(avain);
-                    Kahvihetki();
+                    if (Game.avain > 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Avain lisätty Academy-kassiin.\n");
+                        Console.ResetColor();
+                        Inventaario inventaario2 = new Inventaario();
+                        inventaario2.LisaaEsine(avain);
+                        Game.avain = -5;
+                        Kahvihetki();
+                    }
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                    }
                     break;
                 case "H-HELP":
                     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -349,6 +416,28 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Kahvihetki();
                     break;
+                case "LAMPPU PÄÄLLE":
+                case "SYTYTÄ LAMPPU":
+                case "AVAA LAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                case "SYTYTÄ TASKULAMPPU":
+                case "AVAA TASKULAMPPU":
+                    if (!Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kahvikoneen valo saa nyt riittää.\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                        break;
+                    }
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
@@ -365,7 +454,7 @@ namespace Peliluokkia
             Console.Write("espresso, maitokahvi, kahvi, red eye");
             Console.ResetColor();
             Console.Write(")\n" +
-                "Voit myös kaivaa jääkaapista Terrific Thursdaylta ylijääneitä oluita (A), kävellä keittokomeron puolelle (B) tai siirtyä käytävään (C).\n");
+                "Voit myös kaivaa jääkaapista Terrific Thursdaylta ylijääneitä oluita (A). Voit myös siirtyä keittokomeron puolelle (B), C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -373,9 +462,10 @@ namespace Peliluokkia
             {
                 case "A":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Kaivat jääkaapista oluen ja hörpit sitä hetken ihmetellen, että mitä sitä tekisi seuraavaksi.\n");
+                    Console.WriteLine("Kaivat jääkaapista oluen ja hörpit sitä hetken samalla ihmetellen, että mitä hittoa sitä tekisi seuraavaksi.\n");
                     Console.ResetColor();
                     Game.olutlaskuri--;
+                    Game.oluet++;
                     if (Game.olutlaskuri > 0)
                         KahvihetkiJaKaljaa();
                     else
@@ -390,57 +480,176 @@ namespace Peliluokkia
                     break;
                 case "C":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Kävelet keittokomeron puolelle.\n");
+                    Console.WriteLine("Kävelet käytävään C#-luokan eteen.\n");
                     Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
                     break;
-                case "ESPRESSO":
+                case "D":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Pavut vähissä. Lisää papuja. \n");
+                    Console.WriteLine("Tallustelet ruokailutilaan.\n");
                     Console.ResetColor();
-                    KahvihetkiJaKaljaa();
+                    Ruokailutila ruokailutila = new Ruokailutila();
+                    ruokailutila.Avaa();
+                    break;
+                case "E":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Siirryt hissikäytävään.\n");
+                    Console.ResetColor();
+                    Hissikaytava hissikaytava = new Hissikaytava();
+                    hissikaytava.Avaa();
+                    break;
+                case "ESPRESSO":
+                    if (Game.kahvipavut == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Pavut vähissä. Lisää papuja. \n");
+                        Console.ResetColor();
+                        KahvihetkiJaKaljaa();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle jämäkän espresson. Puhaltelet kahvia viileämmäksi, huitaiset kupillisen kerralla huiviin ja tunnet, kuinka kofeiini piristää.\n");
+                        Console.ResetColor();
+                        Game.kahvipavut=-2;
+                        Game.juodutKahvit++;
+                        KahvihetkiJaKaljaa();
+                    }
                     break;
                 case "MAITOKAHVI":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Pavut vähissä. Lisää papuja.\n");
-                    Console.ResetColor();
-                    Kahvihetki();
+                    if (Game.kahvipavut == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Pavut vähissä. Lisää papuja. \n");
+                        Console.ResetColor();
+                        KahvihetkiJaKaljaa();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle vaalean maitokahvin. Ei tämä kunnon laatu-lattesta mene, mutta kahvin maku silti nostaa fiiliksiäsi.\n");
+                        Console.ResetColor();
+                        Game.kahvipavut--;
+                        Game.juodutKahvit++;
+                        KahvihetkiJaKaljaa();
+                    }
                     break;
                 case "KAHVI":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Pavut vähissä. Lisää papuja.\n");
-                    Console.ResetColor();
-                    KahvihetkiJaKaljaa();
+                    if (Game.kahvipavut == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Pavut vähissä. Lisää papuja. \n");
+                        Console.ResetColor();
+                        KahvihetkiJaKaljaa();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle aivan tavallisen peruskahvin. Ei teeskentelyä, kofeiinia vain koneeseen.\n");
+                        Console.ResetColor();
+                        Game.kahvipavut--;
+                        Game.juodutKahvit++;
+                        KahvihetkiJaKaljaa();
+                    }
                     break;
                 case "RED EYE":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Pavut vähissä. Lisää papuja.\n");
-                    Console.ResetColor();
-                    KahvihetkiJaKaljaa();
+                    if (Game.kahvipavut == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Pavut vähissä. Lisää papuja. \n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Mikä hitto edes on Red Eye? No, kokeillaan.\n" +
+                            "Kone ruksuttaa hetken ja puskee sinulle kahvin ja siihen perään vielä espresson. Pärisee!\n");
+                        Console.ResetColor();
+                        Game.kahvipavut=-3;
+                        Game.juodutKahvit++;
+                        KahvihetkiJaKaljaa();
+                    }
                     break;
                 case "LISÄÄ PAPUJA":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Papuja lisätessäsi kuuluu erikoinen kolaus. Papupussin sisältä tupsahti avain!\n");
-                    Console.ResetColor();
-                    KahvihetkiJaKaljaa();
+                    if (Game.avain == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Papuja lisätessäsi kuuluu erikoinen kolaus. Papupussin sisältä tupsahti avain!\n");
+                        Console.ResetColor();
+                        Game.kahvipavut += 10;
+                        Game.avain++;
+                        KahvihetkiJaKaljaa();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Lisäät papuja kahvikoneeseen\n");
+                        Console.ResetColor();
+                        Game.kahvipavut += 10;
+                        KahvihetkiJaKaljaa();
+                    }
                     break;
                 case "OTA AVAIN":
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Avain lisätty Academy-kassiin.\n");
-                    Console.ResetColor();
-                    Inventaario inventaario = new Inventaario();
-                    inventaario.LisaaEsine(avain);
-                    KahvihetkiJaKaljaa();
+                    if (Game.avain > 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Avain lisätty Academy-kassiin.\n");
+                        Console.ResetColor();
+                        Inventaario inventaario = new Inventaario();
+                        inventaario.LisaaEsine(avain);
+                        Game.avain = -5;
+                        Kahvihetki();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                    }
                     break;
                 case "LISÄÄ AVAIN":
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Avain lisätty Academy-kassiin.\n");
-                    Console.ResetColor();
-                    Inventaario inventaario2 = new Inventaario();
-                    inventaario2.LisaaEsine(avain);
-                    KahvihetkiJaKaljaa();
+                    if (Game.avain > 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Avain lisätty Academy-kassiin.\n");
+                        Console.ResetColor();
+                        Inventaario inventaario2 = new Inventaario();
+                        inventaario2.LisaaEsine(avain);
+                        Game.avain = -5;
+                        Kahvihetki();
+                    }
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Epäkelpo valinta.\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                    }
                     break;
+                case "LAMPPU PÄÄLLE":
+                case "SYTYTÄ LAMPPU":
+                case "AVAA LAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                case "SYTYTÄ TASKULAMPPU":
+                case "AVAA TASKULAMPPU":
+                    if (!Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kahvikoneen valo saa nyt riittää.\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                        break;
+                    }
                 case "H-HELP":
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Heikki heikki = new Heikki();

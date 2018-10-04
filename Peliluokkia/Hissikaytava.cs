@@ -12,8 +12,8 @@ namespace Peliluokkia
         public void Avaa()
         {
             Console.WriteLine("Hissikäytävällä sijaitsevien kahden hissin ovet (A) seisovat varsin järkähtämättömän oloisina kiinni.\n" +
-                "Vieressäsi ovat ovet Torvalds-huoneeseen (B), Java-ryhmän Hawking-luokkaan (C) ja vessaan (D).\n" +
-                "Voit myös palata takaisin keittiöön (E).");
+                "Vieressäsi ovat ovet Torvalds-huoneeseen (B), Java-ryhmän Hawking-luokkaan (C) ja pikkuvessaan (D).\n" +
+                "Lisäksi voit halutessasi siirtyä sohvanurkkaan (E), ruokailutilaan (F) tai keittiöön (G)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -23,7 +23,14 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet avaudu milliäkään suurista ponnisteluista huolimatta.\n");
+                        if (Game.sahkoa == 1)
+                        {
+                            Console.WriteLine("Vaikka kerroksen varasähköt ovat päällä, ei hissi reagoi napinpainallukseen, koska rakennuksen pääsähköt ovat edelleen poikki.\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet avaudu milliäkään suurista ponnisteluista huolimatta.\n");
+                        }
                         Console.ResetColor();
                         Game.hissinappi++;
                         Avaa();
@@ -50,10 +57,24 @@ namespace Peliluokkia
                         break;
                     case "E":
                         Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt sohvanurkkaukseen.\n");
+                        Console.ResetColor();
+                        Sohvanurkkaus nurkka = new Sohvanurkkaus();
+                        nurkka.Avaa();
+                        break;
+                    case "F":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt ruokailutilaan.\n");
+                        Console.ResetColor();
+                        Ruokailutila ruoka = new Ruokailutila();
+                        ruoka.Avaa();
+                        break;
+                    case "G":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Siirryt keittiöön.\n");
                         Console.ResetColor();
-                        Keittio keittio = new Keittio();
-                        keittio.Avaa();
+                        Keittio keittiö = new Keittio();
+                        keittiö.Avaa();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -66,6 +87,22 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Heikki heikki = new Heikki();
                         heikki.Help();
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "AVAA LAMPPU":
+                    case "LAMPPU PÄÄLLE":
+                    case "AVAA TASKULAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        if (Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sinulla ei ole lamppua.\n");
+                        }
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -98,8 +135,16 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Toiveikkaasti kokeilet hissin kutsunappia, vaikkei se viimeksi reagoinut painallukseen.\n" +
+                        if (Game.sahkoa == 1)
+                        {
+                            Console.WriteLine("Toiveikkaasti kokeilet hissin kutsunappia, vaikkei se viimeksi reagoinut painallukseen.\n" +
+                                "Vaikka kerroksen varasähköt ovat päällä, ei hissi edelleenkään reagoi napinpainallukseen, koska rakennuksen pääsähköt ovat edelleen poikki.\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Toiveikkaasti kokeilet hissin kutsunappia, vaikkei se viimeksi reagoinut painallukseen.\n" +
                             "Nappi ei tälläkään kertaa tee mitään.");
+                        }
                         Console.ResetColor();
                         Game.hissinappi++;
                         Avaa();
@@ -126,10 +171,24 @@ namespace Peliluokkia
                         break;
                     case "E":
                         Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt sohvanurkkaukseen.\n");
+                        Console.ResetColor();
+                        Sohvanurkkaus nurkka = new Sohvanurkkaus();
+                        nurkka.Avaa();
+                        break;
+                    case "F":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt ruokailutilaan.\n");
+                        Console.ResetColor();
+                        Ruokailutila ruoka = new Ruokailutila();
+                        ruoka.Avaa();
+                        break;
+                    case "G":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Siirryt keittiöön.\n");
                         Console.ResetColor();
-                        Keittio keittio = new Keittio();
-                        keittio.Avaa();
+                        Keittio keittiö = new Keittio();
+                        keittiö.Avaa();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;

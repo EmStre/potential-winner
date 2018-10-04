@@ -11,11 +11,18 @@ namespace Peliluokkia
         string vastaus;
         public void Avaa()
         {
-            Console.WriteLine("Olet hämärässä käytävässä, jonka toisessa päässä on keittiö (A), toisessa porraskäytävä (B).\n" +
+            if (!Inventaario.esineet.Contains("taskulamppu"))
+            {
+                Console.WriteLine("Sinulla on himmee hedari ja olet hämärässä käytävässä, jonka toisessa päässä on keittiö (A), toisessa porraskäytävä (B).\n" +
                 "Lisäksi käytävän varrelta löytyy C#-ryhmän Hejlsberg-luokka (C), neuvotteluhuoneet Lovelace (D), Hopper (E), Jobs (F) ja Gosling (G) sekä konsolipelinurkkaus (H) ja varasto (I).");
+            }
+            else
+            {
+                Console.WriteLine("Olet hämärässä käytävässä, jonka toisessa päässä on keittiö (A), toisessa porraskäytävä (B).\n" +
+               "Lisäksi käytävän varrelta löytyy C#-ryhmän Hejlsberg-luokka (C), neuvotteluhuoneet Lovelace (D), Hopper (E), Jobs (F) ja Gosling (G) sekä konsolipelinurkkaus (H) ja varasto (I).");
+            }
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
-
             switch (vastaus)
             {
                 case "A":
@@ -62,7 +69,7 @@ namespace Peliluokkia
                     break;
                 case "G":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Miksi haluaisit mennä Gosling-huoneeseen?? Eihän siellä edes koodata... Onneksesi näyttää siltä, että ovi on visusti kiinni! Huh!\n");
+                    Console.WriteLine("Miksi haluaisit mennä Gosling-huoneeseen? Eihän siellä edes koodata! Onneksesi näyttää siltä, että ovi on visusti kiinni. Huh!\n");
                     Console.ResetColor();
                     Avaa();
                     break;
@@ -75,7 +82,7 @@ namespace Peliluokkia
                     break;
                 case "H":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Koska sähkö on poikki, pysyy pelikonsoli mykkänä.\n");
+                    Console.WriteLine("Koska sähköt ovat poikki, pysyy pelikonsoli sitkeistä yrityksistäsi huolimatta mykkänä.\n");
                     Console.ResetColor();
                     Avaa();
                     break;
@@ -111,13 +118,14 @@ namespace Peliluokkia
                 case "LAMPPU PÄÄLLE":
                 case "SYTYTÄ LAMPPU":
                 case "AVAA LAMPPU":
+                case "LAMPPU":
                 case "TASKULAMPPU PÄÄLLE":
                 case "SYTYTÄ TASKULAMPPU":
                 case "AVAA TASKULAMPPU":
                     if (!Inventaario.esineet.Contains("taskulamppu"))
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.WriteLine("Sinulla ei ole lamppua!\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -125,7 +133,8 @@ namespace Peliluokkia
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Taskulamppu välähtää, mutta koska se on älykäs, se ymmärtää, ettet oikeasti halua käyttää sitä käytävässä...\n");
+                        Console.WriteLine("Osoittelet fikkarilla käytävän lattiaa, seiniä, kattoja ja ovia, mutta et näe mitään mielenkiintoista.\n\n" +
+                            "Sammutat lampun.\n");
                         Console.ResetColor();
                         Avaa();
                         break;

@@ -11,9 +11,7 @@ namespace Peliluokkia
         //Avaa-metodi pohjautuen muihin huoneisiin -ES Lisätty lamppu rajapinnan toteutus
         string vastaus;
 
-        private bool lamppuPäällä = false;
-
-       
+        private bool lamppuPäällä = false;   
 
         public bool LamppuPäällä
         {
@@ -43,21 +41,9 @@ namespace Peliluokkia
                         kaytava.Avaa();
                         break;
                     case "TASKULAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaHuone();
-                        break;
                     case "LAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaHuone();
-                        break;
                     case "AVAA LAMPPU":
-                        lamppu.Päällä();
-                        ValoisaHuone();
-                        break;
                     case "LAITA LAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaHuone();
-                        break;
                     case "KYTKE LAMPPU PÄÄLLE":
                         lamppu.Päällä();
                         ValoisaHuone();
@@ -113,12 +99,9 @@ namespace Peliluokkia
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
+                    case "AVAA LAMPPU":
                     case "LAMPPU PÄÄLLE":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua\n");
-                        Console.ResetColor();
-                        Avaa();
-                        break;
+                    case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua\n");
@@ -184,13 +167,7 @@ namespace Peliluokkia
                     kaytava.Avaa();
                     break;
                 case "SAMMUTA VALO":
-                    lamppu.PoisPäältä();
-                    Avaa();
-                    break;
                 case "SAMMUTA TASKULAMPPU":
-                    lamppu.PoisPäältä();
-                    Avaa();
-                    break;
                 case "SAMMUTA LAMPPU":
                     lamppu.PoisPäältä();
                     Avaa();
@@ -200,6 +177,14 @@ namespace Peliluokkia
                     Inventaario inventaario = new Inventaario();
                     Console.ResetColor();
                     Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    ValoisaHuone();
+                    break;
+                case "OTA TAULU":
+                case "OTA FLÄPPITAULU":
+                case "FLÄPPITAULU":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Et voi tehdä tälle mitään. Se on pultattu kiinni, eikä ole tusseja :( :\n");
                     Console.ResetColor();
                     ValoisaHuone();
                     break;

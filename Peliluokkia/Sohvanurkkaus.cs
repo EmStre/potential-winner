@@ -32,6 +32,37 @@ namespace Peliluokkia
                     Hissikaytava hissikaytava = new Hissikaytava();
                     hissikaytava.Avaa();
                     break;
+                case "LAMPPU PÄÄLLE":
+                case "SYTYTÄ LAMPPU":
+                case "AVAA LAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                case "SYTYTÄ TASKULAMPPU":
+                case "AVAA TASKULAMPPU":
+                    if (!Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Game.sohva++;
+                        if (Game.sohva == 1)
+                        {
+                            Console.WriteLine("Taskulamppu syttyy ja sohvalla makaa Aino sammuneena. Yrität kovasti saada häntä hereille, mutta mitään ei tapahdu.\n" +
+                                "Päätät jättää hänet selviämään ja jatkaa matkaa pimeässä (sammutat lampun).\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Taskulamppu syttyy. Sohvalla makaa edelleen se sammunut konsultti.\n Parempi antaa hänen levätä rauhassa. Sammutat valon ja pohdit vaihtoehtojasi.\n");
+                        }
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    }
                 case "KASSI":
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Inventaario inventaario = new Inventaario();

@@ -23,15 +23,11 @@ namespace Peliluokkia
                 return lamppuPäällä;
             }
         }
-
-
         public void Avaa()
         {
             Console.WriteLine("Astut sisään Pixarin perustajan mukaan nimettyyn Jobs-huoneeseen.\nPimeässä näet fläppitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. \nVoit halutessasi palata takaisin käytävään (A).\n");
             Jatka();
         }
-
-
         public void Jatka()
         {
             Jobs lamppu = new Jobs();
@@ -40,13 +36,10 @@ namespace Peliluokkia
             {
                 Console.WriteLine("Olet (B)Jobs-huoneessa.\nPimeässä näet fläppitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. \nVoit halutessasi palata takaisin käytävään (A).");
             }
-           
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
-
             if (Inventaario.esineet.Contains("taskulamppu"))
             {
-
                 switch (vastaus)
                 {
                     case "A":
@@ -57,76 +50,15 @@ namespace Peliluokkia
                         kaytava.Avaa();
                         break;
                     case "TASKULAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
-                        lamppu.PoisPäältä();
-                        vastaus = Console.ReadLine();
-                        vastaus = vastaus.ToUpper();
-                        if (vastaus == "A")
-                        {
-                            Kaytava kaytava2 = new Kaytava();
-                            kaytava2.Avaa();
-                            break;
-                        }
-                        else
-                        {
-                            Jatka();
-                            break;
-                        }
+                    case "AVAA TASKULAMPPU":
                     case "LAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
-                        lamppu.PoisPäältä();
-                        vastaus = Console.ReadLine();
-                        vastaus = vastaus.ToUpper();
-                        if (vastaus == "A")
-                        {
-                            Kaytava kaytava2 = new Kaytava();
-                            kaytava2.Avaa();
-                            break;
-                        }
-                        else
-                        {
-                            Jatka();
-                            break;
-                        }
                     case "AVAA LAMPPU":
-                        lamppu.Päällä();
-                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
-                        lamppu.PoisPäältä();
-                        vastaus = Console.ReadLine();
-                        vastaus = vastaus.ToUpper();
-                        if (vastaus == "A")
-                        {
-                            Kaytava kaytava2 = new Kaytava();
-                            kaytava2.Avaa();
-                            break;
-                        }
-                        else
-                        {
-                            Jatka();
-                            break;
-                        }
                     case "LAITA LAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
-                        lamppu.PoisPäältä();
-                        vastaus = Console.ReadLine();
-                        vastaus = vastaus.ToUpper();
-                        if (vastaus == "A")
-                        {
-                            Kaytava kaytava2 = new Kaytava();
-                            kaytava2.Avaa();
-                            break;
-                        }
-                        else
-                        {
-                            Jatka();
-                            break;
-                        }
                     case "KYTKE LAMPPU PÄÄLLE":
+                    case "LAMPPU":
                         lamppu.Päällä();
-                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
+                        Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvia. Silmiisi sattuu... \n" +
+                            "Voit halutessasi palata takaisin käytävään (A)");
                         lamppu.PoisPäältä();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
@@ -190,12 +122,10 @@ namespace Peliluokkia
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
+                    case "AVAA LAMPPU":
+                    case "AVAA TASKULAMPPU":
+                    case "LAMPPU":
                     case "LAMPPU PÄÄLLE":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua.\n");
-                        Console.ResetColor();
-                        Jatka();
-                        break;
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua.\n");
@@ -242,15 +172,6 @@ namespace Peliluokkia
             }
 
         }
-
-
-    
-
-    public void ValoisaHuone()
-    {
-
-    }
-
     public void PoisPäältä()
     {
         lamppuPäällä = false;
@@ -258,7 +179,6 @@ namespace Peliluokkia
             Console.WriteLine("Taskulamppu sammui.\n");
             Console.ResetColor();
     }
-
     public void Päällä()
     {
         lamppuPäällä = true;
@@ -266,6 +186,5 @@ namespace Peliluokkia
             Console.WriteLine("Taskulamppu on päällä.\n");
             Console.ResetColor();
     }
-
 }
 }

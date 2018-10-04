@@ -16,14 +16,23 @@ namespace Peliluokkia
                 "Avaatko oven (A) vai palaatko takaisin (B)?\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
-
             switch (vastaus)
             {
                 case "A":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Ovi on lukossa. Jumalauta.\n");
-                    Console.ResetColor();
-                    Jatka();
+                    if (Inventaario.esineet.Contains("avain"))
+                    {
+                        Console.WriteLine("Kaivat Academy-laukustasi avaimet ja kokeilet sitä takaoveen.\n");
+                        Thread.Sleep(800);
+                        Game.complete = true;
+                        Console.WriteLine("Olet jo varautunut pahimpaan - avain ei sopisikaan oven lukkoon - mutta vastoin odotuksiasi, avain sopii lukkoon ja ovi aukeaa!");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Ovi on lukossa. Jumalauta.\n");
+                        Console.ResetColor();
+                        Jatka();
+                    }
                     break;
                 case "B":
                     Console.ForegroundColor = ConsoleColor.Cyan;
@@ -58,10 +67,32 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Avaa();
                     break;
+                case "RIKO OVI":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Raivoissasi ryhdyt potkimaan ovea, mutta onnistut vain satuttamaan jalkasi.\n");
+                    Console.ResetColor();
+                    Jatka();
+                    break;
                 case "H-HELP":
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Heikki heikki = new Heikki();
                     heikki.Help();
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+                case "AVAA LAMPPU":
+                case "LAMPPU PÄÄLLE":
+                case "AVAA TASKULAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    if (Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sinulla ei ole lamppua.\n");
+                    }
                     Console.ResetColor();
                     Avaa();
                     break;
@@ -112,6 +143,12 @@ namespace Peliluokkia
                     Porraskaytava porraskaytava = new Porraskaytava();
                     porraskaytava.Avaa();
                     break;
+                case "RIKO OVI":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Raivoissasi ryhdyt potkimaan ovea, mutta onnistut vain satuttamaan jalkasi.\n");
+                    Console.ResetColor();
+                    Jatka();
+                    break;
                 case "KASSI":
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Inventaario inventaario = new Inventaario();
@@ -125,19 +162,35 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(help);
                     Console.ResetColor();
-                    Avaa();
+                    Jatka();
                     break;
                 case "H-HELP":
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Heikki heikki = new Heikki();
                     heikki.Help();
                     Console.ResetColor();
-                    Avaa();
+                    Jatka();
                     break;
                 case "KARTTA":
                     Kartta kartta = new Kartta();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     kartta.KutsuKartta();
+                    Console.ResetColor();
+                    Jatka();
+                    break;
+                case "AVAA LAMPPU":
+                case "LAMPPU PÄÄLLE":
+                case "AVAA TASKULAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    if (Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sinulla ei ole lamppua.\n");
+                    }
                     Console.ResetColor();
                     Avaa();
                     break;

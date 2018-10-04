@@ -43,7 +43,7 @@ namespace Peliluokkia
             if (kassinSisalto.Length == 0)
                 return "\nKassisi on tyhjä.\n";
             else
-            return "Hienossa ACADEMY-kangaskassissasi on tällä hetkellä: \n- " + kassinSisalto;
+            return "Hienossa ACADEMY-kangaskassissasi on tällä hetkellä: \n" + kassinSisalto;
                 }
 
         //Main classissa luokka toimii jotenkuten näin
