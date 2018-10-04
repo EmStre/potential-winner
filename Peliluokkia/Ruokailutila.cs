@@ -66,6 +66,38 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "JUO VESI":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else if (Game.vesiHuikat <= 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+
+                        break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
@@ -171,6 +203,38 @@ namespace Peliluokkia
                         inventaar.LisaaEsine(esine);
                         Console.ResetColor();
                         Avaa();
+                        break;
+                    case "JUO VESI":
+                        Game.vesiHuikat++;
+                        if (Inventaario.esineet.Contains("vesipullo") && Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else if (Game.vesiHuikat <= 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Avaa();
+                        }
+
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;

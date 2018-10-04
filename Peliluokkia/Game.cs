@@ -25,6 +25,8 @@ namespace Peliluokkia
         public static bool complete = false;
         public static int nollaa = 0;
 
+        public static int buranaLaskuri = 0;
+        public static int vesiHuikat = 0;
 
     }
 }

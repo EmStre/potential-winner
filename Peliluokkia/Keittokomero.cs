@@ -276,21 +276,73 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                        Console.WriteLine("Nyt on tabletti, mutta jostain pitäisi saada vielä vettä.\n");
                         Console.ResetColor();
                         Ensiapulaukku();
                         break;
-                    case "OTA VESIPULLO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saan päänsäryn pois.");
-                        Console.ResetColor();
-                        Jatka();
+                    case "VESIPULLO":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat <= 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+
                         break;
-                    case "JUO VETTÄ":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
-                        Console.ResetColor();
-                        Jatka();
+                    case "JUO VESI":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat <= 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+
                         break;
                     case "B":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -383,22 +435,164 @@ namespace Peliluokkia
                         keittokomero.Jatka();
                         break;
                     case "OTA BURANA":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on lääke, mutta olikohan sitä vettä missään.\n");
-                        Console.ResetColor();
-                        Jatka();
+                        Game.buranaLaskuri++;
+                        if (Game.buranaLaskuri == 1)
+                            
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Nyt on tabletti, mutta olikohan sitä vettä missään.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Ai lisää lääkettä? No anna palaa, Frank.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
                         break;
-                    case "OTA VESIPULLO":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
-                        Console.ResetColor();
-                        Jatka();
+                    case "OTA LÄÄKE":
+                        Game.buranaLaskuri++;
+                        if (Game.buranaLaskuri == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Nyt on lääke, mutta olikohan sitä vettä missään.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Ai lisää lääkettä? No anna palaa, Frank.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        break;
+                    case "VESIPULLO":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat <= 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+
                         break;
                     case "JUO VETTÄ":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat <= 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+
+                        break;
+                    case "JUO VESI":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else if (Game.vesiHuikat <= 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+
+                        break;
+                    case "OTA VESI":
+                        Game.vesiHuikat++;
+                        if (Game.vesiHuikat == 1)
+                        { 
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
                         Console.ResetColor();
-                        Jatka();
+                        Ensiapulaukku();
+                        } else if (Game.vesiHuikat == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        } else if (Game.vesiHuikat <= 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        } else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -447,7 +641,7 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                        Console.WriteLine("Nyt on tabletti, mutta jostain pitäisi saada vielä vettä. Palaa ottamaan lääke sitten.\n");
                         Console.ResetColor();
                         Ensiapulaukku();
                         break;
@@ -535,7 +729,7 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä.\n");
+                        Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä. Palaa ottamaan lääke sitten. \n");
                         Console.ResetColor();
                         Ensiapulaukku();
                         break;
