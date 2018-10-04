@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Peliluokkia
 {
@@ -147,6 +148,20 @@ namespace Peliluokkia
                         Varasto varasto = new Varasto();
                         varasto.Avaa();
                         break;
+                    case "666":
+                        Thread.Sleep(1000);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Beep(988, 300);
+                        Console.WriteLine("Hyvä yritys...\n");
+                        Console.Beep(784, 300);
+                        Console.Beep(740, 300);
+                        Console.Beep(698, 600);
+                        Console.ResetColor();
+                        Thread.Sleep(1500);
+                        string pelastus = Console.ReadLine();
+                        if (pelastus == "APUA")
+                            ValoisaOvi();
+                        break;
                     case "SAMMUTA VALO":
                     case "SAMMUTA TASKULAMPPU":
                     case "SAMMUTA LAMPPU":
@@ -230,8 +245,18 @@ namespace Peliluokkia
                         varasto.Avaa();
                         break;
                     case "666":
+                        Thread.Sleep(1000);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Beep(988, 300);
                         Console.WriteLine("Hyvä yritys...\n");
-                        Console.ReadLine();
+                        Console.Beep(784, 300);
+                        Console.Beep(740, 300);
+                        Console.Beep(698, 600);
+                        Console.ResetColor();
+                        Thread.Sleep(1500);
+                        string pelastus = Console.ReadLine();
+                        if (pelastus == "APUA")
+                            ValoisaOvi();
                         break;
                     case "SAMMUTA VALO":
                     case "SAMMUTA TASKULAMPPU":
@@ -317,8 +342,18 @@ namespace Peliluokkia
                         varasto.Avaa();
                         break;
                     case "666":
+                        Thread.Sleep(1000);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Beep(988, 300);
                         Console.WriteLine("Hyvä yritys...\n");
-                        Console.ReadLine();
+                        Console.Beep(784, 300);
+                        Console.Beep(740, 300);
+                        Console.Beep(698, 600);
+                        Console.ResetColor();
+                        Thread.Sleep(1500);
+                        string pelastus = Console.ReadLine();
+                        if (pelastus == "APUA")
+                            ValoisaOvi();
                         break;
                     case "SAMMUTA VALO":
                     case "SAMMUTA TASKULAMPPU":
