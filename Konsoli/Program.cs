@@ -30,11 +30,13 @@ namespace Konsoli
                 "Vilkaiset kännykästäsi kelloa ja toteat sen olevan 23:18. Huomaat samalla kännykän kuuluvuuskentän olevan nollassa ja akkua jäljellä 1%. Juuri tuolloin puhelimesikin sammuu.\n");
             hejlsberg.Avaa();
             GameOver.KutsuGameOver();
-            Inventaario.esineet.Contains("taskulamppu");
-
-
-
-
+            if (Game.complete == true)
+            {
+                Console.WriteLine("Juodut oluet: " + Game.oluet + "/3 kpl");
+                Console.WriteLine("Juodut kahvit: " + Game.juodutKahvit + " kupillista");
+                Console.WriteLine("Hissin nappia painettu: " + Game.hissinappi + " kertaa");
+                Console.Read();
+            }
         }
     }
 }

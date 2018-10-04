@@ -21,8 +21,9 @@ namespace Peliluokkia
                 case "A":
                     if (Inventaario.esineet.Contains("avain"))
                     {
-                        Console.WriteLine("Kaivat Academy-laukustasi avaimet ja kokeilet sitä takaoveen.\n)";
+                        Console.WriteLine("Kaivat Academy-laukustasi avaimet ja kokeilet sitä takaoveen.\n");
                         Thread.Sleep(800);
+                        Game.complete = true;
                         Console.WriteLine("Olet jo varautunut pahimpaan - avain ei sopisikaan oven lukkoon - mutta vastoin odotuksiasi, avain sopii lukkoon ja ovi aukeaa!");
                     }
                     else
