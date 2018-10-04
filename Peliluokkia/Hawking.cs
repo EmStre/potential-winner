@@ -68,11 +68,7 @@ namespace Peliluokkia
                         break;
                     case "AVAA LAMPPU":
                     case "LAMPPU PÄÄLLE":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua.\n");
-                        Console.ResetColor();
-                        Jatka();
-                        break;
+                    case "LAMPPU":
                     case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -81,14 +77,13 @@ namespace Peliluokkia
                         Jatka();
                         break;
                     case "OTA MÖYKKY":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Huomaat, että möykky on paperipallo, mutta on pimeää etkä saa mitään selvää, mitä siinä lukee. Pudotat sen takaisin lattialle.\n");
-                        Console.ResetColor();
-                        Jatka();
-                        break;
                     case "TUTKI MÖYKKY":
+                    case "OTA PAPERIPALLO":
+                    case "TUTKI PAPERIPALLO":
+                    case "OTA PAPERI":
+                    case "TUTKI PAPERI":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Huomaat, että möykky on paperipallo, mutta on pimeää etkä saa mitään selvää, mitä siinä lukee. Pudotat sen takaisin lattialle.\n");
+                        Console.WriteLine("Huomaat, että möykky on paperipallo, mutta on pimeää etkä saa mitään selvää, mitä siinä lukee. Tiputat paperipallon lattialle.\n");
                         Console.ResetColor();
                         Jatka();
                         break;
@@ -119,7 +114,7 @@ namespace Peliluokkia
             {
                 if (!Inventaario.esineet.Contains("CV"))
                 {
-                    Console.WriteLine("Yhtäkkiä kompastalet lattialla lojuvaan möykkyyn. Pääset pimeästä Hawking-luokasta hissikäytävään (A) tai C#-luokkaan (B).\n");
+                    Console.WriteLine("Kompastalet lattialla lojuvaan möykkyyn. Pääset pimeästä Hawking-luokasta hissikäytävään (A) tai C#-luokkaan (B).\n");
                     vastaus = Console.ReadLine();
                     vastaus = vastaus.ToUpper();
                     switch (vastaus)
@@ -152,35 +147,23 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Jatka();
                             break;
+                        case "LAMPPU":
                         case "TASKULAMPPU PÄÄLLE":
-                            lamppu.Päällä();
-                            ValoisaHawking();
-                            break;
                         case "LAMPPU PÄÄLLE":
-                            lamppu.Päällä();
-                            ValoisaHawking();
-                            break;
                         case "AVAA LAMPPU":
-                            lamppu.Päällä();
-                            ValoisaHawking();
-                            break;
                         case "LAITA LAMPPU PÄÄLLE":
-                            lamppu.Päällä();
-                            ValoisaHawking();
-                            break;
                         case "KYTKE LAMPPU PÄÄLLE":
                             lamppu.Päällä();
                             ValoisaHawking();
                             break;
                         case "OTA MÖYKKY":
-                            Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Huomaat, että möykky on paperipallo, mutta on pimeää etkä saa mitään selvää, mitä siinä lukee. Möykky putoaa lattialle.\n");
-                            Console.ResetColor();
-                            Jatka();
-                            break;
                         case "TUTKI MÖYKKY":
+                        case "OTA PAPERIPALLO":
+                        case "TUTKI PAPERIPALLO":
+                        case "OTA PAPERI":
+                        case "TUTKI PAPERI":
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Huomaat, että möykky on paperipallo, mutta on pimeää etkä saa mitään selvää, mitä siinä lukee. Möykky putoaa lattialle.\n");
+                            Console.WriteLine("Huomaat, että möykky on paperipallo, mutta on pimeää etkä saa mitään selvää, mitä siinä lukee. Tiputat paperipallon lattialle.\n");
                             Console.ResetColor();
                             Jatka();
                             break;
@@ -208,7 +191,7 @@ namespace Peliluokkia
                 }
                 else
                 {
-                        Console.WriteLine("Hawking-luokassa on pimeää ja pääset täältä hissikäytävään (A) tai C#-luokkaan (B).\n");
+                        Console.WriteLine("Hawking-luokassa on pimeää. Pääset täältä hissikäytävään (A) tai C#-luokkaan (B).\n");
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
                         switch (vastaus)
@@ -241,25 +224,17 @@ namespace Peliluokkia
                                 Console.ResetColor();
                                 Jatka();
                                 break;
-                        case "H-HELP":
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Heikki heikki = new Heikki();
-                            heikki.Help();
-                            Console.ResetColor();
-                            Jatka();
-                            break;
-                        case "TASKULAMPPU PÄÄLLE":
-                                lamppu.Päällä();
-                                ValoisaHawking();
+                            case "H-HELP":
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Heikki heikki = new Heikki();
+                                heikki.Help();
+                                Console.ResetColor();
+                                Jatka();
                                 break;
+                            case "TASKULAMPPU PÄÄLLE":
+                            case "LAMPPU":
                             case "LAMPPU PÄÄLLE":
-                                lamppu.Päällä();
-                                ValoisaHawking();
-                                break;
                             case "AVAA LAMPPU":
-                                lamppu.Päällä();
-                                ValoisaHawking();
-                                break;
                             case "LAITA LAMPPU PÄÄLLE":
                                 lamppu.Päällä();
                                 ValoisaHawking();
@@ -401,13 +376,7 @@ namespace Peliluokkia
                         ValoisaHawking();
                         break;
                     case "SAMMUTA VALO":
-                        lamppu.PoisPäältä();
-                        Jatka();
-                        break;
                     case "SAMMUTA TASKULAMPPU":
-                        lamppu.PoisPäältä();
-                        Jatka();
-                        break;
                     case "SAMMUTA LAMPPU":
                         lamppu.PoisPäältä();
                         Jatka();
@@ -479,13 +448,7 @@ namespace Peliluokkia
                         ValoisaHawking();
                         break;
                     case "SAMMUTA VALO":
-                        lamppu.PoisPäältä();
-                        Jatka();
-                        break;
                     case "SAMMUTA TASKULAMPPU":
-                        lamppu.PoisPäältä();
-                        Jatka();
-                        break;
                     case "SAMMUTA LAMPPU":
                         lamppu.PoisPäältä();
                         Jatka();
@@ -561,13 +524,7 @@ namespace Peliluokkia
                     ValoisaHawking();
                     break;
                 case "SAMMUTA VALO":
-                    lamppu.PoisPäältä();
-                    Jatka();
-                    break;
                 case "SAMMUTA TASKULAMPPU":
-                    lamppu.PoisPäältä();
-                    Jatka();
-                    break;
                 case "SAMMUTA LAMPPU":
                     lamppu.PoisPäältä();
                     Jatka();

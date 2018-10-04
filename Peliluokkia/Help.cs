@@ -22,7 +22,7 @@ namespace Peliluokkia
             "LISÄÄ x: lisää mahdollisen kohteen kassiin. Muuten palauttaa: 'Epäkelpo valinta'\n" +
             "LUE x: lukee asioita\n" +
             "TUTKI x: tutkii asioita\n" +
-            "SAMMUTA x" +
+            "SAMMUTA x\n" +
             "x: Toimii toisinaan.\n" +
             "Myös muita kaskyjä voi kokeilla...\n" +
             "H-HELP: tunnet kuitenkin pelatessasi Heikin läsnäolon ja tällä komennolla myös näet sen\n" +
