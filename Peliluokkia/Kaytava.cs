@@ -82,7 +82,11 @@ namespace Peliluokkia
                     break;
                 case "H":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Koska sähköt ovat poikki, pysyy pelikonsoli sitkeistä yrityksistäsi huolimatta mykkänä.\n");
+                    if (Game.sahkoa==0)
+                        Console.WriteLine("Koska sähköt ovat poikki, pysyy pelikonsoli sitkeistä yrityksistäsi huolimatta mykkänä.\n");
+                    else if (Game.sahkoa==1)
+                        Console.WriteLine("Vaikka sähköt ovat päällä, konsoli ei vieläkään käynnisty. Joku on näköjään lipastanut konsolin virtajohdon mukaansa!\n" +
+                            "Saatanan saatana. Kai sitä on vain keskityttävä pääsemään täältä pois...");
                     Console.ResetColor();
                     Avaa();
                     break;

@@ -32,7 +32,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
-                        if (vastaus == "AVAA ENSIAPULAUKKU" || vastaus == "TUTKI ENSIAPULAUKKU" || vastaus == "AVAA ENSIAPU" || vastaus == "AVAA LAUKKU")
+                        if (vastaus == "AVAA ENSIAPULAUKKU" || vastaus == "TUTKI ENSIAPULAUKKU" || vastaus == "AVAA ENSIAPU" || vastaus == "OTA LAUKKU" || vastaus == "OTA ENSIAPULAUKKU")
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
@@ -45,7 +45,6 @@ namespace Peliluokkia
                             Jatka();
                             break;
                         }
-
                     case "B":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Helkkarin kiva, juoksevaa vettä ei tule.\n");
@@ -86,6 +85,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla on jo hieno Academy-kassi, miksi vaihtaisit sen tähän? Löydät ensiapulaukun täältä jatkossakin.\n");
                         Console.ResetColor();
+                        Ensiapulaukku();
                         break;
                     case "AVAA ENSIAPULAUKKU":
                     case "TUTKI ENSIAPULAUKKU":                       
@@ -166,7 +166,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
-                        if (vastaus == "AVAA ENSIAPULAUKKU" || vastaus == "TUTKI ENSIAPULAUKKU" || vastaus == "AVAA ENSIAPU" || vastaus == "AVAA LAUKKU")
+                        if (vastaus == "AVAA ENSIAPULAUKKU" || vastaus == "TUTKI ENSIAPULAUKKU" || vastaus == "AVAA ENSIAPU" || vastaus == "AVAA LAUKKU" || vastaus == "OTA LAUKKU" || vastaus == "OTA ENSIAPULAUKKU")
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin.\n");
@@ -249,6 +249,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla on jo hieno Academy-kassi, miksi vaihtaisit sen tähän? Löydät ensiapulaukun täältä jatkossakin.\n");
                         Console.ResetColor();
+                        Ensiapulaukku();
                         break;
                     case "AVAA ENSIAPULAUKKU":
                     case "TUTKI ENSIAPULAUKKU":
@@ -267,7 +268,6 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
-                    
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -293,12 +293,19 @@ namespace Peliluokkia
                 Console.WriteLine("Burana-paketissa (A) on onneksi vielä tabuja jäljellä. Voit myös tarkastella tuntematonta esinettä (B) tarkemmin tai jättää ensiapulaukun sikseen (C).\n");
                 komento = Console.ReadLine();
                 komento = komento.ToUpper();
-
                 switch (komento)
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Nyt on tabletti, mutta jostain pitäisi saada vielä vettä.\n");
+                        Console.ResetColor();
+                        Ensiapulaukku();
+                        break;
+                    case "OTA LAUKKU":
+                    case "OTA ENSIAPULAUKKU":
+                    case "LISÄÄ LAUKKU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla on jo hieno Academy-kassi, miksi vaihtaisit sen tähän? Löydät ensiapulaukun täältä jatkossakin.\n");
                         Console.ResetColor();
                         Ensiapulaukku();
                         break;
@@ -445,6 +452,14 @@ namespace Peliluokkia
                         Keittokomero keittokomero = new Keittokomero();
                         keittokomero.Jatka();
                         break;
+                    case "OTA LAUKKU":
+                    case "OTA ENSIAPULAUKKU":
+                    case "LISÄÄ LAUKKU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla on jo hieno Academy-kassi, miksi vaihtaisit sen tähän? Löydät ensiapulaukun täältä jatkossakin.\n");
+                        Console.ResetColor();
+                        Ensiapulaukku();
+                        break;
                     case "OTA BURANA":
                     case "OTA LÄÄKE":
                         Game.buranaLaskuri++;
@@ -566,6 +581,14 @@ namespace Peliluokkia
                         Keittokomero keittokomero = new Keittokomero();
                         keittokomero.Jatka();
                         break;
+                    case "OTA LAUKKU":
+                    case "OTA ENSIAPULAUKKU":
+                    case "LISÄÄ LAUKKU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla on jo hieno Academy-kassi, miksi vaihtaisit sen tähän? Löydät ensiapulaukun täältä jatkossakin.\n");
+                        Console.ResetColor();
+                        Ensiapulaukku();
+                        break;
                     case "JUO VESI":
                     case "JUO VETTÄ":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -669,6 +692,14 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "OTA LAUKKU":
+                    case "OTA ENSIAPULAUKKU":
+                    case "LISÄÄ LAUKKU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla on jo hieno Academy-kassi, miksi vaihtaisit sen tähän? Löydät ensiapulaukun täältä jatkossakin.\n");
+                        Console.ResetColor();
+                        Ensiapulaukku();
+                        break;
                     case "LISÄÄ LAMPPU":
                     case "LISÄÄ TASKULAMPPU":
                     case "OTA LAMPPU":
@@ -732,7 +763,6 @@ namespace Peliluokkia
                         break;
                 }
             }
-
         }
     }
 }
