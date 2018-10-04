@@ -203,6 +203,10 @@ namespace Peliluokkia
                     Console.WriteLine("'Clear your mind must be, if you are to find the villains behind this plot.'\n");
                     Console.ResetColor();
                     Thread.Sleep(1000);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("'Bye, bye'\n");
+                    Console.ResetColor();
+                    Thread.Sleep(1000);
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Nämä syvälliset sanat antavat sinulle ajattelemisen (ja ehkä vähän huolen) aihetta ja samalla työnnyt takaisin käytävään.\n\n");
                     Console.ResetColor();
