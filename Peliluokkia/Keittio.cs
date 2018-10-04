@@ -22,7 +22,7 @@ namespace Peliluokkia
                 Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
                 "Suutasi kuivaa ja muistat jääkaappiin jääneen bisseä (A) Terrific Thursdayn jäljiltä.\n" +
                 "Kahvi kyllä piristäisi, mutta ilman virtaa et saa kahvia koneesta.\n" +
-                "Toki keittokomeron vesihanasta (B) saisi myös raikasta vettä. Voit myös siirtyä takaisin C#-luokan käytävään (C), ruokailutilaan (D)\n");
+                "Toki keittokomeron vesihanasta (B) saisi myös raikasta vettä. Voit myös siirtyä takaisin C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -108,7 +108,7 @@ namespace Peliluokkia
                 Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
              "Suutasi kuivaa ja arvelet jääkaappiin (A) jääneen bisseä Terrific Thursdayn jäljiltä.\n" +
              "Kahvi kyllä piristäisi, mutta ilman virtaa et saa kahvia koneesta.\n" +
-             "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. (C) vie sinut takaisin käytävään tai voit myös siirtyä (D) ruokailutilaan.\n");
+             "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. Voit myös siirtyä C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -204,8 +204,8 @@ namespace Peliluokkia
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("espresso, maitokahvi, kahvi, red eye");
             Console.ResetColor();
-            Console.Write(")\n" + 
-                "Voit myös kävellä keittokomeron puolelle (A) tai siirtyä käytävään (B).\n");
+            Console.Write(")\n" +
+                "Voit myös siirtyä C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -377,7 +377,7 @@ namespace Peliluokkia
             Console.Write("espresso, maitokahvi, kahvi, red eye");
             Console.ResetColor();
             Console.Write(")\n" +
-                "Voit myös kaivaa jääkaapista Terrific Thursdaylta ylijääneitä oluita (A), kävellä keittokomeron puolelle (B) tai siirtyä käytävään (C).\n");
+                "Voit myös kaivaa jääkaapista Terrific Thursdaylta ylijääneitä oluita (A). Voit myös siirtyä C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 

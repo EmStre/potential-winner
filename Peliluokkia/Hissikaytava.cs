@@ -13,7 +13,7 @@ namespace Peliluokkia
         {
             Console.WriteLine("Hissikäytävällä sijaitsevien kahden hissin ovet (A) seisovat varsin järkähtämättömän oloisina kiinni.\n" +
                 "Vieressäsi ovat ovet Torvalds-huoneeseen (B), , Java-ryhmän Hawking-luokkaan (C) ja pikkuvessaan (D).\n" +
-                "Lisäksi voit halutessasi siirtyä sohvanurkkaan (E) tai ruokailutilaan (F)");
+                "Lisäksi voit halutessasi siirtyä sohvanurkkaan (E), ruokailutilaan (F) tai keittiöön (G)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -68,6 +68,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Ruokailutila ruoka = new Ruokailutila();
                         ruoka.Avaa();
+                        break;
+                    case "G":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt keittiöön.\n");
+                        Console.ResetColor();
+                        Keittio keittiö = new Keittio();
+                        keittiö.Avaa();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -175,6 +182,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Ruokailutila ruoka = new Ruokailutila();
                         ruoka.Avaa();
+                        break;
+                    case "G":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Siirryt keittiöön.\n");
+                        Console.ResetColor();
+                        Keittio keittiö = new Keittio();
+                        keittiö.Avaa();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
