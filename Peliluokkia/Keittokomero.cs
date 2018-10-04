@@ -118,7 +118,7 @@ namespace Peliluokkia
                             Console.WriteLine("Sinulla ei ole lamppua.\n");
                         }
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
@@ -234,7 +234,7 @@ namespace Peliluokkia
                             Console.WriteLine("Sinulla ei ole lamppua.\n");
                         }
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "H-HELP":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -397,7 +397,7 @@ namespace Peliluokkia
                             Console.WriteLine("Sinulla ei ole lamppua.\n");
                         }
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -537,7 +537,7 @@ namespace Peliluokkia
                             Console.WriteLine("Sinulla ei ole lamppua.\n");
                         }
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
@@ -724,7 +724,7 @@ namespace Peliluokkia
                             Console.WriteLine("Sinulla ei ole lamppua.\n");
                         }
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
