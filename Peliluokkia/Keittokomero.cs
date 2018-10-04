@@ -776,9 +776,11 @@ namespace Peliluokkia
                         Ensiapulaukku();
                         break;
                     case "B":
+                        Console.Write("Nice, löysin "); 
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nice, löysin taskulampun. Tästä voisi olla vielä hyötyä.\n");
+                        Console.Write("taskulampun.");
                         Console.ResetColor();
+                        Console.WriteLine("Tästä voisi olla vielä hyötyä.\n");
                         Ensiapulaukku();
                         break;
                     case "C":
