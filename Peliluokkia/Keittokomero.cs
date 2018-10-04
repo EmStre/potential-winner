@@ -23,7 +23,6 @@ namespace Peliluokkia
                     "WC-tilan (E) ovi näyttäisi olevan hieman raollaan.\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
-
                 switch (vastaus)
                 {
                     case "A":
@@ -239,7 +238,7 @@ namespace Peliluokkia
                         break;
                     case "AVAA ENSIAPULAUKKU":
                     case "TUTKI ENSIAPULAUKKU":
-                    case "AVAA ENSIAPU":                      
+                    case "AVAA ENSIAPU":
                     case "AVAA LAUKKU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin.\n");
@@ -268,16 +267,12 @@ namespace Peliluokkia
                         Jatka();
                         break;
                 }
-
-
             }
         }
-
         public void Ensiapulaukku()
         {
             string komento = "";
             string esine = "taskulamppu";
-
             if (Inventaario.esineet.Contains("vesipullo") && !Inventaario.esineet.Contains("taskulamppu"))
             {
                 Console.WriteLine("Burana-paketissa (A) on onneksi vielä tabuja jäljellä. Voit myös tarkastella tuntematonta esinettä (B) tarkemmin tai jättää ensiapulaukun sikseen (C).\n");
@@ -323,7 +318,6 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
-
                         break;
                     case "OTA LÄÄKE":
                     case "OTA BURANA":
@@ -418,7 +412,6 @@ namespace Peliluokkia
                         Console.ResetColor();
                         break;
                 }
-
             }
             else if (Inventaario.esineet.Contains("vesipullo") && Inventaario.esineet.Contains("taskulamppu"))
             {
@@ -483,7 +476,6 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
-                        
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -537,7 +529,6 @@ namespace Peliluokkia
                         Console.ResetColor();
                         break;
                 }
-
             }
             else if (!Inventaario.esineet.Contains("vesipullo") && Inventaario.esineet.Contains("taskulamppu"))
             {

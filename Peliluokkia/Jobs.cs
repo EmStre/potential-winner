@@ -12,10 +12,8 @@ namespace Peliluokkia
     {
         //Avaa-metodi pohjautuen muihin huoneisiin -ES Lisätty lamppu rajapinnan toteutus
         string vastaus;
-            int laskuri = 0;
-
+        int laskuri = 0;
         private bool lamppuPäällä = false;
-
         public bool LamppuPäällä
         {
             get
@@ -110,7 +108,6 @@ namespace Peliluokkia
                         break;
                 }
             }
-
             else
             {
                 switch (vastaus)
@@ -168,9 +165,7 @@ namespace Peliluokkia
                         Jatka();
                         break;
                 }
-
             }
-
         }
     public void PoisPäältä()
     {

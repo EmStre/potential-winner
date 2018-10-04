@@ -19,7 +19,6 @@ namespace Peliluokkia
                     "Voit myös siirtyä WC-tilaan (C) tai keittokomeroon (D).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
-
                 switch (vastaus)
                 {
                     case "A":
@@ -89,7 +88,6 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Avaa();
                         }
-
                         break;
                     case "LAMPPU PÄÄLLE":
                     case "SYTYTÄ LAMPPU":
@@ -149,7 +147,6 @@ namespace Peliluokkia
                         Avaa();
                         break;
                 }
-
             }
             else
             {

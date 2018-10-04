@@ -11,7 +11,6 @@ namespace Peliluokkia
         string vastaus;
         string esine = "CV";
         private bool lamppuPäällä = false;
-
         public bool LamppuPäällä
         {
             get
@@ -24,13 +23,10 @@ namespace Peliluokkia
         {
             Console.WriteLine("Java-luokassa on aavemainen tunnelma. Ulkona on jo täysin pimeää, etkä oikein näe eteesi.\n");
             Jatka();
-
         }
-
         public void Jatka()
         {
             lamppu = new Hawking();
-
             if (!Inventaario.esineet.Contains("taskulamppu"))
             {
                 Console.WriteLine("Yhtäkkiä kompastalet lattialla lojuvaan möykkyyn. Pääset pimeästä Hawking-luokasta hissikäytävään (A) tai C#-luokkaan (B).\n");
@@ -236,9 +232,6 @@ namespace Peliluokkia
                             case "LAMPPU PÄÄLLE":
                             case "AVAA LAMPPU":
                             case "LAITA LAMPPU PÄÄLLE":
-                                lamppu.Päällä();
-                                ValoisaHawking();
-                                break;
                             case "KYTKE LAMPPU PÄÄLLE":
                                 lamppu.Päällä();
                                 ValoisaHawking();
@@ -310,9 +303,6 @@ namespace Peliluokkia
                         ValoisaHawking();
                         break;
                     case "SAMMUTA VALO":
-                        lamppu.PoisPäältä();
-                        Jatka();
-                        break;
                     case "SAMMUTA TASKULAMPPU":
                         lamppu.PoisPäältä();
                         Jatka();
@@ -322,9 +312,8 @@ namespace Peliluokkia
                         Jatka();
                         break;
                     case "OTA MÖYKKY":
-                        Möykky();
-                        break;
                     case "TUTKI MÖYKKY":
+                    case "TUTKI MÖYKKYÄ":
                         Möykky();
                         break;
                     case "KASSI":
@@ -341,7 +330,6 @@ namespace Peliluokkia
                         ValoisaHawking();
                         break;
                 }
-
             }
             else if (Game.java == 0)
             {
@@ -418,7 +406,6 @@ namespace Peliluokkia
                         break;
                 }
             }
-
             else
             {
                 Console.WriteLine("Taskulampun valossa katselet ympärillessi JAVA-luokkaa. Nyt ei ole enää JAVA-koodia häritsemässä ja voit taas keskittyä ollennaiseen.\n" +
@@ -490,9 +477,7 @@ namespace Peliluokkia
                         break;
                 }
             }
-
         }
-
         public void Möykky()
         {
             Console.WriteLine("Poimit paperipallon maasta, rullaat sen auki ja ihmettelet sen sisältöä lampun valossa.\n");
@@ -504,23 +489,17 @@ namespace Peliluokkia
             Console.WriteLine("Perin omituista, mutta todennäköisesti hyödyllistä.");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
+            Inventaario inventaario = new Inventaario();
             switch (vastaus)
             {
                 case "OTA JULIUS CAESARIN CV":
                 case "OTA CV":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("CV lisätty Academy-kassiin.\n");
-                    Inventaario inventaario = new Inventaario();
-                    inventaario.LisaaEsine(esine);
-                    Console.ResetColor();
-                    ValoisaHawking();
-                    break;
                 case "LISÄÄ JULIUS CAESARIN CV":
                 case "LISÄÄ CV":
+                case "OTA PAPERI":
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("CV lisätty Academy-kassiin.\n");
-                    Inventaario inventaario2 = new Inventaario();
-                    inventaario2.LisaaEsine(esine);
+                    inventaario.LisaaEsine(esine);
                     Console.ResetColor();
                     ValoisaHawking();
                     break;
@@ -554,8 +533,7 @@ namespace Peliluokkia
                     break;
                 case "KASSI":
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Inventaario inventaario3 = new Inventaario();
-                    Console.WriteLine(inventaario3);
+                    Console.WriteLine(inventaario);
                     Console.ResetColor();
                     Möykky();
                     break;

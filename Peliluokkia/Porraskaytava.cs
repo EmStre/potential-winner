@@ -16,7 +16,6 @@ namespace Peliluokkia
             Console.WriteLine("Hätäuloskäyntiä ilmaisevan lampun hämyisän vihreä valo valaisee alaspäin johtavia portaita (A). Vieressäsi on ovi takaisin Academyn käytävään (B).\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
-
             switch (vastaus)
             {
                 case "A":

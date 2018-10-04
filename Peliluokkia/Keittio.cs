@@ -21,7 +21,7 @@ namespace Peliluokkia
                 Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
                 "Suutasi kuivaa ja muistat jääkaappiin jääneen bisseä (A) Terrific Thursdayn jäljiltä.\n" +
                 "Kahvi kyllä piristäisi, mutta ilman virtaa et saa kahvia koneesta.\n" +
-                "Toki keittokomeron vesihanasta (B) saisi myös raikasta vettä. Voit myös siirtyä takaisin C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
+                "Toki keittokomeron (B) vesihanasta saisi myös raikasta vettä. Voit myös siirtyä takaisin C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -129,7 +129,7 @@ namespace Peliluokkia
                 Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
              "Suutasi kuivaa ja arvelet jääkaappiin (A) jääneen bisseä Terrific Thursdayn jäljiltä.\n" +
              "Kahvi kyllä piristäisi, mutta ilman virtaa et saa kahvia koneesta.\n" +
-             "Toki (B) keittokomeron vesihanasta saisi myös raikasta vettä. Voit myös siirtyä C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
+             "Toki keittokomeron (B) vesihanasta saisi myös raikasta vettä. Voit myös siirtyä C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -156,7 +156,7 @@ namespace Peliluokkia
                         break;
                     case "D":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Törmäät pöytään etkä pääse etenemään.\n");
+                        Console.WriteLine("Törmäät hämärässä pöytään etkä pääse etenemään.\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -233,7 +233,7 @@ namespace Peliluokkia
         }
         public void ValoisaAcademy()
         {
-            Console.WriteLine("Jaahas. Kahvikoneessa palaa valo ja nyt voit laittaa espressot tulille firman piikkiin.\n");
+            Console.WriteLine("Jaahas. Kahvikoneessa palaa valot ja nyt voit laittaa sumpit tulille firman piikkiin. Ai että!\n");
             if (Game.olutlaskuri > 0)
                 KahvihetkiJaKaljaa();
             else
@@ -431,6 +431,7 @@ namespace Peliluokkia
                 case "LAMPPU PÄÄLLE":
                 case "SYTYTÄ LAMPPU":
                 case "AVAA LAMPPU":
+                case "LAMPPU":
                 case "TASKULAMPPU PÄÄLLE":
                 case "SYTYTÄ TASKULAMPPU":
                 case "AVAA TASKULAMPPU":
@@ -655,6 +656,7 @@ namespace Peliluokkia
                 case "LAMPPU PÄÄLLE":
                 case "SYTYTÄ LAMPPU":
                 case "AVAA LAMPPU":
+                case "LAMPPU":
                 case "TASKULAMPPU PÄÄLLE":
                 case "SYTYTÄ TASKULAMPPU":
                 case "AVAA TASKULAMPPU":

@@ -15,7 +15,6 @@ namespace Peliluokkia
                 "Mietit pitäisikö palata ruokailutilaan (A) vai siirtyä hissikäytävään (B).\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
-
             switch (vastaus)
             {
                 case "A":
@@ -52,13 +51,13 @@ namespace Peliluokkia
                         Game.sohva++;
                         if (Game.sohva == 1)
                         {
-                            Console.WriteLine("Taskulamppu syttyy ja sohvalla makaa Aino sammuneena. Yrität kovasti saada häntä hereille, mutta mitään ei tapahdu.\n" +
+                            Console.WriteLine("Taskulamppu syttyy. Lampun valossa näet, että sohvalla makaa Aino sammuneena. Yrität kovasti saada häntä hereille, mutta mitään ei tapahdu.\n" +
                                 "Päätät jättää hänet selviämään ja jatkaa matkaa pimeässä (sammutat lampun).\n");
                         }
                         else
                         {
-                            Console.WriteLine("Taskulamppu syttyy. Sohvalla makaa edelleen se sammunut konsultti.\n" +
-                                "Parempi antaa hänen levätä rauhassa. Sammutat valon ja pohdit vaihtoehtojasi.\n");
+                            Console.WriteLine("Sytytät lampun. Sohvalla näköjään makaa edelleen se sammunut konsultti.\n" +
+                                "Parempi vain antaa hänen levätä rauhassa. Sammutat valon ja pohdit vaihtoehtojasi.\n");
                         }
                         Console.ResetColor();
                         Avaa();
@@ -68,6 +67,12 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Inventaario inventaario = new Inventaario();
                     Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+                case "HERÄTÄ AINO":
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("NO ET TODELLAKAAN HERÄTÄ.\n");
                     Console.ResetColor();
                     Avaa();
                     break;

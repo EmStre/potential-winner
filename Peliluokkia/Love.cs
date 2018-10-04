@@ -10,9 +10,7 @@ namespace Peliluokkia
     {
         //Avaa-metodi pohjautuen muihin huoneisiin -ES Lisätty lamppu rajapinnan toteutus
         string vastaus;
-
         private bool lamppuPäällä = false;   
-
         public bool LamppuPäällä
         {
             get
@@ -20,17 +18,17 @@ namespace Peliluokkia
                 return lamppuPäällä;
             }
         }
-
         Love lamppu;
         public void Avaa()
         {
-            Console.WriteLine("Olet Lovelace-neuvotteluhuoneessa.\nPimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää, koska on PIMEÄÄ.\nVoit halutessasi palata takaisin käytävään(A)");
+            Console.WriteLine("Olet Lovelace-neuvotteluhuoneessa.\n" +
+                "Pimeässä näet fläppitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää, koska on PIMEÄÄ.\n" +
+                "Voit halutessasi palata takaisin käytävään (A)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             lamppu = new Love();
             if (Inventaario.esineet.Contains("taskulamppu"))
             {
-
                 switch (vastaus)
                 {
                     case "A":
@@ -85,13 +83,10 @@ namespace Peliluokkia
                         break;
                 }
             }
-
             else
             {
-
-              switch(vastaus)
+            switch(vastaus)
                     {
-
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Siirryt takaisin käytävään.\n");
@@ -100,6 +95,7 @@ namespace Peliluokkia
                         kaytava.Avaa();
                         break;
                     case "AVAA LAMPPU":
+                    case "LAMPPU":
                     case "LAMPPU PÄÄLLE":
                     case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
@@ -144,18 +140,14 @@ namespace Peliluokkia
                         Avaa();
                         break;
                 }
-
             }
-
         }
-
-
         public void ValoisaHuone()
         {
-            Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat konsultit ovat pelanneet risti-nollaa ja risteillä pelannut henkilö on voittanut joka kerta. \nVoit halutessasi palata takaisin käytävään (A)");
+            Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat konsultit ovat pelanneet risti-nollaa ja risteillä pelannut henkilö on voittanut joka kerta. \n" +
+                "Voit halutessasi palata takaisin käytävään (A)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
-
             switch (vastaus)
             {
                 case "A":
@@ -216,21 +208,15 @@ namespace Peliluokkia
                     Console.ResetColor();
                     ValoisaHuone();
                     break;
-
-
             }
-            }
-
-
+        }
         public void PoisPäältä()
         {
             lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Sammutit taskulampun.\n");
             Console.ResetColor();
-       
         }
-
         public void Päällä()
         {
             lamppuPäällä = true;
