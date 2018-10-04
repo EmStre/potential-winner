@@ -109,7 +109,7 @@ namespace Peliluokkia
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
+                            Console.WriteLine("Olet huolissasi taskulampun pattereiden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -257,7 +257,7 @@ namespace Peliluokkia
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
+                            Console.WriteLine("Olet huolissasi taskulampun pattereiden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
                             Console.ResetColor();
                             Avaa();
                             break;

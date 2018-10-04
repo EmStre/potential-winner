@@ -630,12 +630,12 @@ namespace Peliluokkia
 
         public void Vihko()
         {
-            Console.Write("Selatessasi vihkoa ymmärrät, ettei sen omistaja ole kovin ahkera muistiinpanojen kirjoittaja.\n Toisaalta koodaamaan oppii koodaamaalla, eikä muistiinpanoja tekemällä...\n" +
-                "Yhdelle sivulle on kirjoitettu isoilla kirjaimilla sana 'VIREYTYMINEN'\nja mieleesi palaa eräs huippuhyödyllinen vuorovaikutuskoulutus ja huomaat olevasi erityisen vireytynyt juuri nyt, yrittäessäsi löytää ulospääsyä tästä rakennuksesta. \n" +
+            Console.Write("Selatessasi vihkoa ymmärrät, ettei sen omistaja ole kovin ahkera muistiinpanojen kirjoittaja.\nToisaalta koodaamaan oppii koodaamaalla, eikä muistiinpanoja tekemällä...\n\n" +
+                "Yhdelle sivulle on kirjoitettu isoilla kirjaimilla sana 'VIREYTYMINEN'\nja mieleesi palaa eräs huippuhyödyllinen vuorovaikutuskoulutus ja huomaat olevasi erityisen vireytynyt juuri nyt, yrittäessäsi löytää ulospääsyä tästä rakennuksesta.\n\n" +
                 "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n" +
                 "Onpa merkillistä! Mietit, että ");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write("vihkosta");
+            Console.Write("vihkosta ");
             Console.ResetColor();
             Console.WriteLine("saattaisi olla hyötyä myöhemmin.\n");
             vastaus = Console.ReadLine();

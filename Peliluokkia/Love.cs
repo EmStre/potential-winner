@@ -24,7 +24,7 @@ namespace Peliluokkia
         Love lamppu;
         public void Avaa()
         {
-            Console.WriteLine("Olet Lovelace-neuvotteluhuoneessa.\nPimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää, koska on PIMEÄÄ.\nVoit halutessasi palata takaisin käytävään(A)");
+            Console.WriteLine("Olet Lovelace-neuvotteluhuoneessa.\nPimeässä näet flappitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää, koska on PIMEÄÄ.\nVoit halutessasi palata takaisin käytävään(A)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             lamppu = new Love();
@@ -104,7 +104,7 @@ namespace Peliluokkia
                     case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.WriteLine("Sinulla ei ole lamppua.\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -152,7 +152,7 @@ namespace Peliluokkia
 
         public void ValoisaHuone()
         {
-            Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat konsultit ovat pelanneet risti-nollaa ja risteillä pelannut henkilö on voittanut joka kerta. \nVoit halutessasi palata takaisin käytävään (A)");
+            Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat konsultit ovat pelanneet risti-nollaa ja risteillä pelannut henkilö on voittanut joka kerta. \nVoit halutessasi palata takaisin käytävään (A)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -184,7 +184,7 @@ namespace Peliluokkia
                 case "OTA FLÄPPITAULU":
                 case "FLÄPPITAULU":
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Et voi tehdä tälle mitään. Se on pultattu kiinni, eikä ole tusseja :( :\n");
+                    Console.WriteLine("Et voi tehdä tälle mitään. Se on pultattu kiinni, eikä ole tusseja :( :(\n");
                     Console.ResetColor();
                     ValoisaHuone();
                     break;

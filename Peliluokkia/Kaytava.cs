@@ -14,12 +14,12 @@ namespace Peliluokkia
             if (!Inventaario.esineet.Contains("taskulamppu"))
             {
                 Console.WriteLine("Sinulla on himmee hedari ja olet hämärässä käytävässä, jonka toisessa päässä on keittiö (A), toisessa porraskäytävä (B).\n" +
-                "Lisäksi käytävän varrelta löytyy C#-ryhmän Hejlsberg-luokka (C), neuvotteluhuoneet Lovelace (D), Hopper (E), Jobs (F) ja Gosling (G) sekä konsolipelinurkkaus (H) ja varasto (I).");
+                "Lisäksi käytävän varrelta löytyy C#-ryhmän Hejlsberg-luokka (C), neuvotteluhuoneet Lovelace (D), Hopper (E), Jobs (F) ja Gosling (G) sekä konsolipelinurkkaus (H) ja varasto (I).\n");
             }
             else
             {
                 Console.WriteLine("Olet hämärässä käytävässä, jonka toisessa päässä on keittiö (A), toisessa porraskäytävä (B).\n" +
-               "Lisäksi käytävän varrelta löytyy C#-ryhmän Hejlsberg-luokka (C), neuvotteluhuoneet Lovelace (D), Hopper (E), Jobs (F) ja Gosling (G) sekä konsolipelinurkkaus (H) ja varasto (I).");
+               "Lisäksi käytävän varrelta löytyy C#-ryhmän Hejlsberg-luokka (C), neuvotteluhuoneet Lovelace (D), Hopper (E), Jobs (F) ja Gosling (G) sekä konsolipelinurkkaus (H) ja varasto (I).\n");
             }
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
@@ -48,21 +48,21 @@ namespace Peliluokkia
                     break;
                 case "D":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Avaat oven Lovelace-huoneeseen.");
+                    Console.WriteLine("Avaat oven Lovelace-huoneeseen.\n");
                     Console.ResetColor();
                     Love love = new Love();
                     love.Avaa();
                     break;
                 case "E":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Avaat oven Hopper-neukkariin");
+                    Console.WriteLine("Avaat oven Hopper-neukkariin.\n");
                     Console.ResetColor();
                     Hopper hopper = new Hopper();
                     hopper.Avaa();
                     break;
                 case "F":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Avaat oven Jobs-neukkariin");
+                    Console.WriteLine("Avaat oven Jobs-neukkariin\n");
                     Console.ResetColor();
                     Jobs jobs = new Jobs();
                     jobs.Avaa();

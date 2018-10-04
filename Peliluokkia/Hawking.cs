@@ -310,20 +310,12 @@ namespace Peliluokkia
                         ValoisaHawking();
                         break;
                     case "SAMMUTA VALO":
-                        lamppu.PoisPäältä();
-                        Jatka();
-                        break;
                     case "SAMMUTA TASKULAMPPU":
-                        lamppu.PoisPäältä();
-                        Jatka();
-                        break;
                     case "SAMMUTA LAMPPU":
                         lamppu.PoisPäältä();
                         Jatka();
                         break;
                     case "OTA MÖYKKY":
-                        Möykky();
-                        break;
                     case "TUTKI MÖYKKY":
                         Möykky();
                         break;
@@ -365,6 +357,8 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaHawking();
                         break;
+                    case "POISTA KOODI":
+                    case "PYYHI KOODI":
                     case "POISTA JAVA":
                     case "PYYHI":
                     case "PYYHI TAULU":
@@ -438,12 +432,6 @@ namespace Peliluokkia
                     case "B":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Yrität avata ovea, mutta se on jostain syystä lukittu.\n");
-                        Console.ResetColor();
-                        ValoisaHawking();
-                        break;
-                    case "PYYHI TAULU":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Noin! Nyt on parempi!\n");
                         Console.ResetColor();
                         ValoisaHawking();
                         break;
