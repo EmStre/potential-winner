@@ -165,7 +165,7 @@ namespace Peliluokkia
         {
             sahkoPaalla = true;
             Game.sahkoa = 1; // tämä asettaa sähköt päälle, jotta voi operoida keittiössä
-            Console.WriteLine("On tämä saatana työmaa, mutta onneksi näkee jo eteensä. Tekee mieli kahvia ja sitten on pakko yrittää kyllä päästä viimein pois täältä.");
+            Console.WriteLine("On tämä saatana työmaa, mutta onneksi näkee jo eteensä. Tekee mieli kahvia ja sitten on pakko yrittää kyllä päästä viimein pois täältä.\n");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Astut takaisin käytävälle.\n");
             Console.ResetColor();
@@ -180,7 +180,7 @@ namespace Peliluokkia
             lamppu = new Varasto();
             sahkot = new Varasto();
 
-            Console.WriteLine("Noniin! Nyt pääset etenemään laatikoiden yli varaston perälle ja siellähän se sähkötaulu pilkottaa.");
+            Console.WriteLine("Noniin! Nyt pääset etenemään laatikoiden yli varaston perälle ja siellähän se sähkötaulu pilkottaa.\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -238,7 +238,7 @@ namespace Peliluokkia
         {
             lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Taskulamppu sammui");
+            Console.WriteLine("Taskulamppu sammui.\n");
             Console.ResetColor();
         }
 
@@ -246,7 +246,7 @@ namespace Peliluokkia
         {
             lamppuPäällä = true;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Taskulamppu on päällä");
+            Console.WriteLine("Taskulamppu on päällä.\n");
             Console.ResetColor();
         }
 
@@ -255,7 +255,7 @@ namespace Peliluokkia
             sahkoPaalla = true;
             Game.sahkoa = 1;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Varasähköt päällä! Näyttää siltä, että laitteet toimivat, mutta valot pysyvät himmeinä.");
+            Console.WriteLine("Varasähköt päällä! Näyttää siltä, että laitteet toimivat, mutta valot pysyvät himmeinä.\n");
             Console.ResetColor();
 
         }
@@ -264,7 +264,7 @@ namespace Peliluokkia
         {
             sahkoPaalla = false;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Sähköt pois päältä.");
+            Console.WriteLine("Sähköt pois päältä.\n");
             Console.ResetColor();
         }
     }

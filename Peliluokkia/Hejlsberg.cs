@@ -472,20 +472,21 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;
+                    case "KORJAA KOODI":
                     case "TUTKI KOODI":
                         Game.koodi++;
                         if (Game.koodi == 1)
                         {
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.WriteLine("Huomaat, ettei koodi kääntyisi, koska siinä on liikaa sulkuja, joten korjaat sen kuntoon.");
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Huomaat, ettei koodi kääntyisi, koska siinä on liikaa sulkuja, joten korjaat sen kuntoon.\n");
                             Console.ResetColor();
                         }
                         else
                         {
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.Write("Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia");
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia.\n");
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine(" <3 <3 ");
+                            Console.WriteLine(" <3 <3 \n");
                             Console.ResetColor();
                         }
                         ValoisaHejsberg();
@@ -570,20 +571,21 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;
+                    case "KORJAA KOODI":
                     case "TUTKI KOODI":
                         Game.koodi++;
                         if (Game.koodi == 1)
                         {
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.WriteLine("Huomaat, että koodi ei kääntyisi, koska siinä on liikaa sulkuja, joten korjaat sen kuntoon.");
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Huomaat, ettei koodi kääntyisi, koska siinä on liikaa sulkuja, joten korjaat sen kuntoon.\n");
                             Console.ResetColor();
                         }
                         else
                         {
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.WriteLine("Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia");
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia.\n");
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine(" <3 <3 ");
+                            Console.WriteLine(" <3 <3 \n");
                             Console.ResetColor();
                         }
                         ValoisaHejsberg();
@@ -684,9 +686,6 @@ namespace Peliluokkia
                     Vihko();
                     break;
                 }
-                
-            
-
         }
     }
 }

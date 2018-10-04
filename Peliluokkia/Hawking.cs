@@ -407,7 +407,7 @@ namespace Peliluokkia
             }
             else
             {
-                Console.WriteLine("Taskulampun valossa katselet ympärillessi JAVA-luokkaa. Nyt ei ole enää JAVA-koodia häritsemässä ja voit taas keskittyä ollennaiseen.\n" +
+                Console.WriteLine("Taskulampun valossa katselet ympärillessi JAVA-luokkaa. Nyt ei ole enää JAVA-koodia häritsemässä ja voit taas keskittyä olennaiseen.\n" +
                     "Pääset Hawking-luokasta hissikäytävään (A) tai C#-luokkaan (B).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
