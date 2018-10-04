@@ -42,6 +42,17 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Avaa();
                     break;
+                case "LAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                case "LAMPPU PÄÄLLE":
+                case "AVAA LAMPPU":
+                case "LAITA LAMPPU PÄÄLLE":
+                case "KYTKE LAMPPU PÄÄLLE":
+                    if (Inventaario.esineet.Contains("taskulamppu"))
+                        Console.WriteLine("Osoittelet fikkarilla ikkunasta ulos, mutta siitä ei tunnu olevan mitään apua. Laitat lampun takaisin laukkuun.");
+                   else
+                        Console.WriteLine("Mitä?");
+                    break;
                 case "HALP":
                 case "HELP":
                     Help help = new Help();
