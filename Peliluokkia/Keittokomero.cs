@@ -134,6 +134,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "JUO VETTÄ":
+                    case "JUO VESI":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Mistä noin kova jano, jos vaikka yrittäisit päästä pois täältä.\n");
+                        Console.ResetColor();
+                        Jatka();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
@@ -206,6 +213,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "JUO VETTÄ":
+                    case "JUO VESI":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Mistä noin kova jano, jos vaikka yrittäisit päästä pois täältä.\n");
+                        Console.ResetColor();
+                        Jatka();
+                        break;
                     case "AVAA LAMPPU":
                     case "LAMPPU PÄÄLLE":
                     case "AVAA TASKULAMPPU":
@@ -253,6 +267,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -289,6 +304,7 @@ namespace Peliluokkia
                         break;
                     case "VESIPULLO":
                     case "JUO VESI":
+                    case "JUO VETTÄ":
                         Game.vesiHuikat++;
                         if (Game.vesiHuikat == 1)
                         {

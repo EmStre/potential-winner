@@ -100,7 +100,7 @@ namespace Peliluokkia
                     case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.WriteLine("Sinulla ei ole lamppua.\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -176,7 +176,7 @@ namespace Peliluokkia
                 case "OTA FLÄPPITAULU":
                 case "FLÄPPITAULU":
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Et voi tehdä tälle mitään. Se on pultattu kiinni, eikä ole tusseja :( :\n");
+                    Console.WriteLine("Et voi tehdä tälle mitään. Se on pultattu kiinni, eikä ole tusseja :( :(\n");
                     Console.ResetColor();
                     ValoisaHuone();
                     break;

@@ -13,7 +13,7 @@ namespace Peliluokkia
         {
             Console.WriteLine("Hissikäytävällä sijaitsevien kahden hissin ovet (A) seisovat varsin järkähtämättömän oloisina kiinni.\n" +
                 "Vieressäsi ovat ovet Torvalds-huoneeseen (B), Java-ryhmän Hawking-luokkaan (C) ja pikkuvessaan (D).\n" +
-                "Lisäksi voit halutessasi siirtyä sohvanurkkaan (E), ruokailutilaan (F) tai keittiöön (G)");
+                "Lisäksi voit halutessasi siirtyä sohvanurkkaan (E), ruokailutilaan (F) tai keittiöön (G).\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 

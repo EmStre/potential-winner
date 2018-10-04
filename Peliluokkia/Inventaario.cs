@@ -28,7 +28,7 @@ namespace Peliluokkia
             }
             else
             {
-                Console.WriteLine("Oops, tämä esine on jo kassissasi!");
+                Console.WriteLine("Oops, tämä esine on jo kassissasi!\n");
             }
         }
 

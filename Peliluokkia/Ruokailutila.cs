@@ -58,12 +58,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "JUO VETTÄ":
                     case "JUO VESI":
                         Game.vesiHuikat++;
                         if (Game.vesiHuikat == 1)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.WriteLine("Onpas harvinaisen pahaa ja lämmintä vettä.");
                             Console.ResetColor();
                             Avaa();
                         }
@@ -106,7 +107,7 @@ namespace Peliluokkia
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
+                            Console.WriteLine("Olet huolissasi taskulampun pattereiden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -205,11 +206,12 @@ namespace Peliluokkia
                         Avaa();
                         break;
                     case "JUO VESI":
+                    case "JUO VETTÄ":
                         Game.vesiHuikat++;
                         if (Inventaario.esineet.Contains("vesipullo") && Game.vesiHuikat == 1)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.WriteLine("Onpas harvinaisen pahaa ja lämmintä vettä.");
                             Console.ResetColor();
                             Avaa();
                         }
@@ -252,7 +254,7 @@ namespace Peliluokkia
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
+                            Console.WriteLine("Olet huolissasi taskulampun pattereiden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
                             Console.ResetColor();
                             Avaa();
                             break;

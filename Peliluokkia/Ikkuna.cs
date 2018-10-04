@@ -18,7 +18,7 @@ namespace Peliluokkia
             {
                 case "A":
                     Console.WriteLine("Hyvästi julma Academy ja kaiken maailman for-loopit ja boolean-operaattorit!\n");
-                    Console.Write("Voitit pelin, hävisit elämän. ");
+                    Console.Write("Voitit pelin, hävisit elämän.\n");
                     Game.life--;
                     Thread.Sleep(1000);
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -31,7 +31,7 @@ namespace Peliluokkia
                     Thread.Sleep(1500);
                     break;
                 case "B":
-                    Console.WriteLine("Huh helkkari, nyt oli synkkää! Astut ikkunan äärestä takaisin keskelle C#-luokkaa.");
+                    Console.WriteLine("Huh helkkari, nyt oli synkkää! Astut ikkunan äärestä takaisin keskelle C#-luokkaa.\n");
                     Hejlsberg hejlsberg = new Hejlsberg();
                     hejlsberg.Avaa();
                     break;
@@ -49,9 +49,9 @@ namespace Peliluokkia
                 case "LAITA LAMPPU PÄÄLLE":
                 case "KYTKE LAMPPU PÄÄLLE":
                     if (Inventaario.esineet.Contains("taskulamppu"))
-                        Console.WriteLine("Osoittelet fikkarilla ikkunasta ulos, mutta siitä ei tunnu olevan mitään apua. Laitat lampun takaisin laukkuun.");
+                        Console.WriteLine("Osoittelet fikkarilla ikkunasta ulos, mutta siitä ei tunnu olevan mitään apua. Laitat lampun takaisin laukkuun.\n");
                    else
-                        Console.WriteLine("Mitä?");
+                        Console.WriteLine("Mitä?\n");
                     Avaa();
                     break;
                 case "HALP":
