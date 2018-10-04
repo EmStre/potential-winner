@@ -70,6 +70,19 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "VIHKO":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Mitä haluat tehdä vihkolle?\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "OTA VIHKO":
+                    case "LUE VIHKO":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("On pimeää etkä saa mitään selvää vihkon sisällöstä. Laitat vihkon takaisin pöydälle.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     case "H-HELP":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Heikki heikki = new Heikki();
@@ -161,6 +174,7 @@ namespace Peliluokkia
                             lamppu.Päällä();
                             ValoisaHejsberg();
                             break;
+                        case "AVAA TASKULAMPPU":
                         case "AVAA LAMPPU":
                             lamppu.Päällä();
                             ValoisaHejsberg();
@@ -180,8 +194,9 @@ namespace Peliluokkia
                             Avaa();
                             break;
                         case "LUE VIHKO":
+                        case "OTA VIHKO":
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("On pimeää etkä saa mitään selvää vihkon sisällöstä.\n");
+                            Console.WriteLine("On pimeää etkä saa mitään selvää vihkon sisällöstä. Laitat vihkon takaisin pöydälle.\n");
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -354,7 +369,7 @@ namespace Peliluokkia
                             break;
                         case "LUE VIHKO":
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("On pimeää etkä saa mitään selvää vihkon sisällöstä.\n");
+                            Console.WriteLine("On pimeää etkä saa mitään selvää vihkon sisällöstä. Laitat vihkon takaisin pöydälle.\n");
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -423,7 +438,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Painat valonkatkaisijaa, mutta mitään ei tapahdu. Sähköt ovat poikki.\n");
                         Console.ResetColor();
-                        Avaa();
+                        ValoisaHejsberg();
                         break;
                     case "B":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -488,6 +503,22 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
                         Console.ResetColor();
+                        ValoisaHejsberg();
+                        break;
+                    case "TUTKI KOODI":
+                        Game.koodi++;
+                        if (Game.koodi == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("Huomaat, ettei koodi kääntyisi, koska siinä on liikaa sulkuja, joten korjaat sen kuntoon.");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("Onnelliset koodarisilmäsi näkevät toimivaa C#-koodia <3 <3 ");
+                            Console.ResetColor();
+                        }
                         ValoisaHejsberg();
                         break;
                     case "KARTTA":
@@ -577,6 +608,22 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;
+                    case "TUTKI KOODI":
+                        Game.koodi++;
+                        if (Game.koodi == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("Huomaat, että koodi ei kääntyisi, koska siinä on liikaa sulkuja, joten korjaat sen kuntoon.");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("Onnelliset koodarisilmäsi näkevät toimivaa C#-koodia <3 <3 ");
+                            Console.ResetColor();
+                        }
+                        ValoisaHejsberg();
+                        break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -614,10 +661,14 @@ namespace Peliluokkia
 
         public void Vihko()
         {
-            Console.WriteLine("Selatessasi vihkoa ymmärrät, ettei sen omistaja ole kovin ahkera muistiinpanojen kirjoittaja.\n Toisaalta koodaamaan oppii koodaamaalla, eikä muistiinpanoja tekemällä...\n" +
+            Console.Write("Selatessasi vihkoa ymmärrät, ettei sen omistaja ole kovin ahkera muistiinpanojen kirjoittaja.\n Toisaalta koodaamaan oppii koodaamaalla, eikä muistiinpanoja tekemällä...\n" +
                 "Yhdelle sivulle on kirjoitettu isoilla kirjaimilla sana 'VIREYTYMINEN'\nja mieleesi palaa eräs huippuhyödyllinen vuorovaikutuskoulutus ja huomaat olevasi erityisen vireytynyt juuri nyt, yrittäessäsi löytää ulospääsyä tästä rakennuksesta. \n" +
                 "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n" +
-                "Onpa merkillistä! Mietit, että vihkosta saattaisi olla hyötyä myöhemmin.\n");
+                "Onpa merkillistä! Mietit, että ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("vihkosta");
+            Console.ResetColor();
+            Console.WriteLine("saattaisi olla hyötyä myöhemmin.\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
                 switch (vastaus)
@@ -670,14 +721,14 @@ namespace Peliluokkia
                     Inventaario inventaario4 = new Inventaario();
                     Console.WriteLine(inventaario4);
                     Console.ResetColor();
-                    ValoisaHejsberg();
+                    Vihko();
                     break;
                 case "H-HELP":
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Heikki heikki = new Heikki();
                     heikki.Help();
                     Console.ResetColor();
-                    ValoisaHejsberg();
+                    Vihko();
                     break;
                 default:
                         Console.ForegroundColor = ConsoleColor.Cyan;

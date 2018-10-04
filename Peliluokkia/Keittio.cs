@@ -32,6 +32,7 @@ namespace Peliluokkia
                         Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.\n");
                         Console.ResetColor();
                         Game.olutlaskuri--;
+                        Game.oluet++;
                         Avaa();
                         break;
                     case "B":
@@ -387,6 +388,7 @@ namespace Peliluokkia
                     Console.WriteLine("Kaivat jääkaapista oluen ja hörpit sitä hetken ihmetellen, että mitä sitä tekisi seuraavaksi.\n");
                     Console.ResetColor();
                     Game.olutlaskuri--;
+                    Game.oluet++;
                     if (Game.olutlaskuri > 0)
                         KahvihetkiJaKaljaa();
                     else

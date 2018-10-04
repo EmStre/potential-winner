@@ -73,6 +73,7 @@ namespace Peliluokkia
                             Jatka();
                             break;
                         }
+                    case "AVAA TASKULAMPPU":
                     case "LAMPPU PÄÄLLE":
                         lamppu.Päällä();
                         Console.WriteLine("Nyt huomaat, että joku tylsistynyt konsultti on piirtänyt siihen rivoja kuvija. Silmiisi sattuu... \nVoit halutessasi palata takaisin käytävään (A)");
@@ -190,6 +191,8 @@ namespace Peliluokkia
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
+                    case "AVAA LAMPPU":
+                    case "AVAA TASKULAMPPU":
                     case "LAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua.\n");
