@@ -179,6 +179,9 @@ namespace Peliluokkia
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Epäkelpo valinta.\n");
+                            Console.ResetColor();
                             Jatka();
                             break;
                         }
@@ -227,7 +230,7 @@ namespace Peliluokkia
                     case "LAMPPU PÄÄLLE":
                     case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         if (Inventaario.esineet.Contains("taskulamppu"))
                         {
                             Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
@@ -319,28 +322,28 @@ namespace Peliluokkia
                         if (Game.vesiHuikat == 1)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                            Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.\n");
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.\n");
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
                         else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.WriteLine("Vesipullo on melkein tyhjä.\n");
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.WriteLine("Vesipullo on tyhjä.\n");
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
@@ -390,7 +393,7 @@ namespace Peliluokkia
                     case "LAMPPU PÄÄLLE":
                     case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         if (Inventaario.esineet.Contains("taskulamppu"))
                         {
                             Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
@@ -530,7 +533,7 @@ namespace Peliluokkia
                     case "LAMPPU PÄÄLLE":
                     case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         if (Inventaario.esineet.Contains("taskulamppu"))
                         {
                             Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
@@ -611,7 +614,7 @@ namespace Peliluokkia
                     case "LAMPPU PÄÄLLE":
                     case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         if (Inventaario.esineet.Contains("taskulamppu"))
                         {
                             Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
@@ -717,7 +720,7 @@ namespace Peliluokkia
                     case "LAMPPU PÄÄLLE":
                     case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         if (Inventaario.esineet.Contains("taskulamppu"))
                         {
                             Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
