@@ -301,12 +301,7 @@ namespace Peliluokkia
                 komento = komento.ToUpper();
                 switch (komento)
                 {
-                    case "A":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nyt on tabletti, mutta jostain pitäisi saada vielä vettä.\n");
-                        Console.ResetColor();
-                        Ensiapulaukku();
-                        break;
+                    
                     case "OTA LAUKKU":
                     case "OTA ENSIAPULAUKKU":
                     case "LISÄÄ LAUKKU":
@@ -319,7 +314,7 @@ namespace Peliluokkia
                     case "JUO VESI":
                     case "JUO VETTÄ":
                         Game.vesiHuikat++;
-                        if (Game.vesiHuikat == 1)
+                        if (Game.buranaLaskuri == 1)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.\n");
@@ -348,10 +343,11 @@ namespace Peliluokkia
                             Ensiapulaukku();
                         }
                         break;
+                    case "A":
                     case "OTA LÄÄKE":
                     case "OTA BURANA":
                         Game.buranaLaskuri++;
-                        if (Game.buranaLaskuri == 1)
+                        if (Game.buranaLaskuri == 1 && Game.vesiHuikat < 3)
 
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -575,6 +571,8 @@ namespace Peliluokkia
                 switch (komento)
                 {
                     case "A":
+                    case "OTA BURANA":
+                    case "OTA LÄÄKE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Nyt on tabletti, mutta jostain pitäisi saada vielä vettä. Palaa ottamaan lääke sitten.\n");
                         Console.ResetColor();
@@ -671,6 +669,8 @@ namespace Peliluokkia
                 komento = komento.ToUpper();
                 switch (komento)
                 {
+                    case "OTA BURANA":
+                    case "OTA LÄÄKE":
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Nyt on burana, mutta jostain pitäisi saada vielä vettä. Palaa ottamaan lääke sitten. \n");
