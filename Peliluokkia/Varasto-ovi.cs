@@ -50,6 +50,7 @@ namespace Peliluokkia
                     case "LAMPPU PÄÄLLE":
                     case "AVAA TASKULAMPPU":
                     case "AVAA LAMPPU":
+                    case "LAMPPU":
                     case "LAITA LAMPPU PÄÄLLE":
                     case "KYTKE LAMPPU PÄÄLLE":
                         lamppu.Päällä();

@@ -34,6 +34,7 @@ namespace Peliluokkia
                 case "LAMPPU PÄÄLLE":
                 case "SYTYTÄ LAMPPU":
                 case "AVAA LAMPPU":
+                case "LAMPPU":
                 case "TASKULAMPPU PÄÄLLE":
                 case "SYTYTÄ TASKULAMPPU":
                 case "AVAA TASKULAMPPU":

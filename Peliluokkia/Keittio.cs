@@ -34,12 +34,14 @@ namespace Peliluokkia
                         if (Game.olutlaskuri == 0)
                         {
                             Thread.Sleep(1000);
-                            Console.WriteLine("...hik!");
+                            Console.WriteLine("...hik!\n");
+                            Thread.Sleep(700);
                         }
                         else if (Game.olutlaskuri>0)
                         {
                             Thread.Sleep(1000);
-                            Console.WriteLine("...aaahh...");
+                            Console.WriteLine("...aaahh...\n");
+                            Thread.Sleep(700);
                         }
                         Console.ResetColor();
                         Game.oluet++;
@@ -377,7 +379,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Papuja lisätessäsi kuuluu erikoinen kolaus. Papupussin sisältä tupsahti avain!\n");
                         Console.ResetColor();
-                        Game.kahvipavut += 8;
+                        Game.kahvipavut = 8;
                         Game.avain++;
                         Kahvihetki();
                     }
@@ -386,7 +388,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Lisäät papuja kahvikoneeseen\n");
                         Console.ResetColor();
-                        Game.kahvipavut += 9;
+                        Game.kahvipavut = 9;
                         Kahvihetki();
                     }
                     break;
@@ -542,7 +544,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle jämäkän espresson. Puhaltelet kahvia viileämmäksi, huitaiset kupillisen kerralla huiviin ja tunnet, kuinka kofeiini piristää.\n");
                         Console.ResetColor();
-                        Game.kahvipavut-=2;
+                        Game.kahvipavut -= 2;
                         Game.juodutKahvit++;
                         KahvihetkiJaKaljaa();
                     }
@@ -597,7 +599,7 @@ namespace Peliluokkia
                         Console.WriteLine("Mikä hitto edes on Red Eye? No, kokeillaan.\n" +
                             "Kone ruksuttaa hetken ja puskee sinulle kahvin ja siihen perään vielä espresson. Pärisee!\n");
                         Console.ResetColor();
-                        Game.kahvipavut-=3;
+                        Game.kahvipavut -= 3;
                         Game.juodutKahvit++;
                         KahvihetkiJaKaljaa();
                     }
@@ -608,7 +610,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Papuja lisätessäsi kuuluu erikoinen kolaus. Papupussin sisältä tupsahti avain!\n");
                         Console.ResetColor();
-                        Game.kahvipavut += 10;
+                        Game.kahvipavut = 8;
                         Game.avain++;
                         KahvihetkiJaKaljaa();
                     }
@@ -617,7 +619,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Lisäät papuja kahvikoneeseen\n");
                         Console.ResetColor();
-                        Game.kahvipavut += 10;
+                        Game.kahvipavut = 9;
                         KahvihetkiJaKaljaa();
                     }
                     break;
