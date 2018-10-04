@@ -352,7 +352,7 @@ namespace Peliluokkia
 
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Nyt on tabletti, mutta olikohan sitä vettä missään.\n");
+                            Console.WriteLine("Nyt on tabletti, mutta olikohan sitä vettä missään. Voit kokeilla vaikkapa komentoa JUO... \n");
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
