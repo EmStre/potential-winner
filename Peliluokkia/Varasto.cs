@@ -41,7 +41,7 @@ namespace Peliluokkia
 
 
             Console.WriteLine("Varasto on pilkkopimeä ja täynnä viinalaatikoita. Pimeässä on hankala lähteä etenemään.\n" +
-            "Muistat, että sähkökaappi löytyy varaston perältä! Olisikohan siellä sellainen varavirtakytkin kuten leffoissa.\n" +
+            "Muistat, että sähkötaulu löytyy varaston perältä! Olisikohan siellä sellainen varavirtakytkin kuten leffoissa." +
             "Voit myös poistua takaisin käytävälle (A).");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
@@ -206,7 +206,7 @@ namespace Peliluokkia
             lamppu = new Varasto();
             sahkot = new Varasto();
 
-            Console.WriteLine("Noniin! Nyt pääset etenemään laatikoiden yli varaston perälle ja siellähän se sähkökaappi pilkottaa.");
+            Console.WriteLine("Noniin! Nyt pääset etenemään laatikoiden yli varaston perälle ja siellähän se sähkötaulu pilkottaa.");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -221,6 +221,10 @@ namespace Peliluokkia
                     ValoisaAcademy();
                     break;
                 case "AVAA SÄHKÖT":
+                    sahkot.SahkotPaalla();
+                    ValoisaAcademy();
+                    break;
+                case "AVAA SÄHKÖ":
                     sahkot.SahkotPaalla();
                     ValoisaAcademy();
                     break;
@@ -283,8 +287,9 @@ namespace Peliluokkia
         public void SahkotPaalla()
         {
             sahkoPaalla = true;
+            Game.sahkoa = 1;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Varasähköt päällä!");
+            Console.WriteLine("Varasähköt päällä! Näyttää siltä, että laitteet toimivat, mutta valot pysyvät himmeinä.");
             Console.ResetColor();
 
         }
