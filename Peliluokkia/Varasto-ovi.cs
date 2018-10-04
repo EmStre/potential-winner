@@ -232,7 +232,7 @@ namespace Peliluokkia
             }
             else if (kokeilu <10)
             {
-                Console.WriteLine("Koodi oli väärin, yritä uudelleen! (7-numeroinen koodi)\n)");
+                Console.WriteLine("Koodi oli väärin, yritä uudelleen! (7-numeroinen koodi)\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
                 switch (vastaus)

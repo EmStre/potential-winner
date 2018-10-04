@@ -484,7 +484,7 @@ namespace Peliluokkia
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Pyyhit parit sulut pois. Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia.\n");
+                            Console.WriteLine("Pyyhit parit sulut pois. Onnelliset koodarisilmäsi ihastelevat kaunista ja toimivaa C#-koodia.");
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine(" <3 <3 \n");
                             Console.ResetColor();
