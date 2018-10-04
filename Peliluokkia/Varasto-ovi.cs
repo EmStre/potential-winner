@@ -33,7 +33,7 @@ namespace Peliluokkia
             lamppu = new VarastoOvi();
             if(Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu"))
             {
-                Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joden avulla voit saada oven auki.. On kuitenkin melko pimeää!\nVoit toki halutessasi palata" +
+                Console.WriteLine("Koodi on 7-numeroinen ja sinulla on kaikki esineet, joden avulla voit saada oven auki.. On kuitenkin melko pimeää!\nVoit toki halutessasi palata\n" +
                     "tutkimaan käytävää (A).");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -95,7 +95,8 @@ namespace Peliluokkia
 
             else if ((!Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu")) || (Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu")) || (Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu")))
             {
-                Console.WriteLine("Sinulta puuttuu yksi oven avaamiseen tarvittava esine. Jatka etsimistä.\nMuistathan lisätä löytämäsi esineet kassiin.\n");
+                Console.WriteLine("Sinulta puuttuu yksi oven avaamiseen tarvittava esine. Jatka etsimistä.\n" +
+                    "Muistathan aina lisätä löytämäsi esineet kassiin!\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Tarkastelet taas käytävää.\n");
                 Console.ResetColor();
@@ -105,7 +106,8 @@ namespace Peliluokkia
             }
             else if ((!Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu")) || (Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu")) || (!Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu")))
             {
-                Console.WriteLine("Sinulta puuttuu esineitä, joita ilman et voi saadaa ovea auki. Jatkahan etsimistä.\nMuistathan lisätä löytämäsi esineet kassiin.\n");
+                Console.WriteLine("Sinulta puuttuu esineitä, joita ilman et voi saadaa ovea auki. Jatkahan etsimistä.\n" +
+                    "Muistathan aina lisätä löytämäsi esineet kassiin!\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Tarkastelet taas käytävää.\n");
                 Console.ResetColor();
@@ -326,7 +328,6 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaOvi();
                         break;
-                    
                     case "OTA FLÄPPITAULU":
                     case "LUE FLÄPPITAULU":
                     case "FLÄPPITAULU":
