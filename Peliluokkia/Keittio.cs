@@ -73,6 +73,28 @@ namespace Peliluokkia
                         Console.WriteLine(Game.olutlaskuri.ToString());
                         Avaa();
                         break;
+                    case "LAMPPU PÄÄLLE":
+                    case "SYTYTÄ LAMPPU":
+                    case "AVAA LAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                    case "SYTYTÄ TASKULAMPPU":
+                    case "AVAA TASKULAMPPU":
+                        if (!Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Sinulla ei ole lamppua\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Täällä tuskin kannattaa kuluttaa rajallista akkua taskulampussa...\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
@@ -164,6 +186,28 @@ namespace Peliluokkia
                         Console.WriteLine(Game.olutlaskuri.ToString());
                         Avaa();
                         break;
+                    case "LAMPPU PÄÄLLE":
+                    case "SYTYTÄ LAMPPU":
+                    case "AVAA LAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                    case "SYTYTÄ TASKULAMPPU":
+                    case "AVAA TASKULAMPPU":
+                        if (!Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Sinulla ei ole lamppua\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Täällä tuskin kannattaa kuluttaa rajallista akkua taskulampussa...\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
@@ -361,6 +405,28 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Kahvihetki();
                     break;
+                case "LAMPPU PÄÄLLE":
+                case "SYTYTÄ LAMPPU":
+                case "AVAA LAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                case "SYTYTÄ TASKULAMPPU":
+                case "AVAA TASKULAMPPU":
+                    if (!Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kahvikoneen valo saa nyt riittää.\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                        break;
+                    }
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
@@ -537,6 +603,28 @@ namespace Peliluokkia
                         Kahvihetki();
                     }
                     break;
+                case "LAMPPU PÄÄLLE":
+                case "SYTYTÄ LAMPPU":
+                case "AVAA LAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                case "SYTYTÄ TASKULAMPPU":
+                case "AVAA TASKULAMPPU":
+                    if (!Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kahvikoneen valo saa nyt riittää.\n");
+                        Console.ResetColor();
+                        Kahvihetki();
+                        break;
+                    }
                 case "H-HELP":
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Heikki heikki = new Heikki();
