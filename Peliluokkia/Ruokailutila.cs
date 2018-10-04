@@ -110,7 +110,7 @@ namespace Peliluokkia
                 string esine = "vesipullo";
                 Console.WriteLine("Ruokailutilassa eteneminen on hankalaa pimeässä.\n" +
                     "Parempi siis jatkaa eteenpäin sohvanurkkaukseen (A) tai hissikäytävään (B).\n" +
-                    "Voit myös palata WC-tilaan (C).\n");
+                    "Voit myös palata WC-tilaan (C), keittokomeroon (D) tai siirtyä keittiöön (E).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
 
@@ -137,6 +137,20 @@ namespace Peliluokkia
                         WC vessa = new WC();
                         vessa.Avaa();
                         break;
+                    case "D":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kävelet keittokomeron puolelle.\n");
+                        Console.ResetColor();
+                        Keittokomero keittokomero = new Keittokomero();
+                        keittokomero.Avaa();
+                        break;
+                    case "E":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kävelet keittiöön.\n");
+                        Console.ResetColor();
+                        Keittio keittio = new Keittio();
+                        keittio.Avaa();
+                        break;
                     case "OTA VESIPULLO":
                         Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
                         Inventaario invent = new Inventaario();
@@ -148,6 +162,13 @@ namespace Peliluokkia
                         Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
                         Inventaario invent2 = new Inventaario();
                         invent2.LisaaEsine(esine);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "LISÄÄ VESI":
+                        Console.WriteLine("Vesipullo lisätty Academy-kassiin.\n");
+                        Inventaario inventaar = new Inventaario();
+                        inventaar.LisaaEsine(esine);
                         Console.ResetColor();
                         Avaa();
                         break;

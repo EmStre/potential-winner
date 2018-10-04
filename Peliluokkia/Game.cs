@@ -9,12 +9,19 @@ namespace Peliluokkia
     public class Game
     {
         public static int olutlaskuri = 3;
+        public static int oluet = 0;
         public static int kassilaskuri = 1;
         public static int life = 1;
         public static int sahkoa = 0;
         public static int java = 0;
         public static int koodi = 0;
         public static int sohva = 0;
+        public static int hissinappi = 0;
+        public static int kahvipavut = 0;
+        public static int avain = 0;
+        public static int juodutKahvit = 0;
+        public static bool complete = false;
+
     }
 }
 
