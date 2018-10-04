@@ -28,7 +28,7 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Nautit virvokkeen.\n");
+                        Console.WriteLine("Avaat jääkaapin ja onneksesi huomaat oluen olevan vielä kylmää sähkökatkosta huolimatta. Sihautat pullon auki ja nautit ravitsevan virvokkeen.\n");
                         Console.ResetColor();
                         Game.olutlaskuri--;
                         Game.oluet++;
@@ -249,7 +249,7 @@ namespace Peliluokkia
                 "Voit myös siirtyä keittokomeroon (A), C#-luokan käytävään (B), ruokailutilaan (C) tai hissikäytävään (D)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
-
+            Inventaario inventaario = new Inventaario();
             switch(vastaus)
             {
                 case "A":
@@ -279,6 +279,12 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Hissikaytava hissikaytava = new Hissikaytava();
                     hissikaytava.Avaa();
+                    break;
+                case "KASSI":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    Avaa();
                     break;
                 case "ESPRESSO":
                     if (Game.kahvipavut == 0)
@@ -378,7 +384,6 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("Avain lisätty Academy-kassiin.\n");
                         Console.ResetColor();
-                        Inventaario inventaario = new Inventaario();
                         inventaario.LisaaEsine(avain);
                         Game.avain = -5;
                         Kahvihetki();
@@ -415,6 +420,13 @@ namespace Peliluokkia
                     heikki.Help();
                     Console.ResetColor();
                     Kahvihetki();
+                    break;
+                case "KARTTA":
+                    Kartta kartta = new Kartta();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    kartta.KutsuKartta();
+                    Console.ResetColor();
+                    Avaa();
                     break;
                 case "LAMPPU PÄÄLLE":
                 case "SYTYTÄ LAMPPU":
@@ -457,7 +469,7 @@ namespace Peliluokkia
                 "Voit myös kaivaa jääkaapista Terrific Thursdaylta ylijääneitä oluita (A). Voit myös siirtyä keittokomeron puolelle (B), C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
-
+            Inventaario inventaario = new Inventaario();
             switch (vastaus)
             {
                 case "A":
@@ -498,6 +510,12 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Hissikaytava hissikaytava = new Hissikaytava();
                     hissikaytava.Avaa();
+                    break;
+                case "KASSI":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    Avaa();
                     break;
                 case "ESPRESSO":
                     if (Game.kahvipavut == 0)
@@ -597,7 +615,6 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("Avain lisätty Academy-kassiin.\n");
                         Console.ResetColor();
-                        Inventaario inventaario = new Inventaario();
                         inventaario.LisaaEsine(avain);
                         Game.avain = -5;
                         Kahvihetki();
@@ -627,6 +644,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Kahvihetki();
                     }
+                    break;
+                case "KARTTA":
+                    Kartta kartta = new Kartta();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    kartta.KutsuKartta();
+                    Console.ResetColor();
+                    Avaa();
                     break;
                 case "LAMPPU PÄÄLLE":
                 case "SYTYTÄ LAMPPU":

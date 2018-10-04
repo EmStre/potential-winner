@@ -25,6 +25,7 @@ namespace Peliluokkia
                         Thread.Sleep(800);
                         Game.complete = true;
                         Console.WriteLine("Olet jo varautunut pahimpaan - avain ei sopisikaan oven lukkoon - mutta vastoin odotuksiasi, avain sopii lukkoon ja ovi aukeaa!");
+                        Console.ReadLine();
                     }
                     else
                     {
@@ -192,7 +193,7 @@ namespace Peliluokkia
                         Console.WriteLine("Sinulla ei ole lamppua.\n");
                     }
                     Console.ResetColor();
-                    Avaa();
+                    Jatka();
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;

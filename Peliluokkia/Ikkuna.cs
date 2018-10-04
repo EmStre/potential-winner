@@ -52,6 +52,7 @@ namespace Peliluokkia
                         Console.WriteLine("Osoittelet fikkarilla ikkunasta ulos, mutta siitä ei tunnu olevan mitään apua. Laitat lampun takaisin laukkuun.");
                    else
                         Console.WriteLine("Mitä?");
+                    Avaa();
                     break;
                 case "HALP":
                 case "HELP":

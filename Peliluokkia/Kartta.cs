@@ -52,6 +52,7 @@ namespace Peliluokkia
                     Console.WriteLine(line);
                 Console.WriteLine("Paina mitä vain näppäintä jatkaaksesi\n");
                 Console.ReadKey();
+                Console.WriteLine("");
             }
 
         }
