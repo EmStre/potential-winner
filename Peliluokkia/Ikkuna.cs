@@ -49,9 +49,16 @@ namespace Peliluokkia
                 case "LAITA LAMPPU PÄÄLLE":
                 case "KYTKE LAMPPU PÄÄLLE":
                     if (Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Osoittelet fikkarilla ikkunasta ulos, mutta siitä ei tunnu olevan mitään apua. Laitat lampun takaisin laukkuun.\n");
-                   else
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("Mitä?\n");
+                    }
+                    Console.ResetColor();
                     Avaa();
                     break;
                 case "HALP":
