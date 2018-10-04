@@ -8,6 +8,7 @@ namespace Peliluokkia
 {
     class WC
     {
+      
         public void Avaa()
         {
             string vastaus;
@@ -84,15 +85,31 @@ namespace Peliluokkia
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Taskulamppu syttyy, jolloin näet, että WC-tila on törkysessä kunnossa. Mietitkin sisään astuessasi, että siellä haisi kovin pahalta\nPäätät sulkea lampun samantien.\n" );
+                        Console.WriteLine("Taskulamppu syttyy, jolloin näet, että WC-tila on törkysessä kunnossa. Mietitkin sisään astuessasi, että siellä haisi kovin pahalta\nPäätät sulkea lampun saman tien.\n" );
                         Console.ResetColor();
                         Avaa();
                         break;
                     }
                 case "PISSAA":
                 case "KÄY VESSASSA":
-
-
+                    
+                    int juomat = (3 - Game.olutlaskuri + Game.juodutKahvit);
+                    juomat = juomat - Game.nollaa;
+                        if(juomat >= 3)
+                        {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Tässähän olikin jo kova hätä!!");
+                        Console.ResetColor();
+                    }
+                        else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Kaverilla on vähän pienempi rakko! Ei kai siinä...");
+                        Console.ResetColor();
+                    }
+                    Game.nollaa = juomat;
+                    Avaa();
+                    break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
