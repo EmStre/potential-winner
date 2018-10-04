@@ -212,6 +212,22 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "AVAA LAMPPU":
+                    case "LAMPPU PÄÄLLE":
+                    case "AVAA TASKULAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        if (Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.WriteLine("Osoittelet lampulla ympärillesi, mutta et näe mitään merkittävää tai mielenkiintoista lampun valossa ja sammutat sen.\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sinulla ei ole lamppua.\n");
+                        }
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
