@@ -84,6 +84,12 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "TUTKI MÖYKKY":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Huomaat, että möykky on paperipallo, mutta on pimeää etkä saa mitään selvää, mitä siinä lukee.\n");
+                        Console.ResetColor();
+                        Jatka();
+                        break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
@@ -158,6 +164,12 @@ namespace Peliluokkia
                             ValoisaHawking();
                             break;
                         case "OTA MÖYKKY":
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Huomaat, että möykky on paperipallo, mutta on pimeää etkä saa mitään selvää, mitä siinä lukee.\n");
+                            Console.ResetColor();
+                            Jatka();
+                            break;
+                        case "TUTKI MÖYKKY":
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Huomaat, että möykky on paperipallo, mutta on pimeää etkä saa mitään selvää, mitä siinä lukee.\n");
                             Console.ResetColor();
@@ -305,6 +317,9 @@ namespace Peliluokkia
                         Jatka();
                         break;
                     case "OTA MÖYKKY":
+                        Möykky();
+                        break;
+                    case "TUTKI MÖYKKY":
                         Möykky();
                         break;
                     case "KASSI":

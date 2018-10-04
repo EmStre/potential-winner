@@ -12,6 +12,7 @@ namespace Peliluokkia
     {
         //Avaa-metodi pohjautuen muihin huoneisiin -ES Lisätty lamppu rajapinnan toteutus
         string vastaus;
+            int laskuri = 0;
 
         private bool lamppuPäällä = false;
 
@@ -24,13 +25,24 @@ namespace Peliluokkia
         }
 
 
-
         public void Avaa()
         {
-            Console.WriteLine("Astut sisään Pixarin perustajan mukaan nimettyyn Jobs-huoneeseen.\nPimeässä näet flappitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. \nVoit halutessasi palata takaisin käytävään (A).");
-            vastaus = Console.ReadLine();
-            vastaus = vastaus.ToUpper();
+            Console.WriteLine("Astut sisään Pixarin perustajan mukaan nimettyyn Jobs-huoneeseen.\nPimeässä näet fläppitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. \nVoit halutessasi palata takaisin käytävään (A).\n");
+            Jatka();
+        }
+
+
+        public void Jatka()
+        {
             Jobs lamppu = new Jobs();
+            laskuri++;
+            if (laskuri != 1)
+            {
+                Console.WriteLine("Olet (B)Jobs-huoneessa.\nPimeässä näet fläppitaulun, jossa on kirjoitusta, mutta et saa kirjoituksesta selvää pimeässä. \nVoit halutessasi palata takaisin käytävään (A).");
+            }
+           
+                vastaus = Console.ReadLine();
+                vastaus = vastaus.ToUpper();
 
             if (Inventaario.esineet.Contains("taskulamppu"))
             {
@@ -58,7 +70,7 @@ namespace Peliluokkia
                         }
                         else
                         {
-                            Avaa();
+                            Jatka();
                             break;
                         }
                     case "LAMPPU PÄÄLLE":
@@ -75,7 +87,7 @@ namespace Peliluokkia
                         }
                         else
                         {
-                            Avaa();
+                            Jatka();
                             break;
                         }
                     case "AVAA LAMPPU":
@@ -92,7 +104,7 @@ namespace Peliluokkia
                         }
                         else
                         {
-                            Avaa();
+                            Jatka();
                             break;
                         }
                     case "LAITA LAMPPU PÄÄLLE":
@@ -109,7 +121,7 @@ namespace Peliluokkia
                         }
                         else
                         {
-                            Avaa();
+                            Jatka();
                             break;
                         }
                     case "KYTKE LAMPPU PÄÄLLE":
@@ -126,7 +138,7 @@ namespace Peliluokkia
                         }
                         else
                         {
-                            Avaa();
+                            Jatka();
                             break;
                         }
                     case "KASSI":
@@ -134,14 +146,14 @@ namespace Peliluokkia
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         kartta.KutsuKartta();
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "HALP":
                     case "HELP":
@@ -149,13 +161,13 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("En ymmärrä sinua :(\n");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                 }
             }
@@ -175,20 +187,20 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua.\n");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua.\n");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "HALP":
                     case "HELP":
@@ -196,20 +208,20 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         kartta.KutsuKartta();
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("En ymmärrä sinua :(\n");
                         Console.ResetColor();
-                        Avaa();
+                        Jatka();
                         break;
                 }
 

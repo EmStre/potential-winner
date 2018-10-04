@@ -12,7 +12,7 @@ namespace Peliluokkia
         string vastaus;
         public void Avaa()
         {
-            Console.WriteLine("Hapuilet pimeässä tiskipöydän luo.\n");
+            Console.WriteLine("Hapuilet pimeässä tiskipöydän luo. Pöydältä erottuu esine, jonka tunnistat ensiapulaukuksi. Kädelläsi tavoitat myös vesihanan.\n"); 
             Jatka();
         }
 
@@ -20,9 +20,8 @@ namespace Peliluokkia
         {
             if (!Inventaario.esineet.Contains("taskulamppu")) { 
             string vastaus;
-            Console.WriteLine("Pöydältä erottuu esine, jonka tunnistat ensiapulaukuksi (A).\n" +
-                "Kädelläsi tavoitat myös vesihanan (B). Voit myös siirtyä ruokailutilaan (C) tai voit palata takaisin keittiön (D) puolelle.\n" +
-                "WC-tilan (E) ovi näyttäisi olevan hieman raollaan. \n");
+            Console.WriteLine("Okei, eli ulottuvillasi on ensiapulaukku (A) ja vesihana (B). Voit myös siirtyä ruokailutilaan (C) tai voit palata takaisin keittiön (D) puolelle.\n" +
+                "WC-tilan (E) ovi näyttäisi olevan hieman raollaan.\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -31,10 +30,24 @@ namespace Peliluokkia
                 case "A":
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Tämä on kaikin puolin hyvin standardinmukainen ensiapulaukku.\n" +
-                        "Haluatko tehdä jotain laukulle?\n");
-                    Console.ResetColor();
-                    Jatka();
-                    break;
+                        "Mitä haluaisit tehdä laukulle?\n");
+                        Console.ResetColor();
+                        vastaus = Console.ReadLine();
+                        vastaus = vastaus.ToUpper();
+                        if(vastaus == "AVAA ENSIAPULAUKKU" || vastaus == "TUTKI ENSIAPULAUKKU" || vastaus== "AVAA ENSIAPU" || vastaus == "AVAA LAUKKU")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                            break;
+                        }
+                        else
+                        {
+                        Jatka();
+                        break;
+                        }
+                    
                 case "B":
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Helkkarin kiva, juoksevaa vettä ei tule.\n");

@@ -16,8 +16,13 @@ namespace Peliluokkia
         {
                 return "\nPelikomennot ovat:\n" +
                 "KASSI: näyttää Academy-kangaskassisi sisällön.\n" +
+                "KARTTA: näyttää kartan" +
                 "AVAA x: avaa kohteen, jos mahdollista. Muuten palauttaa: 'Epäkelpo valinta'\n" +
                 "OTA x: ottaa kohteen ja pakkaa sen kassiin, jos mahdollista. Muuten palauttaa: 'Epäkelpo valinta'\n" +
+                "LISÄÄ x: lisää mahdollisin kohteen kassiin. Muuten palauttaa: 'Epäkelpo valinta '\n" +
+                "x: Testaa josko jotain tapahtuu.\n" +
+                "Myös muita kaskyjä voi kokeilla..." +
+                "H-HELP: tunnet kuitenkin pelatessasi Heikin läsnäolon ja tällä komennolla myös näet sen\n" +
                 "HELP: näyttää tämän listan.\n";
         }
 
