@@ -14,7 +14,7 @@ namespace Peliluokkia
         int indeksi = 0;
 
 
-        string[] helpTekstit = File.ReadAllLines(@"..\..\..\Peliluokkia\HeikkiHelp.txt").ToArray();
+        string[] helpTekstit = File.ReadAllLines(@"..\..\..\Peliluokkia\HeikkiHelp.txt", System.Text.Encoding.GetEncoding("iso-8859-1")).ToArray();
         Random random = new Random();
 
         public void Help()

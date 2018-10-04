@@ -139,10 +139,9 @@ namespace Peliluokkia
             }
             else
             {
-                Console.WriteLine("Hapuilet pimeässä tiskipöydän luo.\n" +
-               "Pöydältä erottuu esine, jonka tunnistat ensiapulaukuksi.\n" +
-               "Kädelläsi tavoitat myös vesihanan (A). Voit myös siirtyä ruokailutilaan (B) tai voit palata takaisin keittiön (C) puolelle.\n" +
-               "WC-tilan (D) ovi näyttäisi olevan hieman raollaan. \n");
+                Console.WriteLine("Okei, eli ulottuvillasi on ensiapulaukku (A) ja vesihana (B).\n" +
+                "Voit myös siirtyä ruokailutilaan (C) tai voit palata takaisin keittiön (D) puolelle.\n" +
+               "WC-tilan (E) ovi näyttäisi olevan hieman raollaan. \n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
 
@@ -150,25 +149,45 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Edelleen tosi hyvä laukku.\n" +
+                            "Mitä haluaisit tehdä laukulle?\n");
+                        Console.ResetColor();
+                        vastaus = Console.ReadLine();
+                        vastaus = vastaus.ToUpper();
+                        if (vastaus == "AVAA ENSIAPULAUKKU" || vastaus == "TUTKI ENSIAPULAUKKU" || vastaus == "AVAA ENSIAPU" || vastaus == "AVAA LAUKKU")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                            break;
+                        }
+                        else
+                        {
+                            Jatka();
+                            break;
+                        }
+                    case "B":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Helkkarin kiva, juoksevaa vettä ei tule.\n");
                         Console.ResetColor();
                         Jatka();
                         break;
-                    case "B":
+                    case "C":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Siirryt ruokailutilaan.\n");
                         Console.ResetColor();
                         Ruokailutila ruokailutila = new Ruokailutila();
                         ruokailutila.Avaa();
                         break;
-                    case "C":
+                    case "D":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Kävelet keittiöön.\n");
                         Console.ResetColor();
                         Keittio keittio = new Keittio();
                         keittio.Avaa();
                         break;
-                    case "D":
+                    case "E":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Astut WC-tilaan.\n");
                         Console.ResetColor();

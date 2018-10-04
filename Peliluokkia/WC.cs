@@ -67,6 +67,28 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Avaa();
                     break;
+                case "LAMPPU PÄÄLLE":
+                case "SYTYTÄ LAMPPU":
+                case "AVAA LAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                case "SYTYTÄ TASKULAMPPU":
+                case "AVAA TASKULAMPPU":
+                    if (!Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Taskulamppu syttyy, jolloin näet, että WC-tila on törkysessä kunnossa. Mietitkin sisään astuessasi, että siellä haisi kovin pahalta\nPäätät sulkea lampun samantien.\n" );
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    }
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
