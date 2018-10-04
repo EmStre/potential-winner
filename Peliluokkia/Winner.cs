@@ -40,7 +40,13 @@ namespace Peliluokkia
             }
             public static void KutsuWinner()
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Beep(660, 450);
+            Console.Beep(524, 450);
+            Console.Beep(588, 450);
+            Console.Beep(660, 300);
+            Console.Beep(588, 150);
+            Console.Beep(660, 900);
+            Console.ForegroundColor = ConsoleColor.Yellow;
                 var arr1 = new[]
                 {
                     @"         /$$           /$$   /$$                                                 ",
