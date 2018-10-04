@@ -78,11 +78,11 @@ namespace Peliluokkia
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
                             Console.ResetColor();
                             Avaa();
                         }
-                        else if (Game.vesiHuikat <= 3)
+                        else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
@@ -98,6 +98,28 @@ namespace Peliluokkia
                         }
 
                         break;
+                    case "LAMPPU PÄÄLLE":
+                    case "SYTYTÄ LAMPPU":
+                    case "AVAA LAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                    case "SYTYTÄ TASKULAMPPU":
+                    case "AVAA TASKULAMPPU":
+                        if (!Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Sinulla ei ole lamppua.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
@@ -216,11 +238,11 @@ namespace Peliluokkia
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
                             Console.ResetColor();
                             Avaa();
                         }
-                        else if (Game.vesiHuikat <= 3)
+                        else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
@@ -234,8 +256,29 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Avaa();
                         }
-
                         break;
+                    case "LAMPPU PÄÄLLE":
+                    case "SYTYTÄ LAMPPU":
+                    case "AVAA LAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                    case "SYTYTÄ TASKULAMPPU":
+                    case "AVAA TASKULAMPPU":
+                        if (!Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Sinulla ei ole lamppua.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();

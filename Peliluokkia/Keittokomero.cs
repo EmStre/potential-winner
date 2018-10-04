@@ -292,11 +292,11 @@ namespace Peliluokkia
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
-                        else if (Game.vesiHuikat <= 3)
+                        else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
@@ -324,11 +324,11 @@ namespace Peliluokkia
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
-                        else if (Game.vesiHuikat <= 3)
+                        else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
@@ -343,6 +343,24 @@ namespace Peliluokkia
                             Ensiapulaukku();
                         }
 
+                        break;
+                    case "OTA BURANA":
+                        Game.buranaLaskuri++;
+                        if (Game.buranaLaskuri == 1)
+
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Nyt on tabletti, mutta olikohan sitä vettä missään.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Ai lisää lääkettä? No anna palaa, Frank.\n");
+                            Console.ResetColor();
+                            Ensiapulaukku();
+                        }
                         break;
                     case "B":
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -481,11 +499,11 @@ namespace Peliluokkia
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
-                        else if (Game.vesiHuikat <= 3)
+                        else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
@@ -517,7 +535,7 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
-                        else if (Game.vesiHuikat <= 3)
+                        else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
@@ -545,11 +563,11 @@ namespace Peliluokkia
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
                             Console.ResetColor();
                             Ensiapulaukku();
                         }
-                        else if (Game.vesiHuikat <= 3)
+                        else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
@@ -576,10 +594,10 @@ namespace Peliluokkia
                         } else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
                             Console.ResetColor();
                             Ensiapulaukku();
-                        } else if (Game.vesiHuikat <= 3)
+                        } else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
@@ -722,7 +740,7 @@ namespace Peliluokkia
             }
             else //kun ei ole kumpaakaan esinettä kassissa
             {
-                Console.WriteLine("Buranapaketissa (A) on onneksi vielä tabuja jäljellä. Voit myös tarkastella tuntematonta esinettä (B) tarkemmin.\n");
+                Console.WriteLine("Buranapaketissa (A) on onneksi vielä tabuja jäljellä. Voit myös tarkastella tuntematonta esinettä (B) tarkemmin tai jättää ensiapulaukun sikseen (C).\n");
                 komento = Console.ReadLine();
                 komento = komento.ToUpper();
                 switch (komento)
@@ -746,9 +764,11 @@ namespace Peliluokkia
                         Ensiapulaukku();
                         break;
                     case "B":
+                        Console.Write("Nice, löysin "); 
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Nice, löysin taskulampun. Tästä voisi olla vielä hyötyä.\n");
+                        Console.Write("taskulampun.");
                         Console.ResetColor();
+                        Console.WriteLine("Tästä voisi olla vielä hyötyä.\n");
                         Ensiapulaukku();
                         break;
                     case "C":
