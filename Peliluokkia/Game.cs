@@ -16,6 +16,8 @@ namespace Peliluokkia
         public static int kahvipavut = 0;
         public static int avain = 0;
         public static int juodutKahvit = 0;
+        public static int buranaLaskuri = 0;
+        public static int vesiHuikat = 0;
 
     }
 }
