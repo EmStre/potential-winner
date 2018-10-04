@@ -62,7 +62,7 @@ namespace Peliluokkia
                     break;
                 case "G":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Ovi näyttää olevan visusti kiinni.\n");
+                    Console.WriteLine("Miksi haluaisit mennä Gosling-huoneeseen?? Eihän siellä edes koodata... Onneksesi näyttää siltä, että ovi on visusti kiinni! Huh!\n");
                     Console.ResetColor();
                     Avaa();
                     break;
@@ -108,6 +108,28 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Avaa();
                     break;
+                case "LAMPPU PÄÄLLE":
+                case "SYTYTÄ LAMPPU":
+                case "AVAA LAMPPU":
+                case "TASKULAMPPU PÄÄLLE":
+                case "SYTYTÄ TASKULAMPPU":
+                case "AVAA TASKULAMPPU":
+                    if (!Inventaario.esineet.Contains("taskulamppu"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Taskulamppu välähtää, mutta koska se on älykäs, se ymmärtää, ettet oikeasti halua käyttää sitä käytävässä...\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    }
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
