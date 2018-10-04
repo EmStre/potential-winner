@@ -168,10 +168,6 @@ namespace Peliluokkia
                         lamppu.PoisPäältä();
                         Jatka();
                         break;
-                    case "666":
-                        Console.WriteLine("Hyvä yritys...\n");
-                        Console.ReadLine();
-                        break;
                     case "OTA VIHKO":
                     case "LUE VIHKO":
                     case "VIHKO":
