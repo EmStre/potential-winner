@@ -113,12 +113,14 @@ namespace Peliluokkia
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
+                    case "AVAA LAMPPU":
                     case "LAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua\n");
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "AVAA TASKULAMPPU":
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua\n");
@@ -200,6 +202,14 @@ namespace Peliluokkia
                     Inventaario inventaario = new Inventaario();
                     Console.ResetColor();
                     Console.WriteLine(inventaario);
+                    Console.ResetColor();
+                    ValoisaHuone();
+                    break;
+                case "OTA TAULU":
+                case "OTA FLÄPPITAULU":
+                case "FLÄPPITAULU":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Et voi tehdä tälle mitään. Se on pultattu kiinni, eikä ole tusseja");
                     Console.ResetColor();
                     ValoisaHuone();
                     break;

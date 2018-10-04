@@ -83,6 +83,8 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "OTA LAUKKU":
+                    case "OTA ENSIAPULAUKKU":
                     case "AVAA ENSIAPULAUKKU":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");

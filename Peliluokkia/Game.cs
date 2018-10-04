@@ -12,7 +12,9 @@ namespace Peliluokkia
         public static int kassilaskuri = 1;
         public static int life = 1;
         public static int sahkoa = 0;
-
+        public static int java = 0;
+        public static int koodi = 0;
+        public static int sohva = 0;
     }
 }
 

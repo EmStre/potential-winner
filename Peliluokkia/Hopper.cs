@@ -29,7 +29,7 @@ namespace Peliluokkia
         Hopper lamppu;
         public void Avaa()
         {
-            Console.WriteLine("Olet Hopper-huoneessa. Ikkunasta näkyy kuun valoa, jonka avaulla näet, että fläppitaulun nurkkaan on kirjoitettu jotakin. Voisi olla hyötyä, saada teksti luettua...\nVoit myös halutessasi palata takaisin käytävään(A).\n\n");
+            Console.WriteLine("Olet Hopper-huoneessa. Ikkunasta näkyy kuun valoa, jonka avulla näet, että fläppitaulun nurkkaan on kirjoitettu jotakin. Voisi olla hyötyä saada teksti luettua...\nVoit myös halutessasi palata takaisin käytävään(A).\n\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             lamppu = new Hopper();
@@ -64,6 +64,12 @@ namespace Peliluokkia
                     case "KYTKE LAMPPU PÄÄLLE":
                         lamppu.Päällä();
                         ValoisaHuone();
+                        break;
+                    case "LUE FLÄPPITAULU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("On pimeää, etkä näe, mitä taululla lukee.\n");
+                        Console.ResetColor();
+                        Avaa();
                         break;
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -135,6 +141,12 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "LUE FLÄPPITAULU":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("On pimeää, etkä näe, mitä taululla lukee.\n");
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     case "H-HELP":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Heikki heikki = new Heikki();
@@ -174,7 +186,7 @@ namespace Peliluokkia
 
         public void ValoisaHuone()
         {
-            Console.WriteLine("Nyt näet fläppitaulun ja pystyt lukemaan tekstin: 'Do or do not. There is no try...'.\n 'Mitä ihmettä, ei tästäkään mitään hyötyä', ajattelet ääneen.\nVoit halutessasi palata takaisin käytävään (A)");
+            Console.WriteLine("Nyt näet fläppitaulun ja pystyt lukemaan tekstin: 'Do or do not. There is no try...'.\n'Mitä ihmettä, ei tästäkään mitään hyötyä', ajattelet ääneen.\nVoit halutessasi palata takaisin käytävään (A)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             Kaytava kaytava = new Kaytava();
@@ -205,11 +217,11 @@ namespace Peliluokkia
                     Console.WriteLine("Pimeässä huoneessa kuuluu kummia...\n");
                     Thread.Sleep(1000);
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.WriteLine("'Patience you must have, my young padawan.'");
+                    Console.WriteLine("'Patience you must have, my young padawan.'\n");
                     Console.ResetColor();
                     Thread.Sleep(1000);
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.WriteLine("'Clear your mind must be, if you are to find the villains behind this plot.'");
+                    Console.WriteLine("'Clear your mind must be, if you are to find the villains behind this plot.'\n");
                     Console.ResetColor();
                     Thread.Sleep(1000);
                     Console.ForegroundColor = ConsoleColor.Cyan;

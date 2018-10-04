@@ -89,6 +89,10 @@ namespace Peliluokkia
                         Avaa();
                         break;
                     }
+                case "PISSAA":
+                case "KÄY VESSASSA":
+
+
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
