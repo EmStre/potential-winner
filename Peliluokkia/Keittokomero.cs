@@ -262,6 +262,7 @@ namespace Peliluokkia
                         break;
                     case "VESIPULLO":
                     case "JUO VESI":
+                    case "JUO VETTÄ":
                         Game.vesiHuikat++;
                         if (Game.vesiHuikat == 1)
                         {
