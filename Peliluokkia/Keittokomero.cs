@@ -157,7 +157,7 @@ namespace Peliluokkia
                         if (vastaus == "AVAA ENSIAPULAUKKU" || vastaus == "TUTKI ENSIAPULAUKKU" || vastaus == "AVAA ENSIAPU" || vastaus == "AVAA LAUKKU")
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
+                            Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin.\n");
                             Console.ResetColor();
                             Ensiapulaukku();
                             break;
