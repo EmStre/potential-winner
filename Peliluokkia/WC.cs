@@ -60,6 +60,13 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Avaa();
                     break;
+                case "H-HELP":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Heikki heikki = new Heikki();
+                    heikki.Help();
+                    Console.ResetColor();
+                    Avaa();
+                    break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Epäkelpo valinta.\n");
@@ -110,6 +117,13 @@ namespace Peliluokkia
                     Help help = new Help();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(help);
+                    Console.ResetColor();
+                    Avaa();
+                    break;
+                case "H-HELP":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Heikki heikki = new Heikki();
+                    heikki.Help();
                     Console.ResetColor();
                     Avaa();
                     break;

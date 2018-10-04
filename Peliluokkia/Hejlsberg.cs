@@ -70,6 +70,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
@@ -136,6 +143,13 @@ namespace Peliluokkia
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Inventaario inventaario = new Inventaario();
                             Console.WriteLine(inventaario);
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        case "H-HELP":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Heikki heikki = new Heikki();
+                            heikki.Help();
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -239,6 +253,13 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Avaa();
                             break;
+                        case "H-HELP":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Heikki heikki = new Heikki();
+                            heikki.Help();
+                            Console.ResetColor();
+                            Avaa();
+                            break;
                         case "TASKULAMPPU PÄÄLLE":
                             lamppu.Päällä();
                             ValoisaHejsberg();
@@ -321,6 +342,13 @@ namespace Peliluokkia
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Inventaario inventaario = new Inventaario();
                             Console.WriteLine(inventaario);
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        case "H-HELP":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Heikki heikki = new Heikki();
+                            heikki.Help();
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -426,6 +454,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        ValoisaHejsberg();
+                        break;
                     case "SAMMUTA VALO":
                         lamppu.PoisPäältä();
                         Avaa();
@@ -524,6 +559,13 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        ValoisaHejsberg();
+                        break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
                         Console.ResetColor();
                         ValoisaHejsberg();
                         break;
@@ -627,6 +669,13 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Inventaario inventaario4 = new Inventaario();
                     Console.WriteLine(inventaario4);
+                    Console.ResetColor();
+                    ValoisaHejsberg();
+                    break;
+                case "H-HELP":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Heikki heikki = new Heikki();
+                    heikki.Help();
                     Console.ResetColor();
                     ValoisaHejsberg();
                     break;

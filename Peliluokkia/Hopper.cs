@@ -72,6 +72,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
@@ -125,6 +132,13 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -208,7 +222,14 @@ namespace Peliluokkia
                     Inventaario inventaario = new Inventaario();
                     Console.WriteLine(inventaario);
                     Console.ResetColor();
-                    Avaa();
+                    ValoisaHuone();
+                    break;
+                case "H-HELP":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Heikki heikki = new Heikki();
+                    heikki.Help();
+                    Console.ResetColor();
+                    ValoisaHuone();
                     break;
                 case "HALP":
                 case "HELP":
@@ -216,14 +237,14 @@ namespace Peliluokkia
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(help);
                     Console.ResetColor();
-                    Avaa();
+                    ValoisaHuone();
                     break;
                 case "KARTTA":
                     Kartta kartta = new Kartta();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     kartta.KutsuKartta();
                     Console.ResetColor();
-                    Avaa();
+                    ValoisaHuone();
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Cyan;

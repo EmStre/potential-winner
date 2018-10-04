@@ -73,6 +73,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -128,6 +135,13 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -233,6 +247,13 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Inventaario inventaario2 = new Inventaario();
                     inventaario2.LisaaEsine(avain);
+                    Kahvihetki();
+                    break;
+                case "H-HELP":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Heikki heikki = new Heikki();
+                    heikki.Help();
+                    Console.ResetColor();
                     Kahvihetki();
                     break;
                 default:

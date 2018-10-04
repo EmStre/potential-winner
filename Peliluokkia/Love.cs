@@ -84,6 +84,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Avaa();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        Avaa();
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("En ymmärrä sinua :(\n");
@@ -137,6 +144,13 @@ namespace Peliluokkia
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         kartta.KutsuKartta();
+                        Console.ResetColor();
+                        Avaa();
+                        break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -201,6 +215,13 @@ namespace Peliluokkia
                     Kartta kartta = new Kartta();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     kartta.KutsuKartta();
+                    Console.ResetColor();
+                    ValoisaHuone();
+                    break;
+                case "H-HELP":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Heikki heikki = new Heikki();
+                    heikki.Help();
                     Console.ResetColor();
                     ValoisaHuone();
                     break;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Globalization;
 
 namespace Peliluokkia
 {
@@ -12,19 +13,21 @@ namespace Peliluokkia
         public string Vihje { get; set; }
         int indeksi = 0;
 
+
         string[] helpTekstit = File.ReadAllLines(@"..\..\..\Peliluokkia\HeikkiHelp.txt").ToArray();
         Random random = new Random();
 
-        public string Help()
+        public void Help()
         {
+        CultureInfo.CurrentCulture = new CultureInfo("fi-FI");
         //Asettaa rivit random_järjestykseen
         string[] randomTekstit = helpTekstit.OrderBy(x => random.Next()).ToArray();
-        foreach (var t in randomTekstit)
-            {
-                Console.WriteLine(t);
+
+            
+                Console.WriteLine(randomTekstit[0]);
                 indeksi++;
-            }
-            return Vihje;
+            
+            //return Vihje;
         }
     }
             //Esim näin pääsee mainissa tätä käyttämään

@@ -148,6 +148,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Jatka();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        Jatka();
+                        break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -214,6 +221,13 @@ namespace Peliluokkia
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         kartta.KutsuKartta();
+                        Console.ResetColor();
+                        Jatka();
+                        break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
                         Console.ResetColor();
                         Jatka();
                         break;

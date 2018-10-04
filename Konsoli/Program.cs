@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Peliluokkia;
+using System.Globalization;
 
 namespace Konsoli
 {
@@ -12,6 +13,7 @@ namespace Konsoli
         
         static void Main(string[] args)
         {
+            CultureInfo.CurrentCulture = new CultureInfo("fi-FI");
             Console.WindowHeight = 50;
             Console.WindowWidth = 185;
             //Intro.KutsuIntro();

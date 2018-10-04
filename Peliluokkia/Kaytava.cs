@@ -86,6 +86,13 @@ namespace Peliluokkia
                     Console.ResetColor();
                     Avaa();
                     break;
+                case "H-HELP":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Heikki heikki = new Heikki();
+                    heikki.Help();
+                    Console.ResetColor();
+                    Avaa();
+                    break;
                 case "HALP":
                 case "HELP":
                     Help help = new Help();

@@ -95,7 +95,14 @@ namespace Peliluokkia
                         Inventaario inventaario = new Inventaario();
                         Console.WriteLine(inventaario);
                         Console.ResetColor();
-                        ValoisaHawking();
+                        Jatka();
+                        break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        Jatka();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -182,6 +189,13 @@ namespace Peliluokkia
                             Console.ResetColor();
                            Jatka();
                             break;
+                        case "H-HELP":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Heikki heikki = new Heikki();
+                            heikki.Help();
+                            Console.ResetColor();
+                            Jatka();
+                            break;
                         default:
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Epäkelpo valinta.\n");
@@ -225,7 +239,14 @@ namespace Peliluokkia
                                 Console.ResetColor();
                                 Jatka();
                                 break;
-                            case "TASKULAMPPU PÄÄLLE":
+                        case "H-HELP":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Heikki heikki = new Heikki();
+                            heikki.Help();
+                            Console.ResetColor();
+                            Jatka();
+                            break;
+                        case "TASKULAMPPU PÄÄLLE":
                                 lamppu.Päällä();
                                 ValoisaHawking();
                                 break;
@@ -294,6 +315,13 @@ namespace Peliluokkia
                         Help help = new Help();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(help);
+                        Console.ResetColor();
+                        ValoisaHawking();
+                        break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
                         Console.ResetColor();
                         ValoisaHawking();
                         break;
@@ -386,6 +414,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaHawking();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        ValoisaHawking();
+                        break;
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
@@ -452,6 +487,13 @@ namespace Peliluokkia
                     Kartta kartta = new Kartta();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     kartta.KutsuKartta();
+                    Console.ResetColor();
+                    Möykky();
+                    break;
+                case "H-HELP":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Heikki heikki = new Heikki();
+                    heikki.Help();
                     Console.ResetColor();
                     Möykky();
                     break;

@@ -80,6 +80,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                        Jatka();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        Jatka();
+                        break;
                     case "KARTTA":
                         Kartta kartta = new Kartta();
                         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -183,6 +190,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaOvi();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
@@ -258,6 +272,13 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaOvi();
                         break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
                     case "HALP":
                     case "HELP":
                         Help help = new Help();
@@ -311,6 +332,13 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Selaat vihkoa:\n" +
                             "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n");
+                        Console.ResetColor();
+                        ValoisaOvi();
+                        break;
+                    case "H-HELP":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Heikki heikki = new Heikki();
+                        heikki.Help();
                         Console.ResetColor();
                         ValoisaOvi();
                         break;
