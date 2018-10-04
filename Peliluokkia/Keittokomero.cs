@@ -32,7 +32,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                         vastaus = Console.ReadLine();
                         vastaus = vastaus.ToUpper();
-                        if (vastaus == "AVAA ENSIAPULAUKKU" || vastaus == "TUTKI ENSIAPULAUKKU" || vastaus == "AVAA ENSIAPU" || vastaus == "OTA LAUKKU" || vastaus == "OTA ENSIAPULAUKKU")
+                        if (vastaus == "AVAA ENSIAPULAUKKU" || vastaus == "TUTKI ENSIAPULAUKKU" || vastaus == "AVAA ENSIAPU" || vastaus == "OTA LAUKKU" || vastaus == "OTA ENSIAPULAUKKU" || vastaus == "AVAA LAUKKU")
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Tunnustelet ensiapulaukun sisältöä. Tunnistat hämärässä burana-paketin ja huomaat myös jonkun kookkaamman esineen.\n");
@@ -42,6 +42,9 @@ namespace Peliluokkia
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Epäkelpo valinta.\n");
+                            Console.ResetColor();
                             Jatka();
                             break;
                         }
@@ -431,8 +434,8 @@ namespace Peliluokkia
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
-                        Ensiapulaukku();
                         Console.ResetColor();
+                        Ensiapulaukku();
                         break;
                 }
             }
@@ -485,7 +488,7 @@ namespace Peliluokkia
                         if (Game.vesiHuikat == 1)
                         { 
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Onneksi tuli kerättyä vesipullo talteen. Viimein saat päänsäryn pois.");
+                        Console.WriteLine("Oh yes. Lämpimällä vedellä saa huuhtoa kurkkua..");
                         Console.ResetColor();
                         Ensiapulaukku();
                         } else if (Game.vesiHuikat == 2)
@@ -556,8 +559,8 @@ namespace Peliluokkia
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
-                        Ensiapulaukku();
                         Console.ResetColor();
+                        Ensiapulaukku();
                         break;
                 }
             }
@@ -652,8 +655,8 @@ namespace Peliluokkia
                     default:
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Epäkelpo valinta.\n");
-                        Ensiapulaukku();
                         Console.ResetColor();
+                        Ensiapulaukku();
                         break;
                 }
 
