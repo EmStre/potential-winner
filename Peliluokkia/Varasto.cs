@@ -41,7 +41,7 @@ namespace Peliluokkia
 
 
             Console.WriteLine("Varasto on pilkkopimeä ja täynnä viinalaatikoita. Pimeässä on hankala lähteä etenemään.\n" +
-            "Muistat, että sähkökaappi löytyy varaston perältä! Olisikohan siellä sellainen varavirtakytkin kuten leffoissa." +
+            "Muistat, että sähkökaappi löytyy varaston perältä! Olisikohan siellä sellainen varavirtakytkin kuten leffoissa.\n" +
             "Voit myös poistua takaisin käytävälle (A).");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();

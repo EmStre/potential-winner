@@ -23,7 +23,14 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet avaudu milliäkään suurista ponnisteluista huolimatta.\n");
+                        if (Game.sahkoa == 1)
+                        {
+                            Console.WriteLine("Vaikka kerroksen varasähköt ovat päällä, ei hissi reagoi napinpainallukseen, koska rakennuksen pääsähköt ovat edelleen poikki.\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Hissin nappi ei reagoi painallukseen, eivätkä hissien ovet avaudu milliäkään suurista ponnisteluista huolimatta.\n");
+                        }
                         Console.ResetColor();
                         Game.hissinappi++;
                         Avaa();
@@ -98,8 +105,16 @@ namespace Peliluokkia
                 {
                     case "A":
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Toiveikkaasti kokeilet hissin kutsunappia, vaikkei se viimeksi reagoinut painallukseen.\n" +
+                        if (Game.sahkoa == 1)
+                        {
+                            Console.WriteLine("Toiveikkaasti kokeilet hissin kutsunappia, vaikkei se viimeksi reagoinut painallukseen.\n" +
+                                "Vaikka kerroksen varasähköt ovat päällä, ei hissi edelleenkään reagoi napinpainallukseen, koska rakennuksen pääsähköt ovat edelleen poikki.\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Toiveikkaasti kokeilet hissin kutsunappia, vaikkei se viimeksi reagoinut painallukseen.\n" +
                             "Nappi ei tälläkään kertaa tee mitään.");
+                        }
                         Console.ResetColor();
                         Game.hissinappi++;
                         Avaa();
