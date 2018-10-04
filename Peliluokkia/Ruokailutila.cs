@@ -78,11 +78,11 @@ namespace Peliluokkia
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
                             Console.ResetColor();
                             Avaa();
                         }
-                        else if (Game.vesiHuikat <= 3)
+                        else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
@@ -238,11 +238,11 @@ namespace Peliluokkia
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat toisen huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
                             Console.ResetColor();
                             Avaa();
                         }
-                        else if (Game.vesiHuikat <= 3)
+                        else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Vesipullo on melkein tyhjä.");
