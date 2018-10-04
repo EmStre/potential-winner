@@ -266,6 +266,7 @@ namespace Peliluokkia
                             break;
                         case "TASKULAMPPU PÄÄLLE":
                         case "LAMPPU PÄÄLLE":
+                        case "LAMPPU":
                         case "AVAA LAMPPU":
                         case "LAITA LAMPPU PÄÄLLE":
                         case "KYTKE LAMPPU PÄÄLLE":
@@ -358,6 +359,8 @@ namespace Peliluokkia
                             Avaa();
                             break;
                         case "LAMPPU PÄÄLLE":
+                        case "LAMPPU":
+                        case "AVAA LAMPPU":
                         case "TASKULAMPPU PÄÄLLE":
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Sinulla ei ole lamppua.\n");

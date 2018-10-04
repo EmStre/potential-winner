@@ -57,7 +57,8 @@ namespace Peliluokkia
                         }
                         else
                         {
-                            Console.WriteLine("Taskulamppu syttyy. Sohvalla makaa edelleen se sammunut konsultti.\nParempi antaa hänen levätä rauhassa. Sammutat valon ja pohdit vaihtoehtojasi.\n");
+                            Console.WriteLine("Taskulamppu syttyy. Sohvalla makaa edelleen se sammunut konsultti.\n" +
+                                "Parempi antaa hänen levätä rauhassa. Sammutat valon ja pohdit vaihtoehtojasi.\n");
                         }
                         Console.ResetColor();
                         Avaa();

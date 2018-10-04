@@ -85,13 +85,14 @@ namespace Peliluokkia
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Taskulamppu syttyy, jolloin näet, että WC-tila on törkysessä kunnossa. Mietitkin sisään astuessasi, että siellä haisi kovin pahalta\nPäätät sulkea lampun saman tien.\n" );
+                        Console.WriteLine("Taskulamppu syttyy, jolloin näet, että WC-tila on törkyisessä kunnossa. Mietitkin sisään astuessasi, että siellä haisi kovin pahalta\nPäätät sulkea lampun saman tien.\n" );
                         Console.ResetColor();
                         Avaa();
                         break;
                     }
                 case "PISSAA":
                 case "KÄY VESSASSA":
+                case "KÄY PÖNTÖLLÄ":                    
                 case "KÄY PISSALLA":
                     int juomat = (3 - Game.olutlaskuri + Game.juodutKahvit);
                     juomat = juomat - Game.nollaa;
@@ -188,6 +189,7 @@ namespace Peliluokkia
                 case "PISSAA":
                 case "KÄY VESSASSA":
                 case "KÄY PISSALLA":
+                case "KÄY PÖNTÖLLÄ":
                     int juomat = (3 - Game.olutlaskuri + Game.juodutKahvit);
                     juomat = juomat - Game.nollaa;
                     if (juomat >= 3)

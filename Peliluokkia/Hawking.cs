@@ -483,8 +483,9 @@ namespace Peliluokkia
 
         public void Möykky()
         {
+            Console.WriteLine("Poimit paperipallon maasta, rullaat sen auki ja ihmettelet sen sisältöä lampun valossa.\n");
             Console.Write("'Tulin, näin voitin...' Kyseessä on Julius Caesarin ");
-               Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("CV!!\n");
             Console.ResetColor();
 

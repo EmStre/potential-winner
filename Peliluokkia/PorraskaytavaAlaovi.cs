@@ -25,6 +25,7 @@ namespace Peliluokkia
                         Thread.Sleep(800);
                         Game.complete = true;
                         Console.WriteLine("Olet jo varautunut pahimpaan - avain ei sopisikaan oven lukkoon - mutta vastoin odotuksiasi, avain sopii lukkoon ja ovi aukeaa!");
+                        Console.ReadLine();
                     }
                     else
                     {

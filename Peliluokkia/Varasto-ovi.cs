@@ -95,7 +95,8 @@ namespace Peliluokkia
 
             else if ((!Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu")) || (Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu")) || (Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu")))
             {
-                Console.WriteLine("Sinulta puuttuu yksi oven avaamiseen tarvittava esine. Jatka etsimistä.\nMuistathan lisätä löytämäsi esineet kassiin.\n");
+                Console.WriteLine("Sinulta puuttuu yksi oven avaamiseen tarvittava esine. Jatka etsimistä.\n" +
+                    "Muistathan aina lisätä löytämäsi esineet kassiin!\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Tarkastelet taas käytävää.\n");
                 Console.ResetColor();
@@ -105,7 +106,8 @@ namespace Peliluokkia
             }
             else if ((!Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && Inventaario.esineet.Contains("fläppitaulu")) || (Inventaario.esineet.Contains("CV") && !Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu")) || (!Inventaario.esineet.Contains("CV") && Inventaario.esineet.Contains("vihko") && !Inventaario.esineet.Contains("fläppitaulu")))
             {
-                Console.WriteLine("Sinulta puuttuu esineitä, joita ilman et voi saadaa ovea auki. Jatkahan etsimistä.\nMuistathan lisätä löytämäsi esineet kassiin.\n");
+                Console.WriteLine("Sinulta puuttuu esineitä, joita ilman et voi saadaa ovea auki. Jatkahan etsimistä.\n" +
+                    "Muistathan aina lisätä löytämäsi esineet kassiin!\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Tarkastelet taas käytävää.\n");
                 Console.ResetColor();
@@ -327,7 +329,6 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaOvi();
                         break;
-                    
                     case "OTA FLÄPPITAULU":
                     case "LUE FLÄPPITAULU":
                     case "FLÄPPITAULU":
