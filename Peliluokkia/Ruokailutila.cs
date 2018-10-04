@@ -64,28 +64,28 @@ namespace Peliluokkia
                         if (Game.vesiHuikat == 1)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Onpas harvinaisen pahaa ja lämmintä vettä.");
+                            Console.WriteLine("Onpas harvinaisen pahaa ja lämmintä vettä.\n");
                             Console.ResetColor();
                             Avaa();
                         }
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.\n");
                             Console.ResetColor();
                             Avaa();
                         }
                         else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.WriteLine("Vesipullo on melkein tyhjä.\n");
                             Console.ResetColor();
                             Avaa();
                         }
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Vesipullo on tyhjä.");
+                            Console.WriteLine("Vesipullo on tyhjä.\n");
                             Console.ResetColor();
                             Avaa();
                         }
@@ -211,21 +211,21 @@ namespace Peliluokkia
                         if (Inventaario.esineet.Contains("vesipullo") && Game.vesiHuikat == 1)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Onpas harvinaisen pahaa ja lämmintä vettä.");
+                            Console.WriteLine("Onpas harvinaisen pahaa ja lämmintä vettä.\n");
                             Console.ResetColor();
                             Avaa();
                         }
                         else if (Game.vesiHuikat == 2)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.");
+                            Console.WriteLine("Otat huikan ja mietit eikö täältä oikeasti löydy muuta juotavaa.\n");
                             Console.ResetColor();
                             Avaa();
                         }
                         else if (Game.vesiHuikat == 3)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Vesipullo on melkein tyhjä.");
+                            Console.WriteLine("Vesipullo on melkein tyhjä.\n");
                             Console.ResetColor();
                             Avaa();
                         }
