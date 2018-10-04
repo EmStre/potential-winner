@@ -107,7 +107,7 @@ namespace Peliluokkia
                         if (!Inventaario.esineet.Contains("taskulamppu"))
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Sinulla ei ole lamppua\n");
+                            Console.WriteLine("Sinulla ei ole lamppua.\n");
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -115,7 +115,7 @@ namespace Peliluokkia
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Taskulamppu välähtää, mutta koska se on älykäs, se ymmärtää, ettet oikeasti halua käyttää sitä käytävässä...\n");
+                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
                             Console.ResetColor();
                             Avaa();
                             break;
@@ -256,8 +256,29 @@ namespace Peliluokkia
                             Console.ResetColor();
                             Avaa();
                         }
-
                         break;
+                    case "LAMPPU PÄÄLLE":
+                    case "SYTYTÄ LAMPPU":
+                    case "AVAA LAMPPU":
+                    case "TASKULAMPPU PÄÄLLE":
+                    case "SYTYTÄ TASKULAMPPU":
+                    case "AVAA TASKULAMPPU":
+                        if (!Inventaario.esineet.Contains("taskulamppu"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Sinulla ei ole lamppua.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Olet huolissasi taskulampun patteriden riittävyydestä, joten päätät sulkea lampun ja edetä pimeässä.\n");
+                            Console.ResetColor();
+                            Avaa();
+                            break;
+                        }
                     case "KASSI":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Inventaario inventaario = new Inventaario();
