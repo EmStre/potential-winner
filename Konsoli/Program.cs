@@ -16,7 +16,7 @@ namespace Konsoli
             CultureInfo.CurrentCulture = new CultureInfo("fi-FI");
             Console.WindowHeight = 50;
             Console.WindowWidth = 185;
-            //Intro.KutsuIntro();
+            Intro.KutsuIntro();
             Console.ResetColor();
             Console.BackgroundColor = ConsoleColor.Black;
             Hejlsberg hejlsberg = new Hejlsberg();
