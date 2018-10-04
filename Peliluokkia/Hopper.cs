@@ -46,22 +46,11 @@ namespace Peliluokkia
                         kaytava.Avaa();
                         break;
                     case "TASKULAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaHuone();
-                        break;
                     case "LAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaHuone();
-                        break;
                     case "AVAA LAMPPU":
-                        lamppu.Päällä();
-                        ValoisaHuone();
-                        break;
                     case "LAITA LAMPPU PÄÄLLE":
-                        lamppu.Päällä();
-                        ValoisaHuone();
-                        break;
                     case "KYTKE LAMPPU PÄÄLLE":
+                    case "LAMPPU":
                         lamppu.Päällä();
                         ValoisaHuone();
                         break;
@@ -123,11 +112,6 @@ namespace Peliluokkia
                         kaytava.Avaa();
                         break;
                     case "LAMPPU PÄÄLLE":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua.\n");
-                        Console.ResetColor();
-                        Avaa();
-                        break;
                     case "TASKULAMPPU PÄÄLLE":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Sinulla ei ole lamppua.\n");
@@ -186,7 +170,8 @@ namespace Peliluokkia
 
         public void ValoisaHuone()
         {
-            Console.WriteLine("Nyt näet fläppitaulun ja pystyt lukemaan tekstin: 'Do or do not. There is no try...'.\n'Mitä ihmettä, ei tästäkään mitään hyötyä', ajattelet ääneen.\nVoit halutessasi palata takaisin käytävään (A)");
+            Console.WriteLine("Nyt näet fläppitaulun ja pystyt lukemaan tekstin: 'Do or do not. There is no try...'.\n'Mitä ihmettä, ei kyllä tästäkään ole mitään hyötyä...', ajattelet ääneen.\n" +
+                "Voit halutessasi palata takaisin käytävään (A)");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             Kaytava kaytava = new Kaytava();
@@ -201,13 +186,7 @@ namespace Peliluokkia
                     kaytava.Avaa();
                     break;
                 case "SAMMUTA VALO":
-                    lamppu.PoisPäältä();
-                    Avaa();
-                    break;
                 case "SAMMUTA TASKULAMPPU":
-                    lamppu.PoisPäältä();
-                    Avaa();
-                    break;
                 case "SAMMUTA LAMPPU":
                     lamppu.PoisPäältä();
                     Avaa();

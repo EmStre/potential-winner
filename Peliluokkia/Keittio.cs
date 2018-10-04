@@ -16,7 +16,6 @@ namespace Peliluokkia
             {
                 ValoisaAcademy();
             }
-
             else if (Game.olutlaskuri > 0)
             {
                 Console.WriteLine("Keittiöön tulee hieman valoa ulkona palavista katulampuista.\n" +
@@ -70,7 +69,7 @@ namespace Peliluokkia
                         Avaa();
                         break;
                     case "OLUT":
-                        Console.WriteLine(Game.olutlaskuri.ToString());
+                        Console.WriteLine("Jääkaapin oluttilanne: " + Game.olutlaskuri.ToString());
                         Avaa();
                         break;
                     case "LAMPPU PÄÄLLE":
@@ -183,7 +182,7 @@ namespace Peliluokkia
                         Avaa();
                         break;
                     case "OLUT":
-                        Console.WriteLine(Game.olutlaskuri.ToString());
+                        Console.WriteLine("Jääkaapin oluttilanne: " + Game.olutlaskuri.ToString());
                         Avaa();
                         break;
                     case "LAMPPU PÄÄLLE":
@@ -232,7 +231,6 @@ namespace Peliluokkia
                 }
             }
         }
-
         public void ValoisaAcademy()
         {
             Console.WriteLine("Jaahas. Kahvikoneessa palaa valo ja nyt voit laittaa espressot tulille firman piikkiin.\n");
@@ -241,7 +239,6 @@ namespace Peliluokkia
             else
                 Kahvihetki();    
         }
-
         public void Kahvihetki()
         {
             Console.Write("Valitse mieleisesi tuote (");
@@ -249,7 +246,7 @@ namespace Peliluokkia
             Console.Write("espresso, maitokahvi, kahvi, red eye");
             Console.ResetColor();
             Console.Write(")\n" +
-                "Voit myös siirtyä C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
+                "Voit myös siirtyä keittokomeroon (A), C#-luokan käytävään (B), ruokailutilaan (C) tai hissikäytävään (D)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -264,10 +261,24 @@ namespace Peliluokkia
                     break;
                 case "B":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Kävelet keittokomeron puolelle.\n");
+                    Console.WriteLine("Kävelet C#-luokan käytävään.\n");
                     Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
+                    break;
+                case "C":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Tallustelet ruokailutilaan.\n");
+                    Console.ResetColor();
+                    Ruokailutila ruokailutila = new Ruokailutila();
+                    ruokailutila.Avaa();
+                    break;
+                case "D":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Siirryt hissikäytävään.\n");
+                    Console.ResetColor();
+                    Hissikaytava hissikaytava = new Hissikaytava();
+                    hissikaytava.Avaa();
                     break;
                 case "ESPRESSO":
                     if (Game.kahvipavut == 0)
@@ -280,7 +291,7 @@ namespace Peliluokkia
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle jämäkän espresson. Puhaltelet kahvia viileämmäksi, huitaiset kupillisen kerralla huiviin ja tunnet, kuinka kofeiini piristää.\n");
+                        Console.WriteLine("Kone ruksuttaa hetken ja puskee sinulle jämäkän espresson. Puhaltelet kahvia viileämmäksi, huitaiset kupillisen kerralla huiviin ja tunnet, kuinka kofeiini virkistää väsyneitä aivojasi.\n");
                         Console.ResetColor();
                         Game.kahvipavut=-2;
                         Game.juodutKahvit++;
@@ -348,7 +359,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Papuja lisätessäsi kuuluu erikoinen kolaus. Papupussin sisältä tupsahti avain!\n");
                         Console.ResetColor();
-                        Game.kahvipavut += 10;
+                        Game.kahvipavut += 8;
                         Game.avain++;
                         Kahvihetki();
                     }
@@ -357,7 +368,7 @@ namespace Peliluokkia
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Lisäät papuja kahvikoneeseen\n");
                         Console.ResetColor();
-                        Game.kahvipavut += 10;
+                        Game.kahvipavut += 9;
                         Kahvihetki();
                     }
                     break;
@@ -443,7 +454,7 @@ namespace Peliluokkia
             Console.Write("espresso, maitokahvi, kahvi, red eye");
             Console.ResetColor();
             Console.Write(")\n" +
-                "Voit myös kaivaa jääkaapista Terrific Thursdaylta ylijääneitä oluita (A). Voit myös siirtyä C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
+                "Voit myös kaivaa jääkaapista Terrific Thursdaylta ylijääneitä oluita (A). Voit myös siirtyä keittokomeron puolelle (B), C#-luokan käytävään (C), ruokailutilaan (D) tai hissikäytävään (E)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
 
@@ -451,7 +462,7 @@ namespace Peliluokkia
             {
                 case "A":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Kaivat jääkaapista oluen ja hörpit sitä hetken ihmetellen, että mitä sitä tekisi seuraavaksi.\n");
+                    Console.WriteLine("Kaivat jääkaapista oluen ja hörpit sitä hetken samalla ihmetellen, että mitä hittoa sitä tekisi seuraavaksi.\n");
                     Console.ResetColor();
                     Game.olutlaskuri--;
                     Game.oluet++;
@@ -469,10 +480,24 @@ namespace Peliluokkia
                     break;
                 case "C":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Kävelet keittokomeron puolelle.\n");
+                    Console.WriteLine("Kävelet käytävään C#-luokan eteen.\n");
                     Console.ResetColor();
                     Kaytava kaytava = new Kaytava();
                     kaytava.Avaa();
+                    break;
+                case "D":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Tallustelet ruokailutilaan.\n");
+                    Console.ResetColor();
+                    Ruokailutila ruokailutila = new Ruokailutila();
+                    ruokailutila.Avaa();
+                    break;
+                case "E":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("Siirryt hissikäytävään.\n");
+                    Console.ResetColor();
+                    Hissikaytava hissikaytava = new Hissikaytava();
+                    hissikaytava.Avaa();
                     break;
                 case "ESPRESSO":
                     if (Game.kahvipavut == 0)

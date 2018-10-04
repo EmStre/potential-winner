@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace Peliluokkia
 {
     class Keittokomero
-
     {
         string vastaus;
         public void Avaa()
@@ -15,7 +14,6 @@ namespace Peliluokkia
             Console.WriteLine("Hapuilet pimeässä tiskipöydän luo. Pöydältä erottuu esine, jonka tunnistat ensiapulaukuksi. Kädelläsi tavoitat myös vesihanan.\n");
             Jatka();
         }
-
         public void Jatka()
         {
             if (!Inventaario.esineet.Contains("taskulamppu"))

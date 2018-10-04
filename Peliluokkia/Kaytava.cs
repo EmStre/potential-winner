@@ -21,10 +21,8 @@ namespace Peliluokkia
                 Console.WriteLine("Olet hämärässä käytävässä, jonka toisessa päässä on keittiö (A), toisessa porraskäytävä (B).\n" +
                "Lisäksi käytävän varrelta löytyy C#-ryhmän Hejlsberg-luokka (C), neuvotteluhuoneet Lovelace (D), Hopper (E), Jobs (F) ja Gosling (G) sekä konsolipelinurkkaus (H) ja varasto (I).");
             }
-
-                vastaus = Console.ReadLine();
+            vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
-
             switch (vastaus)
             {
                 case "A":
@@ -84,7 +82,7 @@ namespace Peliluokkia
                     break;
                 case "H":
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Koska sähkö on poikki, pysyy pelikonsoli sitkeistä yrityksistäsi huolimatta mykkänä.\n");
+                    Console.WriteLine("Koska sähköt ovat poikki, pysyy pelikonsoli sitkeistä yrityksistäsi huolimatta mykkänä.\n");
                     Console.ResetColor();
                     Avaa();
                     break;
@@ -120,14 +118,14 @@ namespace Peliluokkia
                 case "LAMPPU PÄÄLLE":
                 case "SYTYTÄ LAMPPU":
                 case "AVAA LAMPPU":
-                case "Lamppu":
+                case "LAMPPU":
                 case "TASKULAMPPU PÄÄLLE":
                 case "SYTYTÄ TASKULAMPPU":
                 case "AVAA TASKULAMPPU":
                     if (!Inventaario.esineet.Contains("taskulamppu"))
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Sinulla ei ole lamppua\n");
+                        Console.WriteLine("Sinulla ei ole lamppua!\n");
                         Console.ResetColor();
                         Avaa();
                         break;
@@ -136,7 +134,7 @@ namespace Peliluokkia
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Osoittelet fikkarilla käytävän lattiaa, seiniä, kattoja ja ovia, mutta et näe mitään mielenkiintoista.\n\n" +
-                            "Sammutat lampun.");
+                            "Sammutat lampun.\n");
                         Console.ResetColor();
                         Avaa();
                         break;
