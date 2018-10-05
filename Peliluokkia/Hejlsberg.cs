@@ -398,9 +398,12 @@ namespace Peliluokkia
             lamppu = new Hejlsberg();
             if (!Inventaario.esineet.Contains("vihko"))
             {
-                Console.WriteLine("Taskulampun valossa katselet ympärillessi C#-luokkaa ja näet, että tussitaulut ovat täynnä mitä erikoisimpia for-looppeja ja if-lauseita,\n" +
-                    "joiden syvällisempää tarkoitusta et jää miettimään." + " Huomiosi kiinnittyy pöydällä olevaan vihkoon.\n" + 
-                    "Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
+                Console.Write("Taskulampun valossa katselet ympärillessi C#-luokkaa ja näet, että tussitaulut ovat täynnä mitä erikoisimpia for-looppeja ja if-lauseita,\n" +
+                    "joiden syvällisempää tarkoitusta et jää miettimään." + " Huomiosi kiinnittyy pöydällä olevaan ");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("vihkoon.\n");
+                Console.ResetColor();
+                Console.WriteLine("Nyt erotat selvästi valonkatkaisijan (A), kaksi ovea käytävään (B) ja oven Java-ryhmän Hawking-luokkaan (C).\n" +
                     "Tunnet edelleen niskassasi tuulenvireen takanasi auki olevasta ikkunasta (D).\n");
                 vastaus = Console.ReadLine();
                 vastaus = vastaus.ToUpper();
@@ -478,7 +481,7 @@ namespace Peliluokkia
                         if (Game.koodi == 1)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine("Huomaat, ettei koodi kääntyisi, koska siinä on liikaa sulkuja, joten korjaat sen kuntoon.\n");
+                            Console.WriteLine("Huomaat, ettei koodi kääntyisi, koska siinä on liikaa sulkuja, joten korjaat koodin kuntoon.\n");
                             Console.ResetColor();
                         }
                         else
@@ -611,7 +614,7 @@ namespace Peliluokkia
         {
             lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Taskulamppu sammui");
+            Console.WriteLine("Taskulamppu sammui\n");
             Console.ResetColor();
         }
         public void Päällä()
@@ -623,7 +626,7 @@ namespace Peliluokkia
         }
         public void Vihko()
         {
-            Console.Write("Selatessasi vihkoa ymmärrät, ettei sen omistaja ole kovin ahkera muistiinpanojen kirjoittaja.\nToisaalta koodaamaan oppii koodaamaalla, eikä muistiinpanoja tekemällä...\n\n" +
+            Console.Write("Selatessasi vihkoa ymmärrät, ettei sen omistaja ole kovin ahkera muistiinpanojen kirjoittaja.\nToisaalta koodaamaan oppii koodaamaalla, eikä muistiinpanoja tekemällä...\n" +
                 "Yhdelle sivulle on kirjoitettu isoilla kirjaimilla sana 'VIREYTYMINEN'\n" +
                 "ja mieleesi palaa eräs huippuhyödyllinen vuorovaikutuskoulutus ja huomaat olevasi erityisen vireytynyt juuri nyt, yrittäessäsi löytää ulospääsyä tästä rakennuksesta.\n\n" +
                 "Vihkon yhdellä sivulla on lause: 'Varastoon pääsy kulminoituu osittain elämään, maailmankaikkeuteen ja kaikkeen muuhun sellaiseen liittyvän kysymyksen vastaukseen'\n" +

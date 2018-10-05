@@ -240,7 +240,6 @@ namespace Peliluokkia
                                 lamppu.Päällä();
                                 ValoisaHawking();
                                 break;
-                            
                             case "KASSI":
                                 Console.ForegroundColor = ConsoleColor.Yellow;
                                 Inventaario inventaario = new Inventaario();
@@ -487,7 +486,7 @@ namespace Peliluokkia
             Console.WriteLine("CV!!\n");
             Console.ResetColor();
 
-            Console.WriteLine("Perin omituista, mutta todennäköisesti hyödyllistä.");
+            Console.WriteLine("Perin omituista, mutta todennäköisesti hyödyllistä.\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             Inventaario inventaario = new Inventaario();
@@ -551,7 +550,7 @@ namespace Peliluokkia
         {
             lamppuPäällä = false;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Taskulamppu sammui");
+            Console.WriteLine("Taskulamppu sammui\n");
             Console.ResetColor();
         }
 
