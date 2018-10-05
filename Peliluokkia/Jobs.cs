@@ -48,7 +48,7 @@ namespace Peliluokkia
                         kaytava.Avaa();
                         break;
                     case "B":
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("You wish!!\n");
                         Console.ResetColor();
                         Jatka();
@@ -74,6 +74,9 @@ namespace Peliluokkia
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("En ymmärrä sinua :(\n");
+                            Console.ResetColor();
                             Jatka();
                             break;
                         }
@@ -126,7 +129,7 @@ namespace Peliluokkia
                         kaytava.Avaa();
                         break;
                     case "B":
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("You wish!!\n");
                         Console.ResetColor();
                         Jatka();
