@@ -24,7 +24,7 @@ namespace Peliluokkia
         VarastoOvi lamppu;
         public void Avaa()
         {
-            Console.WriteLine("Muistat Maisan kertoneen, että varastossa on sähkökaappi, joka käynnistää Academyn generaattorin tarjoten sähköä oleellisimmille toiminoille.\n " +
+            Console.WriteLine("Muistat Maisan kertoneen, että varastossa on sähkökaappi, joka käynnistää Academyn generaattorin tarjoten sähköä oleellisimmille toiminnoille.\n " +
                 "Voisi olla hyödyllistä saada sähköt päälle.\n");
             Jatka();
 

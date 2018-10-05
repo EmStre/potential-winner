@@ -23,7 +23,7 @@ namespace Peliluokkia
         {
             Console.WriteLine("Olet Lovelace-neuvotteluhuoneessa.\n" +
                 "Pimeässä näet fläppitaulun, johon on kirjoitettu jotakin, mutta et saa kirjoituksesta selvää, koska on PIMEÄÄ.\n" +
-                "Voit halutessasi palata takaisin käytävään (A)");
+                "Voit halutessasi palata takaisin käytävään (A)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             lamppu = new Love();
@@ -145,7 +145,7 @@ namespace Peliluokkia
         public void ValoisaHuone()
         {
             Console.WriteLine("Nyt näet fläppitaulun ja huomaat, että ahkerat konsultit ovat pelanneet risti-nollaa ja risteillä pelannut henkilö on voittanut joka kerta. \n" +
-                "Voit halutessasi palata takaisin käytävään (A)");
+                "Voit halutessasi palata takaisin käytävään (A)\n");
             vastaus = Console.ReadLine();
             vastaus = vastaus.ToUpper();
             switch (vastaus)
