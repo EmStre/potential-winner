@@ -14,7 +14,11 @@ namespace Peliluokkia
             {
                 string vastaus;
                 string esine = "vesipullo";
-                Console.WriteLine("Ruokailutilassa eteneminen on hankalaa pimeässä. Törmäät pöytään ja saat vesipullon kaatumaan. \n" +
+                Console.Write("Ruokailutilassa eteneminen on hankalaa pimeässä. Törmäät pöytään ja saat ");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("vesipullo");
+                Console.ResetColor();
+                Console.WriteLine("n kaatumaan. \n" +
                     "Parempi siis jatkaa eteenpäin sohvanurkkaukseen (A) tai hissikäytävään (B).\n" +
                     "Voit myös siirtyä WC-tilaan (C) tai keittokomeroon (D).\n");
                 vastaus = Console.ReadLine();
