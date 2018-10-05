@@ -72,6 +72,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                        Jatka();
                         break;
+                    case "HEIKKI":
                     case "H-HELP":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Heikki heikki = new Heikki();
@@ -200,6 +201,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaOvi();
                         break;
+                    case "HEIKKI":
                     case "H-HELP":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Heikki heikki = new Heikki();
@@ -296,6 +298,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaOvi();
                         break;
+                    case "HEIKKI":
                     case "H-HELP":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Heikki heikki = new Heikki();
@@ -370,6 +373,7 @@ namespace Peliluokkia
                         Console.ResetColor();
                         ValoisaOvi();
                         break;
+                    case "HEIKKI":
                     case "H-HELP":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("42");

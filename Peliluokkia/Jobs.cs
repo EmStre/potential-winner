@@ -47,6 +47,12 @@ namespace Peliluokkia
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
                         break;
+                    case "B":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("You wish!!\n");
+                        Console.ResetColor();
+                        Jatka();
+                        break;
                     case "TASKULAMPPU PÄÄLLE":
                     case "AVAA TASKULAMPPU":
                     case "LAMPPU PÄÄLLE":
@@ -68,6 +74,9 @@ namespace Peliluokkia
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("En ymmärrä sinua :(\n");
+                            Console.ResetColor();
                             Jatka();
                             break;
                         }
@@ -118,6 +127,12 @@ namespace Peliluokkia
                         Console.ResetColor();
                         Kaytava kaytava = new Kaytava();
                         kaytava.Avaa();
+                        break;
+                    case "B":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("You wish!!\n");
+                        Console.ResetColor();
+                        Jatka();
                         break;
                     case "AVAA LAMPPU":
                     case "AVAA TASKULAMPPU":
