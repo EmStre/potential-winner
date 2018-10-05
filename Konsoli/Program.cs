@@ -20,7 +20,6 @@ namespace Konsoli
             Console.ResetColor();
             Console.BackgroundColor = ConsoleColor.Black;
             Hejlsberg hejlsberg = new Hejlsberg();
-            Kaytava kaytava = new Kaytava();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Pelissä käytettävät komennot saat näkyviin kirjoittamalla HELP\n");
             Console.ResetColor();
